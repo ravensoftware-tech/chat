@@ -946,7 +946,6 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         final Transferable transferable = message.getTransferable();
         final boolean unInitiatedButKnownSize = MessageUtils.unInitiatedButKnownSize(message);
         if (unInitiatedButKnownSize
-                || message.isDeleted()
                 || (transferable != null
                         && transferable.getStatus() != Transferable.STATUS_UPLOADING)) {
             if (unInitiatedButKnownSize
@@ -974,6 +973,9 @@ public class MessageAdapter extends ArrayAdapter<Message> {
                         UIHelper.getMessagePreview(activity, message).first,
                         bubbleColor);
             }
+        } else if (message.isDeleted()) {
+            // TODO: displayInfoMessage used to be italic, but now it's indistinguishable from normal messages
+            displayInfoMessage(viewHolder, activity.getString(R.string.message_deleted), bubbleColor);
         } else if (message.isFileOrImage()
                 && message.getEncryption() != Message.ENCRYPTION_PGP
                 && message.getEncryption() != Message.ENCRYPTION_DECRYPTION_FAILED) {
