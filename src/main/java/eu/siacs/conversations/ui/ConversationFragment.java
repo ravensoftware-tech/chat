@@ -2185,18 +2185,36 @@ public class ConversationFragment extends XmppFragment
         builder.create().show();
     }
 
-    private void deleteMessage(Message message) {
-        // TODO display a confirmation
-        do {
-            message.setDeleted(true);
-            // Remove the body from the database. This makes sure that the message body can't be extracted
-            // from the application database even if the device is compromised.
-            // Note that the message might still possibly be retrieved from the MAM.
-            message.setBody("");
-            activity.xmppConnectionService.updateMessage(message, false);
-            message = message.next();
-        } while (message.mergeable(message.next()));
-        refresh();
+    private void deleteMessageImpl(final Message message) {
+        message.setDeleted(true);
+        // Remove the body from the database. This makes sure that the message body can't be extracted
+        // from the application database even if the device is compromised.
+        // Note that the message might still possibly be retrieved from the MAM.
+        message.setBody("");
+        activity.xmppConnectionService.updateMessage(message, false);
+    }
+
+    private void deleteMessage(final Message message) {
+        final MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(requireActivity());
+        builder.setNegativeButton(R.string.cancel, null);
+        // TODO Use proper strings
+        builder.setTitle(R.string.delete_message_dialog);
+        builder.setMessage(R.string.delete_message_dialog_msg);
+        builder.setPositiveButton(
+                R.string.confirm,
+                (dialog, which) -> {
+                    Message current = message;
+                    while (current.mergeable(current.next()) || current.next() == null) {
+                        deleteMessageImpl(current);
+                        current = current.next();
+                        if (current == null) {
+                            break;
+                        }
+                    }
+                    refresh();
+                });
+        builder.create().show();
+
     }
 
     private void resendMessage(final Message message) {
