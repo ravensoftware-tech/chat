@@ -2185,13 +2185,17 @@ public class ConversationFragment extends XmppFragment
         builder.create().show();
     }
 
-    private void deleteMessage(final Message message) {
-        message.setDeleted(true);
-        // Remove the body from the database. This makes sure that the message body can't be extracted
-        // from the application database even if the device is compromised.
-        // Note that the message might still possibly be retrieved from the MAM.
-        message.setBody("");
-        activity.xmppConnectionService.updateMessage(message, false);
+    private void deleteMessage(Message message) {
+        // TODO display a confirmation
+        do {
+            message.setDeleted(true);
+            // Remove the body from the database. This makes sure that the message body can't be extracted
+            // from the application database even if the device is compromised.
+            // Note that the message might still possibly be retrieved from the MAM.
+            message.setBody("");
+            activity.xmppConnectionService.updateMessage(message, false);
+            message = message.next();
+        } while (message.mergeable(message.next()));
         refresh();
     }
 
