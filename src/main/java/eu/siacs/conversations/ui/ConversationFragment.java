@@ -1471,7 +1471,6 @@ public class ConversationFragment extends XmppFragment
                 reportMessage(selectedMessage);
                 return true;
             case R.id.delete_message:
-                // TODO: disable the context menu for the messages that were already deleted
                 deleteMessage(selectedMessage);
                 return true;
             default:
@@ -2197,7 +2196,6 @@ public class ConversationFragment extends XmppFragment
     private void deleteMessage(final Message message) {
         final MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(requireActivity());
         builder.setNegativeButton(R.string.cancel, null);
-        // TODO Use proper strings
         builder.setTitle(R.string.delete_message_dialog);
         builder.setMessage(R.string.delete_message_dialog_msg);
         builder.setPositiveButton(
