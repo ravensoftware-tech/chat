@@ -2190,7 +2190,7 @@ public class ConversationFragment extends XmppFragment
         // from the application database even if the device is compromised.
         // Note that the message might still possibly be retrieved from the MAM.
         message.setBody("");
-        activity.xmppConnectionService.updateMessage(message, false);
+        activity.xmppConnectionService.updateMessage(message, true);
     }
 
     private void deleteMessage(final Message message) {

@@ -656,6 +656,7 @@ public class Message extends AbstractEntity implements AvatarService.Avatarable 
                         !message.treatAsDownloadable() &&
                         !this.treatAsDownloadable() &&
                         !this.isDeleted() &&
+                        !message.isDeleted() &&
                         !message.hasMeCommand() &&
                         !this.hasMeCommand() &&
                         !this.bodyIsOnlyEmojis() &&
