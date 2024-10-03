@@ -12,7 +12,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimaps;
 import com.google.common.collect.Ordering;
-import com.google.common.reflect.TypeToken;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
@@ -25,6 +25,7 @@ import eu.siacs.conversations.Config;
 import eu.siacs.conversations.xmpp.Jid;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -79,7 +80,8 @@ public class Reaction {
             return Collections.emptyList();
         }
         try {
-            return GSON.fromJson(asString, new TypeToken<List<Reaction>>() {}.getType());
+            Type type = new TypeToken<ArrayList<Reaction>>() {}.getType();
+            return GSON.fromJson(asString, type);
         } catch (final JsonSyntaxException e) {
             Log.e(Config.LOGTAG,"could not restore reactions", e);
             return Collections.emptyList();
