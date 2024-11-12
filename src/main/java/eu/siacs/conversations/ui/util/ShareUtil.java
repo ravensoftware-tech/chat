@@ -53,7 +53,7 @@ public class ShareUtil {
 			shareIntent.putExtra(Intent.EXTRA_TEXT, message.getBody());
 			shareIntent.setType("text/plain");
 		} else if (!message.isFileOrImage()) {
-			shareIntent.putExtra(Intent.EXTRA_TEXT, message.getMergedBody().toString());
+			shareIntent.putExtra(Intent.EXTRA_TEXT, message.getBody());
 			shareIntent.setType("text/plain");
 			shareIntent.putExtra(ConversationsActivity.EXTRA_AS_QUOTE, message.getStatus() == Message.STATUS_RECEIVED);
 		} else {
@@ -80,7 +80,7 @@ public class ShareUtil {
 	}
 
 	public static void copyToClipboard(XmppActivity activity, Message message) {
-		if (activity.copyTextToClipboard(message.getMergedBody().toString(), R.string.message)) {
+		if (activity.copyTextToClipboard(message.getBody(), R.string.message)) {
 			Toast.makeText(activity, R.string.message_copied_to_clipboard, Toast.LENGTH_SHORT).show();
 		}
 	}
@@ -105,7 +105,7 @@ public class ShareUtil {
 	}
 
     public static void copyLinkToClipboard(final XmppActivity activity, final Message message) {
-        final SpannableStringBuilder body = message.getMergedBody();
+        final SpannableStringBuilder body = message.getSpannableBody();
         for (final String url : MyLinkify.extractLinks(body)) {
             final Uri uri = Uri.parse(url);
             if ("xmpp".equals(uri.getScheme())) {

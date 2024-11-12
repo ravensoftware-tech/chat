@@ -81,22 +81,21 @@ public class ConversationAdapter
         }
 
         final Message message = conversation.getLatestMessage();
-        final int status = message.getStatus();
         final int unreadCount = conversation.unreadCount();
         final boolean isRead = conversation.isRead();
         final @DrawableRes Integer messageStatusDrawable =
-                MessageAdapter.getMessageStatusAsDrawable(message, status);
+                MessageAdapter.getMessageStatusAsDrawable(message);
         if (message.getType() == Message.TYPE_RTP_SESSION) {
             viewHolder.binding.messageStatus.setVisibility(View.GONE);
         } else if (messageStatusDrawable == null) {
-            if (status <= Message.STATUS_RECEIVED) {
+            if (message.getStatus() <= Message.STATUS_RECEIVED) {
                 viewHolder.binding.messageStatus.setVisibility(View.GONE);
             } else {
                 viewHolder.binding.messageStatus.setVisibility(View.INVISIBLE);
             }
         } else {
             viewHolder.binding.messageStatus.setImageResource(messageStatusDrawable);
-            if (status == Message.STATUS_SEND_DISPLAYED) {
+            if (message.getStatus() == Message.STATUS_SEND_DISPLAYED) {
                 viewHolder.binding.messageStatus.setImageResource(R.drawable.ic_done_all_bold_24dp);
                 ImageViewCompat.setImageTintList(
                         viewHolder.binding.messageStatus,
@@ -180,7 +179,7 @@ public class ConversationAdapter
                     viewHolder.binding.senderName.setTypeface(null, Typeface.BOLD);
                 }
             }
-            if (status == Message.STATUS_RECEIVED) {
+            if (message.getStatus() == Message.STATUS_RECEIVED) {
                 if (conversation.getMode() == Conversation.MODE_MULTI) {
                     viewHolder.binding.senderName.setVisibility(View.VISIBLE);
                     final var displayName = UIHelper.getMessageDisplayName(message);

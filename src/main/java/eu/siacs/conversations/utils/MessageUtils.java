@@ -63,7 +63,7 @@ public class MessageUtils {
             }
             body = nick + " " + message.getBody().substring(Message.ME_COMMAND.length());
         } else {
-            body = message.getMergedBody().toString();
+            body = message.getBody();
         }
         for (String line : body.split("\n")) {
             if (!(line.length() <= 0) && QuoteHelper.isNestedTooDeeply(line)) {

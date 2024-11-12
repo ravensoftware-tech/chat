@@ -692,14 +692,6 @@ public class ConversationFragment extends XmppFragment
         for (int i = 0; i < messages.size(); ++i) {
             if (uuid.equals(messages.get(i).getUuid())) {
                 return i;
-            } else {
-                Message next = messages.get(i);
-                while (next != null && next.wasMergedIntoPrevious()) {
-                    if (uuid.equals(next.getUuid())) {
-                        return i;
-                    }
-                    next = next.next();
-                }
             }
         }
         return -1;
@@ -1282,10 +1274,7 @@ public class ConversationFragment extends XmppFragment
     private void populateContextMenu(ContextMenu menu) {
         final Message m = this.selectedMessage;
         final Transferable t = m.getTransferable();
-        Message relevantForCorrection = m;
-        while (relevantForCorrection.mergeable(relevantForCorrection.next())) {
-            relevantForCorrection = relevantForCorrection.next();
-        }
+
         if (m.getType() != Message.TYPE_STATUS && m.getType() != Message.TYPE_RTP_SESSION) {
 
             if (m.getEncryption() == Message.ENCRYPTION_AXOLOTL_NOT_FOR_THIS_DEVICE
@@ -1359,7 +1348,7 @@ public class ConversationFragment extends XmppFragment
                     && t == null) {
                 copyMessage.setVisible(true);
                 quoteMessage.setVisible(!showError && !MessageUtils.prepareQuote(m).isEmpty());
-                final String scheme = ShareUtil.getLinkScheme(m.getMergedBody());
+                final String scheme = ShareUtil.getLinkScheme(m.getSpannableBody());
                 if ("xmpp".equals(scheme)) {
                     copyLink.setTitle(R.string.copy_jabber_id);
                     copyLink.setVisible(true);
@@ -1371,9 +1360,9 @@ public class ConversationFragment extends XmppFragment
                 retryDecryption.setVisible(true);
             }
             if (!showError
-                    && relevantForCorrection.getType() == Message.TYPE_TEXT
+                    && m.getType() == Message.TYPE_TEXT
                     && !m.isGeoUri()
-                    && relevantForCorrection.isLastCorrectableMessage()
+                    && m.isLastCorrectableMessage()
                     && m.getConversation() instanceof Conversation) {
                 correctMessage.setVisible(true);
             }
@@ -2121,9 +2110,6 @@ public class ConversationFragment extends XmppFragment
                     }
                 }
                 if (message != null) {
-                    while (message.next() != null && message.next().wasMergedIntoPrevious()) {
-                        message = message.next();
-                    }
                     return message.getUuid();
                 }
             }
@@ -2276,9 +2262,6 @@ public class ConversationFragment extends XmppFragment
     }
 
     private void correctMessage(Message message) {
-        while (message.mergeable(message.next())) {
-            message = message.next();
-        }
         this.conversation.setCorrectingMessage(message);
         final Editable editable = binding.textinput.getText();
         this.conversation.setDraftMessage(editable.toString());

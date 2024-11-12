@@ -488,11 +488,6 @@ public class Conversation extends AbstractEntity implements Blockable, Comparabl
             messages.clear();
             messages.addAll(this.messages);
         }
-        for (Iterator<Message> iterator = messages.iterator(); iterator.hasNext(); ) {
-            if (iterator.next().wasMergedIntoPrevious()) {
-                iterator.remove();
-            }
-        }
     }
 
     @Override

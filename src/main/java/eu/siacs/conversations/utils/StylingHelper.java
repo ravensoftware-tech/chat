@@ -87,13 +87,7 @@ public class StylingHelper {
 	}
 
 	public static void format(final Editable editable, @ColorInt int textColor) {
-		int end = 0;
-		Message.MergeSeparator[] spans = editable.getSpans(0, editable.length() - 1, Message.MergeSeparator.class);
-		for (Message.MergeSeparator span : spans) {
-			format(editable, end, editable.getSpanStart(span), textColor);
-			end = editable.getSpanEnd(span);
-		}
-		format(editable, end, editable.length() - 1, textColor);
+		format(editable, 0, editable.length() - 1, textColor);
 	}
 
 	public static void highlight(final TextView view, final Editable editable, final List<String> needles) {

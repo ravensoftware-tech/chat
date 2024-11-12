@@ -651,56 +651,6 @@ public class Message extends AbstractEntity implements AvatarService.Avatarable 
         return status != STATUS_RECEIVED && !isCarbon() && type != Message.TYPE_RTP_SESSION;
     }
 
-    public boolean mergeable(final Message message) {
-        return message != null &&
-                (message.getType() == Message.TYPE_TEXT &&
-                        this.getTransferable() == null &&
-                        message.getTransferable() == null &&
-                        message.getEncryption() != Message.ENCRYPTION_PGP &&
-                        message.getEncryption() != Message.ENCRYPTION_DECRYPTION_FAILED &&
-                        this.getType() == message.getType() &&
-                        this.isReactionsEmpty() &&
-                        message.isReactionsEmpty() &&
-                        isStatusMergeable(this.getStatus(), message.getStatus()) &&
-                        isEncryptionMergeable(this.getEncryption(),message.getEncryption()) &&
-                        this.getCounterpart() != null &&
-                        this.getCounterpart().equals(message.getCounterpart()) &&
-                        this.edited() == message.edited() &&
-                        (message.getTimeSent() - this.getTimeSent()) <= (Config.MESSAGE_MERGE_WINDOW * 1000) &&
-                        this.getBody().length() + message.getBody().length() <= Config.MAX_DISPLAY_MESSAGE_CHARS &&
-                        !message.isGeoUri() &&
-                        !this.isGeoUri() &&
-                        !message.isOOb() &&
-                        !this.isOOb() &&
-                        !message.treatAsDownloadable() &&
-                        !this.treatAsDownloadable() &&
-                        !message.hasMeCommand() &&
-                        !this.hasMeCommand() &&
-                        !this.bodyIsOnlyEmojis() &&
-                        !message.bodyIsOnlyEmojis() &&
-                        ((this.axolotlFingerprint == null && message.axolotlFingerprint == null) || this.axolotlFingerprint.equals(message.getFingerprint())) &&
-                        UIHelper.sameDay(message.getTimeSent(), this.getTimeSent()) &&
-                        this.getReadByMarkers().equals(message.getReadByMarkers()) &&
-                        !this.conversation.getJid().asBareJid().equals(Config.BUG_REPORTS)
-                );
-    }
-
-    private static boolean isStatusMergeable(int a, int b) {
-        return a == b || (
-                (a == Message.STATUS_SEND_RECEIVED && b == Message.STATUS_UNSEND)
-                        || (a == Message.STATUS_SEND_RECEIVED && b == Message.STATUS_SEND)
-                        || (a == Message.STATUS_SEND_RECEIVED && b == Message.STATUS_WAITING)
-                        || (a == Message.STATUS_SEND && b == Message.STATUS_UNSEND)
-                        || (a == Message.STATUS_SEND && b == Message.STATUS_WAITING)
-        );
-    }
-
-    private static boolean isEncryptionMergeable(final int a, final int b) {
-        return a == b
-                && Arrays.asList(ENCRYPTION_NONE, ENCRYPTION_DECRYPTED, ENCRYPTION_AXOLOTL)
-                        .contains(a);
-    }
-
     public void setCounterparts(List<MucOptions.User> counterparts) {
         this.counterparts = counterparts;
     }
@@ -751,58 +701,12 @@ public class Message extends AbstractEntity implements AvatarService.Avatarable 
         this.reactions = reactions;
     }
 
-    public static class MergeSeparator {
-    }
-
-    public SpannableStringBuilder getMergedBody() {
-        SpannableStringBuilder body = new SpannableStringBuilder(MessageUtils.filterLtrRtl(this.body).trim());
-        Message current = this;
-        while (current.mergeable(current.next())) {
-            current = current.next();
-            if (current == null) {
-                break;
-            }
-            body.append("\n\n");
-            body.setSpan(new MergeSeparator(), body.length() - 2, body.length(),
-                    SpannableStringBuilder.SPAN_EXCLUSIVE_EXCLUSIVE);
-            body.append(MessageUtils.filterLtrRtl(current.getBody()).trim());
-        }
-        return body;
+    public SpannableStringBuilder getSpannableBody() {
+	return new SpannableStringBuilder(MessageUtils.filterLtrRtl(this.body).trim());
     }
 
     public boolean hasMeCommand() {
         return this.body.trim().startsWith(ME_COMMAND);
-    }
-
-    public int getMergedStatus() {
-        int status = this.status;
-        Message current = this;
-        while (current.mergeable(current.next())) {
-            current = current.next();
-            if (current == null) {
-                break;
-            }
-            status = current.status;
-        }
-        return status;
-    }
-
-    public long getMergedTimeSent() {
-        long time = this.timeSent;
-        Message current = this;
-        while (current.mergeable(current.next())) {
-            current = current.next();
-            if (current == null) {
-                break;
-            }
-            time = current.timeSent;
-        }
-        return time;
-    }
-
-    public boolean wasMergedIntoPrevious() {
-        Message prev = this.prev();
-        return prev != null && prev.mergeable(this);
     }
 
     public boolean trusted() {

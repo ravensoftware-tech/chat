@@ -192,7 +192,6 @@ public class MessageAdapter extends ArrayAdapter<Message> {
             final Message message,
             final int type,
             final BubbleColor bubbleColor) {
-        final int mergedStatus = message.getMergedStatus();
         final boolean error;
         if (viewHolder.indicatorReceived != null) {
             viewHolder.indicatorReceived.setVisibility(View.GONE);
@@ -200,7 +199,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         final Transferable transferable = message.getTransferable();
         final boolean multiReceived =
                 message.getConversation().getMode() == Conversation.MODE_MULTI
-                        && mergedStatus <= Message.STATUS_RECEIVED;
+                        && message.getStatus() <= Message.STATUS_RECEIVED;
         final String fileSize;
         if (message.isFileOrImage()
                 || transferable != null
@@ -222,12 +221,12 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         }
         if (type == SENT) {
             final @DrawableRes Integer receivedIndicator =
-                    getMessageStatusAsDrawable(message, mergedStatus);
+                    getMessageStatusAsDrawable(message);
             if (receivedIndicator == null) {
                 viewHolder.indicatorReceived.setVisibility(View.INVISIBLE);
             } else {
                 viewHolder.indicatorReceived.setImageResource(receivedIndicator);
-                if (mergedStatus == Message.STATUS_SEND_FAILED) {
+                if (message.getStatus() == Message.STATUS_SEND_FAILED) {
                     setImageTintError(viewHolder.indicatorReceived);
                 } else {
                     setImageTint(viewHolder.indicatorReceived, bubbleColor);
@@ -235,7 +234,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
                 viewHolder.indicatorReceived.setVisibility(View.VISIBLE);
             }
         }
-        final var additionalStatusInfo = getAdditionalStatusInfo(message, mergedStatus);
+        final var additionalStatusInfo = getAdditionalStatusInfo(message);
 
         if (error && type == SENT) {
             viewHolder.time.setTextColor(
@@ -285,7 +284,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         }
 
         final String formattedTime =
-                UIHelper.readableTimeDifferenceFull(getContext(), message.getMergedTimeSent());
+                UIHelper.readableTimeDifferenceFull(getContext(), message.getTimeSent());
         final String bodyLanguage = message.getBodyLanguage();
         final ImmutableList.Builder<String> timeInfoBuilder = new ImmutableList.Builder<>();
         if (message.getStatus() <= Message.STATUS_RECEIVED) {
@@ -322,9 +321,9 @@ public class MessageAdapter extends ArrayAdapter<Message> {
     }
 
     public static @DrawableRes Integer getMessageStatusAsDrawable(
-            final Message message, final int status) {
+            final Message message) {
         final var transferable = message.getTransferable();
-        return switch (status) {
+        return switch (message.getStatus()) {
             case Message.STATUS_WAITING -> R.drawable.ic_more_horiz_24dp;
             case Message.STATUS_UNSEND -> transferable == null ? null : R.drawable.ic_upload_24dp;
             case Message.STATUS_SEND -> R.drawable.ic_done_24dp;
@@ -344,9 +343,9 @@ public class MessageAdapter extends ArrayAdapter<Message> {
     }
 
     @Nullable
-    private String getAdditionalStatusInfo(final Message message, final int mergedStatus) {
+    private String getAdditionalStatusInfo(final Message message) {
         final String additionalStatusInfo;
-        if (mergedStatus == Message.STATUS_SEND_FAILED) {
+        if (message.getStatus() == Message.STATUS_SEND_FAILED) {
             final String errorMessage = Strings.nullToEmpty(message.getErrorMessage());
             final String[] errorParts = errorMessage.split("\\u001f", 2);
             if (errorParts.length == 2 && errorParts[0].equals("file-too-large")) {
@@ -354,7 +353,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
             } else {
                 additionalStatusInfo = null;
             }
-        } else if (mergedStatus == Message.STATUS_UNSEND) {
+        } else if (message.getStatus() == Message.STATUS_UNSEND) {
             final var transferable = message.getTransferable();
             if (transferable == null) {
                 return null;
@@ -486,7 +485,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
 
         if (message.getBody() != null) {
             final String nick = UIHelper.getMessageDisplayName(message);
-            SpannableStringBuilder body = message.getMergedBody();
+            SpannableStringBuilder body = message.getSpannableBody();
             boolean hasMeCommand = message.hasMeCommand();
             if (hasMeCommand) {
                 body = body.replace(0, Message.ME_COMMAND.length(), nick + " ");
@@ -494,13 +493,6 @@ public class MessageAdapter extends ArrayAdapter<Message> {
             if (body.length() > Config.MAX_DISPLAY_MESSAGE_CHARS) {
                 body = new SpannableStringBuilder(body, 0, Config.MAX_DISPLAY_MESSAGE_CHARS);
                 body.append("\u2026");
-            }
-            Message.MergeSeparator[] mergeSeparators =
-                    body.getSpans(0, body.length(), Message.MergeSeparator.class);
-            for (Message.MergeSeparator mergeSeparator : mergeSeparators) {
-                int start = body.getSpanStart(mergeSeparator);
-                int end = body.getSpanEnd(mergeSeparator);
-                body.setSpan(new DividerSpan(true), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
             boolean startsWithQuote = handleTextQuotes(viewHolder.messageBody, body, bubbleColor);
             if (!message.isPrivateMessage()) {
