@@ -940,6 +940,15 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         }
 
         resetClickListener(viewHolder.message_box, viewHolder.messageBody);
+        if (activity.getClass().getSimpleName().equals("SearchActivity")) {
+            viewHolder.messageBody.setOnClickListener(v -> {
+                    final Intent intent = new Intent(getContext(), ConversationsActivity.class);
+                    intent.setAction(ConversationsActivity.ACTION_VIEW_CONVERSATION);
+                    intent.putExtra(ConversationsActivity.EXTRA_CONVERSATION, conversation.getUuid());
+                    intent.putExtra(ConversationsActivity.EXTRA_MESSAGE, message.getUuid());
+                    getContext().startActivity(intent);
+                });
+        }
 
         viewHolder.contact_picture.setOnClickListener(
                 v -> {

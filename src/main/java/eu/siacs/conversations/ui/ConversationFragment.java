@@ -2574,6 +2574,7 @@ public class ConversationFragment extends XmppFragment
         final String nick = extras.getString(ConversationsActivity.EXTRA_NICK);
         final String postInitAction =
                 extras.getString(ConversationsActivity.EXTRA_POST_INIT_ACTION);
+        final String messageUuid = extras.getString(ConversationsActivity.EXTRA_MESSAGE);
         final boolean asQuote = extras.getBoolean(ConversationsActivity.EXTRA_AS_QUOTE);
         final boolean pm = extras.getBoolean(ConversationsActivity.EXTRA_IS_PRIVATE_MESSAGE, false);
         final boolean doNotAppend =
@@ -2623,10 +2624,16 @@ public class ConversationFragment extends XmppFragment
             attachFile(ATTACHMENT_CHOICE_RECORD_VOICE, false);
             return;
         }
-        final Message message =
+        Message message =
                 downloadUuid == null ? null : conversation.findMessageWithFileAndUuid(downloadUuid);
         if (message != null) {
             startDownloadable(message);
+        }
+        message = messageUuid == null ? null : conversation.findMessageWithUuid(messageUuid);
+        if (message != null) {
+            if (this.binding != null) {
+                this.binding.messagesView.smoothScrollToPosition(messageListAdapter.getPosition(message));
+            }
         }
     }
 
