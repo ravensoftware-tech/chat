@@ -2632,7 +2632,10 @@ public class ConversationFragment extends XmppFragment
         message = messageUuid == null ? null : conversation.findMessageWithUuid(messageUuid);
         if (message != null) {
             if (this.binding != null) {
-                this.binding.messagesView.smoothScrollToPosition(messageListAdapter.getPosition(message));
+                final int position = messageListAdapter.getPosition(message);
+                this.binding.messagesView.post(()->
+                    this.binding.messagesView.smoothScrollToPosition(position)
+                );
             }
         }
     }
