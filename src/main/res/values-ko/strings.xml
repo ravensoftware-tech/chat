@@ -72,10 +72,6 @@
     <string name="pref_accept_files_summary">이 크기보다 작은 파일을 자동으로 수락 </string>
     <string name="pref_attachments">첨부파일</string>
     <string name="pref_notification_settings">알림 </string>
-    <string name="pref_vibrate">진동 </string>
-    <string name="pref_vibrate_summary">새 메세지 도착시 진동</string>
-    <string name="pref_led">LED 알림</string>
-    <string name="pref_led_summary">새 메세지 도착시 LED 깜빡이기</string>
     <string name="pref_ringtone">알림음</string>
     <string name="pref_notification_grace_period">유예기간</string>
     <string name="pref_advanced_options">고급</string>
@@ -205,7 +201,6 @@
     <string name="account_details">계정 정보 </string>
     <string name="confirm">확인 </string>
     <string name="try_again">다시 시도하세요 </string>
-    <string name="pref_keep_foreground_service_summary">운영체제가 접속을 해제하지 못하도록 예방합니다 </string>
     <string name="choose_file">파일 선택 </string>
     <string name="receiving_x_file">수신중 %1$s (%2$d%% 완료) </string>
     <string name="download_x_file">%s 다운로드 </string>

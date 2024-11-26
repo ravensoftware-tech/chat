@@ -999,9 +999,7 @@ public class StartConversationActivity extends XmppActivity
     @Override
     protected void onBackendConnected() {
         if (QuickConversationsService.isContactListIntegration(this)
-                && (Build.VERSION.SDK_INT < Build.VERSION_CODES.M
-                        || checkSelfPermission(Manifest.permission.READ_CONTACTS)
-                                == PackageManager.PERMISSION_GRANTED)) {
+                && (checkSelfPermission(Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED)) {
             xmppConnectionService.getQuickConversationsService().considerSyncBackground(false);
         }
         if (mPostponedActivityResult != null) {

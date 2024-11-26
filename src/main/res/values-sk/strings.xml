@@ -107,13 +107,7 @@
     <string name="pref_accept_files_summary">Automaticky prijať súbory menšie ako…</string>
     <string name="pref_attachments">Prílohy</string>
     <string name="pref_notification_settings">Oznámenie</string>
-    <string name="pref_vibrate">Vibrovať</string>
-    <string name="pref_vibrate_summary">Vibrovať, keď príde nová správa</string>
-    <string name="pref_led">LED notifikácia</string>
-    <string name="pref_led_summary">Blikať notifikačným svetlom, keď príde nová správa</string>
     <string name="pref_ringtone">Zvonenie</string>
-    <string name="pref_notification_sound">Zvuk oznámenia</string>
-    <string name="pref_notification_sound_summary">Zvuk oznámenia nových správ</string>
     <string name="pref_call_ringtone_summary">Zvonenie pre prichádzajúce hovory</string>
     <string name="pref_notification_grace_period">Ochranná doba</string>
     <string name="pref_notification_grace_period_summary">Doba, počas ktorej budú oznámenia stíšené po detekcii aktivity na jednom z vašich ostatných zariadení.</string>
@@ -297,8 +291,6 @@
     <string name="account_details">Detaily účtu</string>
     <string name="confirm">Potvrdiť</string>
     <string name="try_again">Skúste znova</string>
-    <string name="pref_keep_foreground_service">Služba v popredí</string>
-    <string name="pref_keep_foreground_service_summary">Zamedzí operačnému systému ukončiť pripojenie </string>
     <string name="pref_create_backup">Vytvoriť zálohu</string>
     <string name="pref_create_backup_summary">Súbory zálohy budú uložené v %s</string>
     <string name="notification_create_backup_title">Vytváram súbor zálohy</string>

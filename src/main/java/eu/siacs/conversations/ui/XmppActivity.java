@@ -549,14 +549,10 @@ public abstract class XmppActivity extends ActionBarActivity {
 }
 
     protected boolean isAffectedByDataSaver() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            final ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-            return cm != null
-                    && cm.isActiveNetworkMetered()
-                    && Compatibility.getRestrictBackgroundStatus(cm) == ConnectivityManager.RESTRICT_BACKGROUND_STATUS_ENABLED;
-        } else {
-            return false;
-        }
+        final ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm != null
+                && cm.isActiveNetworkMetered()
+                && Compatibility.getRestrictBackgroundStatus(cm) == ConnectivityManager.RESTRICT_BACKGROUND_STATUS_ENABLED;
     }
 
     private boolean usingEnterKey() {

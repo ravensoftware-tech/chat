@@ -107,13 +107,7 @@
     <string name="pref_accept_files_summary">…‘den küçük olan dosyaları kendiliğinden kabul et</string>
     <string name="pref_attachments">Ekler</string>
     <string name="pref_notification_settings">Bildirim</string>
-    <string name="pref_vibrate">Titreşim</string>
-    <string name="pref_vibrate_summary">Yeni ileti geldiğinde titret</string>
-    <string name="pref_led">LED Bildirimi</string>
-    <string name="pref_led_summary">Yeni bir ileti geldiğinde bildirim ışığı yanıp sönsün</string>
     <string name="pref_ringtone">Zil sesi</string>
-    <string name="pref_notification_sound">Bildirim sesi</string>
-    <string name="pref_notification_sound_summary">Yeni mesajlar için bildirim sesi</string>
     <string name="pref_call_ringtone_summary">Gelen çağrılar için zil sesi</string>
     <string name="pref_notification_grace_period">Mühlet</string>
     <string name="pref_notification_grace_period_summary">Cihazlarınızın birinde faaliyet tespit edilmesinden sonra  zaman hatırlatmalarının susturulma uzunluğu.</string>
@@ -319,8 +313,6 @@
     <string name="account_details">Hesap bilgileri</string>
     <string name="confirm">Doğrula</string>
     <string name="try_again">Yeniden deneyin</string>
-    <string name="pref_keep_foreground_service">Ön planda çalışması</string>
-    <string name="pref_keep_foreground_service_summary">İşletim sisteminin bağlantınızı koparmasına engel olur</string>
     <string name="pref_create_backup">Yedek oluştur</string>
     <string name="pref_create_backup_summary">Yedekleme dosyaları %s\'da depolanacak</string>
     <string name="notification_create_backup_title">Yedekleme dosyaları oluşturuluyor</string>
@@ -664,8 +656,6 @@
     <string name="account_status_regis_web">Sunucu web sitesinden oturum açılmasını istiyor</string>
     <string name="open_website">Açık web sitesi</string>
     <string name="application_found_to_open_website">Web sitesini aç</string>
-    <string name="pref_headsup_notifications">Uyarı bildirimleri</string>
-    <string name="pref_headsup_notifications_summary">Uyarı bildirimlerini göster</string>
     <string name="today">Bugün</string>
     <string name="yesterday">Dün</string>
     <string name="pref_validate_hostname">Sunucu adını DNSSEC ile doğrula</string>

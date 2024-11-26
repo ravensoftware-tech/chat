@@ -109,13 +109,7 @@
     <string name="pref_accept_files_summary">Accepter automatisk filer mindre end…</string>
     <string name="pref_attachments">Vedhæftninger</string>
     <string name="pref_notification_settings">Notifikation</string>
-    <string name="pref_vibrate">Vibrer</string>
-    <string name="pref_vibrate_summary">Vibrer ved nye beskeder</string>
-    <string name="pref_led">LED Notifikation</string>
-    <string name="pref_led_summary">Blik notifikationslys når en ny besked kommer</string>
     <string name="pref_ringtone">Ringetone</string>
-    <string name="pref_notification_sound">Notifikationslyd</string>
-    <string name="pref_notification_sound_summary">Lydnotifikation for nye beskeder</string>
     <string name="pref_call_ringtone_summary">Ringetone for indkommende opkald</string>
     <string name="pref_notification_grace_period">Fredningsperiode</string>
     <string name="pref_notification_grace_period_summary">Tidsintervallet hvor notifikationer er lydløs efter at have registreret aktivitet på en af dine andre enheder.</string>
@@ -316,8 +310,6 @@
     <string name="account_details">Kontodetaljer</string>
     <string name="confirm">Bekræft</string>
     <string name="try_again">Prøv igen</string>
-    <string name="pref_keep_foreground_service">Forgrundstjeneste</string>
-    <string name="pref_keep_foreground_service_summary">Forhindre operativsystemet i at afbryde din forbindelse</string>
     <string name="pref_create_backup">Opret backup</string>
     <string name="pref_create_backup_summary">Backup filer vil blive gemt i %s</string>
     <string name="notification_create_backup_title">Opretter backup filer</string>
@@ -660,8 +652,6 @@
     <string name="account_status_regis_web">Server kræver registrering på hjemmeside</string>
     <string name="open_website">Åben hjemmeside</string>
     <string name="application_found_to_open_website">Ingen app fundet der kan åbne hjemmeside</string>
-    <string name="pref_headsup_notifications">Forhåndsvisning af notifikationer</string>
-    <string name="pref_headsup_notifications_summary">Vis forhåndsvisning af notifikationer</string>
     <string name="today">I dag</string>
     <string name="yesterday">I går</string>
     <string name="pref_validate_hostname">Bekræft værtsnavn med DNSSEC</string>

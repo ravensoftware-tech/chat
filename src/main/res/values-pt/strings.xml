@@ -78,10 +78,6 @@
     <string name="pref_accept_files_summary">Automaticamente aceitar ficheiros menores que...</string>
     <string name="pref_attachments">Anexos</string>
     <string name="pref_notification_settings">Notificação</string>
-    <string name="pref_vibrate">Vibrar</string>
-    <string name="pref_vibrate_summary">Vibrar quando uma nova mensagem for recebida</string>
-    <string name="pref_led">Notificação LED</string>
-    <string name="pref_led_summary">Piscar luz de notificação quando uma nova mensagem for recebida</string>
     <string name="pref_ringtone">Tom de toque</string>
     <string name="pref_advanced_options">Avançadas</string>
     <string name="pref_confirm_messages">Confirmar mensagens</string>
@@ -219,7 +215,6 @@
     <string name="account_details">Detalhes da conta</string>
     <string name="confirm">Confirmar</string>
     <string name="try_again">Tentar novamente</string>
-    <string name="pref_keep_foreground_service_summary">Previne o sistema operativo de terminar a sua conexão</string>
     <string name="choose_file">Escolher ficheiro</string>
     <string name="receiving_x_file">A receber %1$s (%2$d%% concluído)</string>
     <string name="download_x_file">Transferir %s</string>

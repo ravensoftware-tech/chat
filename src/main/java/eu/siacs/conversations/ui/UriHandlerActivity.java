@@ -209,7 +209,7 @@ public class UriHandlerActivity extends BaseActivity {
     private void checkForLinkHeader(final HttpUrl url) {
         Log.d(Config.LOGTAG, "checking for link header on " + url);
         this.call =
-                HttpConnectionManager.okHttpClient(this).newCall(
+                HttpConnectionManager.okHttpClient().newCall(
                         new Request.Builder().url(url).head().build());
         this.call.enqueue(
                 new Callback() {

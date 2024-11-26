@@ -107,13 +107,7 @@
     <string name="pref_accept_files_summary">Αυτόματη αποδοχή αρχείων μικρότερων από...</string>
     <string name="pref_attachments">Συνημμένα</string>
     <string name="pref_notification_settings">Ειδοποίηση</string>
-    <string name="pref_vibrate">Δόνηση</string>
-    <string name="pref_vibrate_summary">Δόνηση όταν δέχεστε νέο μήνυμα</string>
-    <string name="pref_led">Ειδοποίηση LED</string>
-    <string name="pref_led_summary">Ειδοποίηση μέσω εναλλαγής LED κατά τη λήψη νέου μηνύματος</string>
     <string name="pref_ringtone">Κουδούνισμα</string>
-    <string name="pref_notification_sound">Ήχος ειδοποίησης</string>
-    <string name="pref_notification_sound_summary">Ήχος ειδοποίησης για νέα μηνύματα</string>
     <string name="pref_call_ringtone_summary">Ήχος κουδουνίσματος για εισερχόμενες κλήσεις</string>
     <string name="pref_notification_grace_period">Περίοδος Χάριτος</string>
     <string name="pref_notification_grace_period_summary">Ο χρόνος σίγασης ειδοποιήσεων αφότου ανιχνευθεί δραστηριότητα σε μια από τις άλλες συσκευές σας.</string>
@@ -310,8 +304,6 @@
     <string name="account_details">Λεπτομέρειες λογαριασμού</string>
     <string name="confirm">Επιβεβαίωση</string>
     <string name="try_again">Επανάληψη</string>
-    <string name="pref_keep_foreground_service">Υπηρεσία στο προσκήνιο</string>
-    <string name="pref_keep_foreground_service_summary">Αποτρέπει τον τερματισμό της σύνδεσης από το λειτουργικό σύστημα</string>
     <string name="pref_create_backup">Δημιουργία αντιγράφου ασφαλείας</string>
     <string name="pref_create_backup_summary">Τα αντίγραφα ασφαλείας θα αποθηκεύονται στο %s</string>
     <string name="notification_create_backup_title">Δημιουργία αντιγράφων ασφαλείας</string>
@@ -651,8 +643,6 @@
     <string name="account_status_regis_web">Ο διακομιστής απαιτεί εγγραφή σε ιστοσελίδα</string>
     <string name="open_website">Άνοιγμα ιστοσελίδας</string>
     <string name="application_found_to_open_website">Δεν βρέθηκε εφαρμογή για να ανοίξει την ιστοσελίδα</string>
-    <string name="pref_headsup_notifications">Αναδυόμενες ειδοποιήσεις</string>
-    <string name="pref_headsup_notifications_summary">Εμφάνιση αναδυόμενων ειδοποιήσεων</string>
     <string name="today">Σήμερα</string>
     <string name="yesterday">Χτες</string>
     <string name="pref_validate_hostname">Επαλήθευση ονόματος μηχανήματος με χρήση DNSSEC</string>

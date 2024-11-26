@@ -109,13 +109,7 @@
     <string name="pref_accept_files_summary">Accepta fitxers automàticament amb una mida menor a…</string>
     <string name="pref_attachments">Fitxers adjunts</string>
     <string name="pref_notification_settings">Notificació</string>
-    <string name="pref_vibrate">Vibra</string>
-    <string name="pref_vibrate_summary">Vibra quan arribi un missatge nou</string>
-    <string name="pref_led">Notificació LED</string>
-    <string name="pref_led_summary">Fes que la notificació lumínica parpellegi quan arribi un missatge nou</string>
     <string name="pref_ringtone">To de trucada</string>
-    <string name="pref_notification_sound">So de notificació</string>
-    <string name="pref_notification_sound_summary">So de notificació per als nous missatges</string>
     <string name="pref_notification_grace_period">Període de gràcia</string>
     <string name="pref_notification_grace_period_summary">La durada de les notificacions se silencia després de detectar activitat en un dels seus altres dispositius.</string>
     <string name="pref_advanced_options">Avançat</string>
@@ -309,8 +303,6 @@
     <string name="account_details">Detalls del compte</string>
     <string name="confirm">Confirmar</string>
     <string name="try_again">Intenta una altra vegada</string>
-    <string name="pref_keep_foreground_service">Servei de primer pla</string>
-    <string name="pref_keep_foreground_service_summary">Evitar que el sistema operatiu desconnecti la connexió</string>
     <string name="pref_create_backup">Crea una còpia de seguretat</string>
     <string name="pref_create_backup_summary">Els arxius de suport s\'emmagatzemaran en %s</string>
     <string name="notification_create_backup_title">Creant arxius de còpia de seguretat</string>
@@ -634,8 +626,6 @@
     <string name="account_status_regis_web">El servidor requereix el registre al lloc web</string>
     <string name="open_website">Obre la pàgina web</string>
     <string name="application_found_to_open_website">No s\'ha trobat cap aplicació per a obrir el lloc web</string>
-    <string name="pref_headsup_notifications">Notificacions \"cap amunt\"</string>
-    <string name="pref_headsup_notifications_summary">Mostrar les notificacions dels caps de fila</string>
     <string name="today">Avui</string>
     <string name="yesterday">Ahir</string>
     <string name="pref_validate_hostname">Valideu el nom del servidor amb DNSSEC</string>

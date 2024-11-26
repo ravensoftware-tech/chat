@@ -108,13 +108,7 @@
     <string name="pref_accept_files_summary">Tự động chấp thuận các tập tin nhỏ hơn…</string>
     <string name="pref_attachments">Tập tin đính kèm</string>
     <string name="pref_notification_settings">Thông báo</string>
-    <string name="pref_vibrate">Rung</string>
-    <string name="pref_vibrate_summary">Rung khi có tin nhắn mới</string>
-    <string name="pref_led">Thông báo đèn LED</string>
-    <string name="pref_led_summary">Chớp đèn thông báo khi có tin nhắn mới</string>
     <string name="pref_ringtone">Âm báo</string>
-    <string name="pref_notification_sound">Âm thanh thông báo</string>
-    <string name="pref_notification_sound_summary">Âm thanh thông báo cho các tin nhắn mới</string>
     <string name="pref_call_ringtone_summary">Nhạc chuông cho các cuộc gọi đến</string>
     <string name="pref_notification_grace_period">Thời gian gia hạn thông báo</string>
     <string name="pref_notification_grace_period_summary">Khoảng thời gian mà các thông báo được giữ im lặng sau khi phát hiện hoạt động trên một trong những thiết bị khác.</string>
@@ -313,8 +307,6 @@
     <string name="account_details">Chi tiết tài khoản</string>
     <string name="confirm">Xác nhận</string>
     <string name="try_again">Thử lại</string>
-    <string name="pref_keep_foreground_service">Dịch vụ ở trước</string>
-    <string name="pref_keep_foreground_service_summary">Ngăn hệ điều hành ngắt kết nối của bạn</string>
     <string name="pref_create_backup">Tạo bản sao lưu</string>
     <string name="pref_create_backup_summary">Các tệp sao lưu sẽ được lưu trữ trong %s</string>
     <string name="notification_create_backup_title">Đang tạo các tệp sao lưu</string>
@@ -647,8 +639,6 @@
     <string name="account_status_regis_web">Máy chủ yêu cầu đăng ký trên trang web</string>
     <string name="open_website">Mở trang web</string>
     <string name="application_found_to_open_website">Không tìm thấy ứng dụng nào để mở trang web</string>
-    <string name="pref_headsup_notifications">Thông báo gây chú ý</string>
-    <string name="pref_headsup_notifications_summary">Hiện thông báo gây chú ý</string>
     <string name="today">Hôm nay</string>
     <string name="yesterday">Hôm qua</string>
     <string name="pref_validate_hostname">Xác thực tên máy chủ bằng DNSSEC</string>

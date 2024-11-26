@@ -93,11 +93,7 @@
     <string name="pref_accept_files_summary">اقبل تلقائيا الملفات أقل من</string>
     <string name="pref_attachments">الملفات المرفقة</string>
     <string name="pref_notification_settings">إشعار</string>
-    <string name="pref_vibrate">إعداد الإهتزاز</string>
-    <string name="pref_vibrate_summary">إهتز عند وصول رسالة جديدة</string>
-    <string name="pref_led">إشعار ضوئي</string>
     <string name="pref_ringtone">التنبيه الصوتي</string>
-    <string name="pref_notification_sound">تنبيه صوتي</string>
     <string name="pref_notification_grace_period">فترة السماح</string>
     <string name="pref_advanced_options">متقدم</string>
     <string name="pref_confirm_messages">تأكيد الرسالة</string>
@@ -253,8 +249,6 @@
     <string name="account_details">تفاصيل الحساب</string>
     <string name="confirm">تأكيد</string>
     <string name="try_again">حاول مرة أخرى</string>
-    <string name="pref_keep_foreground_service">الخدمة الأمامية</string>
-    <string name="pref_keep_foreground_service_summary">منع نظام التشغيل من انهاء اتصالك</string>
     <string name="pref_create_backup">أنشئ نسخة احتياطية</string>
     <string name="notification_backup_created_title">تم إنشاء نسختك الاحتياطية</string>
     <string name="notification_restored_backup_title">تم استرجاع نسختك الاحتياطية</string>

@@ -107,13 +107,7 @@
     <string name="pref_accept_files_summary">Автоматично приемане на файлове с размер, по-малък от…</string>
     <string name="pref_attachments">Притурки</string>
     <string name="pref_notification_settings">Известие</string>
-    <string name="pref_vibrate">Вибрация</string>
-    <string name="pref_vibrate_summary">Вибриране при получаване на ново съобщение</string>
-    <string name="pref_led">Известие чрез светодиода</string>
-    <string name="pref_led_summary">Мигане на индикаторния светодиод при получаване на ново съобщение</string>
     <string name="pref_ringtone">Тон на звънене</string>
-    <string name="pref_notification_sound">Звук за известията</string>
-    <string name="pref_notification_sound_summary">Звук за известията при получаване на нови съобщения</string>
     <string name="pref_call_ringtone_summary">Звук за входящи обаждания</string>
     <string name="pref_notification_grace_period">Период на пренебрегване</string>
     <string name="pref_notification_grace_period_summary">Продължителност на времето, през което известията се заглушават, след като бъде забележена дейност на някое от другите Ви устройства.</string>
@@ -309,8 +303,6 @@
     <string name="account_details">Подробности за профила</string>
     <string name="confirm">Потвърждаване</string>
     <string name="try_again">Повторен опит</string>
-    <string name="pref_keep_foreground_service">Услуга на преден план</string>
-    <string name="pref_keep_foreground_service_summary">Предотвратява прекъсването на връзката Ви от операционната система</string>
     <string name="pref_create_backup">Създаване на резервно копие</string>
     <string name="pref_create_backup_summary">Резервните копия ще се пазят в %s</string>
     <string name="notification_create_backup_title">Създаване на резервни копия</string>
@@ -650,8 +642,8 @@
     <string name="account_status_regis_web">Сървърът изисква регистриране чрез уеб сайт</string>
     <string name="open_website">Отваряне на уеб сайта</string>
     <string name="application_found_to_open_website">Няма намерено приложение за отваряне на уеб сайта</string>
-    <string name="pref_headsup_notifications">Изскачащи известия</string>
-    <string name="pref_headsup_notifications_summary">Показване на изскачащи известия</string>
+
+
     <string name="today">Днес</string>
     <string name="yesterday">Вчера</string>
     <string name="pref_validate_hostname">Проверка на името на сървъра чрез DNSSEC</string>

@@ -5,7 +5,6 @@ import static eu.siacs.conversations.utils.Random.SECURE_RANDOM;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.KeyguardManager;
 import android.app.Notification;
@@ -994,9 +993,6 @@ public class XmppConnectionService extends Service {
     }
 
     public boolean isDataSaverDisabled() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
-            return true;
-        }
         final ConnectivityManager connectivityManager = getSystemService(ConnectivityManager.class);
         return !Compatibility.isActiveNetworkMetered(connectivityManager)
                 || Compatibility.getRestrictBackgroundStatus(connectivityManager)
@@ -1177,11 +1173,9 @@ public class XmppConnectionService extends Service {
     @Override
     public void onCreate() {
         LibIdnXmppStringprep.setup();
-        if (Compatibility.runsTwentySix()) {
-            mNotificationService.initializeChannels();
-        }
+        mNotificationService.initializeChannels();
         mChannelDiscoveryService.initializeMuclumbusService();
-        mForceDuringOnCreate.set(Compatibility.runsAndTargetsTwentySix(this));
+        mForceDuringOnCreate.set(true);
         toggleForegroundService();
         this.destroyed = false;
         OmemoSetting.load(this);
@@ -1263,9 +1257,7 @@ public class XmppConnectionService extends Service {
         toggleScreenEventReceiver();
         final IntentFilter systemBroadcastFilter = new IntentFilter();
         scheduleNextIdlePing();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            systemBroadcastFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        }
+        systemBroadcastFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
         systemBroadcastFilter.addAction(NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED);
         ContextCompat.registerReceiver(
                 this,
@@ -1282,17 +1274,6 @@ public class XmppConnectionService extends Service {
         mForceDuringOnCreate.set(false);
         toggleForegroundService();
         internalPingExecutor.scheduleAtFixedRate(this::manageAccountConnectionStatesInternal,10,10,TimeUnit.SECONDS);
-        final SharedPreferences sharedPreferences =
-                androidx.preference.PreferenceManager.getDefaultSharedPreferences(this);
-        sharedPreferences.registerOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
-            @Override
-            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, @Nullable String key) {
-                Log.d(Config.LOGTAG,"preference '"+key+"' has changed");
-                if (AppSettings.KEEP_FOREGROUND_SERVICE.equals(key)) {
-                    toggleForegroundService();
-                }
-            }
-        });
     }
 
 
@@ -1403,7 +1384,7 @@ public class XmppConnectionService extends Service {
                 || mForceDuringOnCreate.get()
                 || ongoingVideoTranscoding
                 || ongoing != null
-                || (Compatibility.keepForegroundService(this) && hasEnabledAccounts())) {
+                || hasEnabledAccounts()) {
             final Notification notification;
             if (ongoing != null) {
                 notification = this.mNotificationService.getOngoingCallNotification(ongoing);
@@ -1473,13 +1454,13 @@ public class XmppConnectionService extends Service {
     }
 
     public boolean foregroundNotificationNeedsUpdatingWhenErrorStateChanges() {
-        return !mOngoingVideoTranscoding.get() && ongoingCall.get() == null && Compatibility.keepForegroundService(this) && hasEnabledAccounts();
+        return !mOngoingVideoTranscoding.get() && ongoingCall.get() == null && hasEnabledAccounts();
     }
 
     @Override
     public void onTaskRemoved(final Intent rootIntent) {
         super.onTaskRemoved(rootIntent);
-        if ((Compatibility.keepForegroundService(this) && hasEnabledAccounts()) || mOngoingVideoTranscoding.get() || ongoingCall.get() != null) {
+        if (hasEnabledAccounts() || mOngoingVideoTranscoding.get() || ongoingCall.get() != null) {
             Log.d(Config.LOGTAG, "ignoring onTaskRemoved because foreground service is activated");
         } else {
             this.logoutAndSave(false);
@@ -1515,11 +1496,7 @@ public class XmppConnectionService extends Service {
             final PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, s()
                     ? PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT
                     : PendingIntent.FLAG_UPDATE_CURRENT);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                alarmManager.setAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtMillis, pendingIntent);
-            } else {
-                alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtMillis, pendingIntent);
-            }
+            alarmManager.setAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtMillis, pendingIntent);
         } catch (RuntimeException e) {
             Log.e(Config.LOGTAG, "unable to schedule alarm for post connectivity change", e);
         }
@@ -1543,7 +1520,6 @@ public class XmppConnectionService extends Service {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
     private void scheduleNextIdlePing() {
         final long timeToWake = SystemClock.elapsedRealtime() + (Config.IDLE_PING_INTERVAL * 1000);
         final AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);

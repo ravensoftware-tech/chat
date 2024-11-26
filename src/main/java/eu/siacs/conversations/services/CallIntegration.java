@@ -83,12 +83,7 @@ public class CallIntegration extends Connection {
     public CallIntegration(final Context context) {
         this.context = context.getApplicationContext();
         if (selfManaged()) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                setConnectionProperties(Connection.PROPERTY_SELF_MANAGED);
-            } else {
-                throw new AssertionError(
-                        "Trying to set connection properties on unsupported version");
-            }
+            setConnectionProperties(Connection.PROPERTY_SELF_MANAGED);
             this.appRTCAudioManager = null;
         } else {
             this.appRTCAudioManager = new AppRTCAudioManager(context);
@@ -186,10 +181,8 @@ public class CallIntegration extends Connection {
             return getAudioDevicesFallback();
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
             return getAudioDevicesUpsideDownCake();
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            return getAudioDevicesOreo();
         } else {
-            throw new AssertionError("Trying to get audio devices on unsupported version");
+            return getAudioDevicesOreo();
         }
     }
 
@@ -198,10 +191,8 @@ public class CallIntegration extends Connection {
             return getAudioDeviceFallback();
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
             return getAudioDeviceUpsideDownCake();
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            return getAudioDeviceOreo();
         } else {
-            throw new AssertionError("Trying to get selected audio device on unsupported version");
+            return getAudioDeviceOreo();
         }
     }
 
@@ -210,10 +201,8 @@ public class CallIntegration extends Connection {
             setAudioDeviceFallback(audioDevice);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
             setAudioDeviceUpsideDownCake(audioDevice);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            setAudioDeviceOreo(audioDevice);
         } else {
-            throw new AssertionError("Trying to set audio devices on unsupported version");
+            setAudioDeviceOreo(audioDevice);
         }
     }
 
@@ -329,7 +318,6 @@ public class CallIntegration extends Connection {
         };
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void setAudioDeviceOreo(final AudioDevice audioDevice) {
         switch (audioDevice) {
             case EARPIECE -> setAudioRoute(CallAudioState.ROUTE_EARPIECE);
@@ -411,11 +399,7 @@ public class CallIntegration extends Connection {
 
     public void accepted() {
         Log.d(Config.LOGTAG, "CallIntegration.accepted()");
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
-            this.destroyWith(new DisconnectCause(DisconnectCause.ANSWERED_ELSEWHERE, null));
-        } else {
-            this.destroyWith(new DisconnectCause(DisconnectCause.CANCELED, null));
-        }
+        this.destroyWith(new DisconnectCause(DisconnectCause.ANSWERED_ELSEWHERE, null));
     }
 
     public void error() {
@@ -526,8 +510,7 @@ public class CallIntegration extends Connection {
     }
 
     public static boolean selfManaged(final Context context) {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.O
-                && Build.VERSION.SDK_INT < 35
+        return Build.VERSION.SDK_INT < 35
                 && hasSystemFeature(context)
                 && isDeviceModelSupported();
     }

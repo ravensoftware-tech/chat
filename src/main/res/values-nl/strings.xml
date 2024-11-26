@@ -103,10 +103,6 @@
     <string name="pref_accept_files_summary">Aanvaard automatisch bestanden kleiner dan…</string>
     <string name="pref_attachments">Bijlagen</string>
     <string name="pref_notification_settings">Melding</string>
-    <string name="pref_vibrate">Trillen</string>
-    <string name="pref_vibrate_summary">Trillen wanneer een nieuw bericht ontvangen wordt</string>
-    <string name="pref_led">LED-melding</string>
-    <string name="pref_led_summary">Meldingslicht knipperen wanneer een nieuw bericht ontvangen wordt</string>
     <string name="pref_ringtone">Meldingstoon</string>
     <string name="pref_notification_grace_period">Uitstelperiode</string>
     <string name="pref_advanced_options">Geavanceerd</string>
@@ -292,8 +288,6 @@
     <string name="account_details">Accountgegevens</string>
     <string name="confirm">Bevestigen</string>
     <string name="try_again">Opnieuw proberen</string>
-    <string name="pref_keep_foreground_service">Voorgronddienst</string>
-    <string name="pref_keep_foreground_service_summary">Belet het besturingssysteem je verbinding te onderbreken</string>
     <string name="pref_create_backup">Back-up creëren</string>
     <string name="pref_create_backup_summary">Back-upbestanden worden opgeslagen in %s</string>
     <string name="notification_create_backup_title">Back-upbestanden aanmaken</string>
@@ -568,7 +562,6 @@
     <string name="sasl_downgrade">SASL-mechanisme neergewaardeerd</string>
     <string name="account_status_regis_web">Server vereist registratie op website</string>
     <string name="open_website">Website openen</string>
-    <string name="pref_headsup_notifications">Heads-up-meldingen</string>
     <string name="today">Vandaag</string>
     <string name="yesterday">Gisteren</string>
     <string name="pref_validate_hostname">Valideer hostnaam met DNSSEC</string>
@@ -854,8 +847,6 @@
 \n
 \n<small>Dit wordt gebruikt om te bepalen welke chat-app jouw contactpersoon gebruikt</small>.</string>
     <string name="send_encrypted_message">Verstuur versleuteld bericht</string>
-    <string name="pref_notification_sound">Kennisgevingsgeluid</string>
-    <string name="pref_notification_sound_summary">Kennisgevingsgeluid voor nieuwe berichten</string>
     <string name="pref_call_ringtone_summary">Ringtone voor inkomende oproepen</string>
     <string name="pref_notification_grace_period_summary">De tijdsduurmeldingen worden gedempt na het detecteren van activiteit op een van je andere apparaten.</string>
     <string name="pref_prevent_screenshots_summary">App-inhoud verbergen in de app-schakelaar en schermopnames blokkeren</string>
@@ -935,7 +926,6 @@
     <string name="missed_calls_channel_name">Gemiste oproepen</string>
     <string name="continue_btn">Doorgaan</string>
     <string name="application_found_to_open_website">Geen app om website te openen</string>
-    <string name="pref_headsup_notifications_summary">Let op-meldingen weergeven</string>
     <string name="magic_create_text">Er is een handleiding opgezet voor het aanmaken van een account op conversations.im.
 \nWanneer je conversations.im als provider kiest, kun je communiceren met gebruikers van andere providers door hen jouw volledige XMPP-adres te geven.</string>
     <string name="sync_with_contacts_long">%1$s verwerkt jouw contactenlijst lokaal, op jouw apparaat, om u de namen en profielfoto\'s te tonen voor overeenkomende contacten op XMPP.

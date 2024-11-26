@@ -110,13 +110,7 @@
     <string name="pref_accept_files_summary">De forma automática aceptar archivos menores que…</string>
     <string name="pref_attachments">Adjuntos</string>
     <string name="pref_notification_settings">Notificación</string>
-    <string name="pref_vibrate">Vibrar</string>
-    <string name="pref_vibrate_summary">Vibra cuando llega un nuevo mensaje</string>
-    <string name="pref_led">Led de notificaciones</string>
-    <string name="pref_led_summary">La luz de notificación parpadea cuando llega un nuevo mensaje</string>
     <string name="pref_ringtone">Tono de llamada</string>
-    <string name="pref_notification_sound">Sonido de notificación</string>
-    <string name="pref_notification_sound_summary">Sonido de notificación para nuevos mensajes</string>
     <string name="pref_call_ringtone_summary">Tono para las nuevas llamadas</string>
     <string name="pref_notification_grace_period">Periodo de gracia</string>
     <string name="pref_notification_grace_period_summary">El tiempo que se silencian las notificaciones tras detectar actividad en otro de tus dispositivos.</string>
@@ -319,8 +313,6 @@
     <string name="account_details">Detalles de la cuenta</string>
     <string name="confirm">Confirmar</string>
     <string name="try_again">Intentar de nuevo</string>
-    <string name="pref_keep_foreground_service">Servicio en primer plano</string>
-    <string name="pref_keep_foreground_service_summary">Mantener el servicio en primer plano previene que el sistema cierre la conexión</string>
     <string name="pref_create_backup">Crear una copia de respaldo</string>
     <string name="pref_create_backup_summary">Los ficheros de respaldo serán almacenados en %s</string>
     <string name="notification_create_backup_title">Creando los ficheros de respaldo</string>
@@ -670,8 +662,6 @@
     <string name="account_status_regis_web">El servidor requiere registro en su página web</string>
     <string name="open_website">Abrir página web</string>
     <string name="application_found_to_open_website">No se ha encontrado aplicación para abrir el sitio web</string>
-    <string name="pref_headsup_notifications">Notificaciones emergentes</string>
-    <string name="pref_headsup_notifications_summary">Mostrar ventana emergente al recibir una notificación </string>
     <string name="today">Hoy</string>
     <string name="yesterday">Ayer</string>
     <string name="pref_validate_hostname">Validar hostname con DNSSEC</string>

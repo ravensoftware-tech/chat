@@ -65,7 +65,6 @@
     <string name="pref_general">כללי</string>
     <string name="pref_accept_files">קבל קבצים</string>
     <string name="pref_accept_files_summary">קבל אוטומטית קבצים שגודלם קטן מ…</string>
-    <string name="pref_vibrate">הרטט</string>
     <string name="pref_confirm_messages">אשר הודעות</string>
     <string name="accept">קבל</string>
     <string name="error">אירעה שגיאה</string>
@@ -172,7 +171,6 @@
     <string name="account_details">פרטי חשבון</string>
     <string name="confirm">אמת</string>
     <string name="try_again">נסה שוב</string>
-    <string name="pref_keep_foreground_service_summary">מונע ממערכת ההפעלה לנתק את החיבור לשרת</string>
     <string name="choose_file">בחר קובץ</string>
     <string name="receiving_x_file">מקבל %1$s ( הושלם %2$d%% )</string>
     <string name="download_x_file">הורד %s</string>

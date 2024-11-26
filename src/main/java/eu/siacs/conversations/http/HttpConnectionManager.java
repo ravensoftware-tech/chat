@@ -2,8 +2,6 @@ package eu.siacs.conversations.http;
 
 import static eu.siacs.conversations.utils.Random.SECURE_RANDOM;
 
-import android.content.Context;
-import android.os.Build;
 import android.util.Log;
 
 import eu.siacs.conversations.BuildConfig;
@@ -31,7 +29,6 @@ import java.net.UnknownHostException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
@@ -78,11 +75,7 @@ public class HttpConnectionManager extends AbstractConnectionManager {
         } catch (final UnknownHostException e) {
             throw new IllegalStateException(e);
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(localhost, 9050));
-        } else {
-            return new Proxy(Proxy.Type.HTTP, new InetSocketAddress(localhost, 8118));
-        }
+        return new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(localhost, 9050));
     }
 
     public void createNewDownloadConnection(Message message) {
@@ -180,23 +173,17 @@ public class HttpConnectionManager extends AbstractConnectionManager {
     }
 
 
-    public static OkHttpClient okHttpClient(final Context context) {
+    public static OkHttpClient okHttpClient() {
         final OkHttpClient.Builder builder = HttpConnectionManager.OK_HTTP_CLIENT.newBuilder();
         try {
             final X509TrustManager trustManager;
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
-                trustManager = TrustManagers.defaultWithBundledLetsEncrypt(context);
-            } else {
-                trustManager = TrustManagers.createDefaultTrustManager();
-            }
+            trustManager = TrustManagers.createDefaultTrustManager();
             final SSLSocketFactory socketFactory =
                     new TLSSocketFactory(new X509TrustManager[] {trustManager}, SECURE_RANDOM);
             builder.sslSocketFactory(socketFactory, trustManager);
-        } catch (final IOException
-                       | KeyManagementException
+        } catch (final KeyManagementException
                        | NoSuchAlgorithmException
-                       | KeyStoreException
-                       | CertificateException e) {
+                       | KeyStoreException e) {
             Log.d(Config.LOGTAG, "not reconfiguring service to work with bundled LetsEncrypt");
             throw new RuntimeException(e);
         }

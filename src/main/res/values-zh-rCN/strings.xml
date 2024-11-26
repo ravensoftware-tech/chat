@@ -112,13 +112,7 @@
     <string name="pref_accept_files_summary">自动接收小于此大小的文件…</string>
     <string name="pref_attachments">附件</string>
     <string name="pref_notification_settings">通知</string>
-    <string name="pref_vibrate">振动</string>
-    <string name="pref_vibrate_summary">收到新消息时振动</string>
-    <string name="pref_led">LED 通知</string>
-    <string name="pref_led_summary">收到新消息时闪烁通知灯</string>
     <string name="pref_ringtone">铃声</string>
-    <string name="pref_notification_sound">通知铃声</string>
-    <string name="pref_notification_sound_summary">新消息的通知铃声</string>
     <string name="pref_call_ringtone_summary">来电铃声</string>
     <string name="pref_notification_grace_period">静默期</string>
     <string name="pref_notification_grace_period_summary">在其他设备上检测到活动之后，通知在此期间静音。</string>
@@ -330,8 +324,6 @@
     <string name="account_details">账号详情</string>
     <string name="confirm">确认</string>
     <string name="try_again">再试一次</string>
-    <string name="pref_keep_foreground_service">前台服务</string>
-    <string name="pref_keep_foreground_service_summary">防止操作系统中断连接</string>
     <string name="pref_create_backup">创建备份</string>
     <string name="pref_create_backup_summary">备份文件将存储在 %s</string>
     <string name="notification_create_backup_title">正在创建备份文件</string>
@@ -672,8 +664,6 @@
     <string name="account_status_regis_web">服务器要求在网站上注册</string>
     <string name="open_website">打开网站</string>
     <string name="application_found_to_open_website">未找到可以打开网站的应用</string>
-    <string name="pref_headsup_notifications">顶部通知</string>
-    <string name="pref_headsup_notifications_summary">显示顶部通知</string>
     <string name="today">今天</string>
     <string name="yesterday">昨天</string>
     <string name="pref_validate_hostname">用 DNSSEC 验证主机名</string>

@@ -288,11 +288,9 @@ public class CallIntegrationConnectionService extends ConnectionService {
         final var builder =
                 PhoneAccount.builder(getHandle(context, account), account.getJid().asBareJid());
         builder.setSupportedUriSchemes(Collections.singletonList("xmpp"));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            builder.setCapabilities(
-                    PhoneAccount.CAPABILITY_SELF_MANAGED
-                            | PhoneAccount.CAPABILITY_SUPPORTS_VIDEO_CALLING);
-        }
+        builder.setCapabilities(
+                PhoneAccount.CAPABILITY_SELF_MANAGED
+                        | PhoneAccount.CAPABILITY_SUPPORTS_VIDEO_CALLING);
         final var phoneAccount = builder.build();
         telecomManager.registerPhoneAccount(phoneAccount);
     }

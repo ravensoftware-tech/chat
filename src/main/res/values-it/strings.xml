@@ -108,13 +108,7 @@
     <string name="pref_accept_files_summary">Accetta automaticamente i file più piccoli di…</string>
     <string name="pref_attachments">Allegati</string>
     <string name="pref_notification_settings">Notifiche</string>
-    <string name="pref_vibrate">Vibra</string>
-    <string name="pref_vibrate_summary">Vibra quando arriva un nuovo messaggio</string>
-    <string name="pref_led">Notifica LED</string>
-    <string name="pref_led_summary">Luce di notifica lampeggiante quando arriva un nuovo messaggio</string>
     <string name="pref_ringtone">Suoneria</string>
-    <string name="pref_notification_sound">Suono di notifica</string>
-    <string name="pref_notification_sound_summary">Suono di notifica per i nuovi messaggi</string>
     <string name="pref_call_ringtone_summary">Suoneria per chiamate in arrivo</string>
     <string name="pref_notification_grace_period">Periodo di grazia</string>
     <string name="pref_notification_grace_period_summary">Il periodo di tempo in cui le notifiche vengono silenziate dopo aver rilevato attività su uno dei tuoi altri dispositivi.</string>
@@ -319,8 +313,6 @@
     <string name="account_details">Dettagli del profilo</string>
     <string name="confirm">Conferma</string>
     <string name="try_again">Prova di nuovo</string>
-    <string name="pref_keep_foreground_service">Servizio in primo piano</string>
-    <string name="pref_keep_foreground_service_summary">Evita che il sistema operativo chiuda la connessione</string>
     <string name="pref_create_backup">Crea un backup</string>
     <string name="pref_create_backup_summary">I file di backup verranno salvati in %s</string>
     <string name="notification_create_backup_title">Creazione dei file di backup</string>
@@ -670,8 +662,6 @@
     <string name="account_status_regis_web">Il server richiede la registrazione sul sito</string>
     <string name="open_website">Apri sito</string>
     <string name="application_found_to_open_website">Nessuna app trovata per aprire il sito</string>
-    <string name="pref_headsup_notifications">Notifiche avvisi</string>
-    <string name="pref_headsup_notifications_summary">Mostra notifiche su avvisi</string>
     <string name="today">Oggi</string>
     <string name="yesterday">Ieri</string>
     <string name="pref_validate_hostname">Convalida hostname con DNSSEC</string>

@@ -1231,10 +1231,8 @@ public class ConversationFragment extends XmppFragment
 
         registerForContextMenu(binding.messagesView);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            this.binding.textinput.setCustomInsertionActionModeCallback(
-                    new EditMessageActionModeCallback(this.binding.textinput));
-        }
+        this.binding.textinput.setCustomInsertionActionModeCallback(
+                new EditMessageActionModeCallback(this.binding.textinput));
 
         return binding.getRoot();
     }

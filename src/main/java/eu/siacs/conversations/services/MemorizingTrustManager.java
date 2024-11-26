@@ -33,7 +33,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Base64;
@@ -50,8 +49,6 @@ import com.google.common.io.CharStreams;
 
 import eu.siacs.conversations.Config;
 import eu.siacs.conversations.R;
-import eu.siacs.conversations.crypto.BundledTrustManager;
-import eu.siacs.conversations.crypto.CombiningTrustManager;
 import eu.siacs.conversations.crypto.TrustManagers;
 import eu.siacs.conversations.crypto.XmppDomainVerifier;
 import eu.siacs.conversations.entities.MTMDecision;
@@ -175,15 +172,9 @@ public class MemorizingTrustManager {
         init(context);
         this.appTrustManager = getTrustManager(appKeyStore);
         try {
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
-                this.defaultTrustManager = TrustManagers.defaultWithBundledLetsEncrypt(context);
-            } else {
-                this.defaultTrustManager = TrustManagers.createDefaultTrustManager();
-            }
+            this.defaultTrustManager = TrustManagers.createDefaultTrustManager();
         } catch (final NoSuchAlgorithmException
-                | KeyStoreException
-                | CertificateException
-                | IOException e) {
+                | KeyStoreException e) {
             throw new RuntimeException(e);
         }
     }

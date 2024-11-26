@@ -75,10 +75,6 @@
     <string name="pref_accept_files_summary">پذیرفتن خودکار پرونده‌های کوچک‌تر از…</string>
     <string name="pref_attachments">پیوست‌ها</string>
     <string name="pref_notification_settings">اعلان</string>
-    <string name="pref_vibrate">لرزش</string>
-    <string name="pref_vibrate_summary">هنگام دریافت پیام جدید بلرز</string>
-    <string name="pref_led">اعلان از راه LED</string>
-    <string name="pref_led_summary">چشمک زدن چراغ اعلان هنگام رسیدن پیام تازه</string>
     <string name="pref_ringtone">آهنگ زنگ</string>
     <string name="pref_notification_grace_period">مدت خاموشی</string>
     <string name="pref_advanced_options">پیشرفته</string>
@@ -182,7 +178,6 @@
     <string name="hide_notification">نهفتن اعلان‌ها</string>
     <string name="mgmt_account_delete_confirm_text">آیا می‌خواهید حساب کاربری خود را حذف کنید؟ این کار تاریخچهٔ همهٔ گفتگوهای شما را از بین می‌برد</string>
     <string name="no_active_accounts_support_this">این ویژگی با هیچ حساب فعالی ممکن نیست</string>
-    <string name="pref_keep_foreground_service_summary">نگذارید سیستم‌عامل اتصال شما را قطع کند</string>
     <string name="jabber_id_copied_to_clipboard">نشانی XMPP کپی شد</string>
     <string name="outcast">بیرون‌انداخته‌شده</string>
     <string name="contact_has_read_up_to_this_point">%s تا این‌جا خوانده است</string>
@@ -498,7 +493,6 @@
     <string name="scan_qr_code">اسکن بارکد دوبعدی</string>
     <string name="server_info_roster_version">XEP-0237: Roster Versioning</string>
     <string name="private_message">پیغام خصوصی</string>
-    <string name="pref_notification_sound">صدای اعلان</string>
     <string name="account_status_regis_invalid_token">کد ثبت‌نام اشتباه</string>
     <string name="bad_key_for_encryption">کلید اشتباه برای رمرگذاری.</string>
     <string name="video">ویدیو</string>
@@ -558,7 +552,6 @@
     <string name="no_more_history_on_server">تاریخچهٔ بیشتری در سرور نیست</string>
     <string name="server_info_session_established">نشست ایجاد شد</string>
     <string name="enter_password">ورود رمز</string>
-    <string name="pref_notification_sound_summary">صدای اعلان برای پیام‌های تازه</string>
     <string name="recording_error">خطا</string>
     <string name="download_failed_server_not_found">بارگیری شکست خورد: سرور پیدا نشد</string>
     <string name="server_info_stream_management">XEP-0198: Stream Management</string>
@@ -585,7 +578,6 @@
     <string name="no_affiliation">بدون نسبت</string>
     <string name="rtp_state_connecting">وصل می‌شود</string>
     <string name="crash_report_message">فرستادن اطلاعات مربوط به اشکال برنامه از راه حساب XMPP شما به توسعهٔ %1$s در آینده کمک می‌کند.</string>
-    <string name="pref_keep_foreground_service">سرویس پیش‌زمینه</string>
     <string name="ban_from_channel">منع‌کردن از کانال</string>
     <string name="account_settings_jabber_id">نشانی XMPP</string>
     <string name="pref_quiet_hours_summary">اعلان‌ها در این مدت خاموش خواهند ماند</string>
@@ -674,7 +666,6 @@
     <string name="install_orbot">نصب Orbot</string>
     <string name="pref_clean_cache">کش را خالی کن</string>
     <string name="copy_fingerprint">کپی اثر انگشت دیجیتال</string>
-    <string name="pref_headsup_notifications">اعلان‌های شناور</string>
     <string name="choose_account">انتخاب حساب</string>
     <string name="no_users_hint_group_chat">این گفتگوی گروهی خصوصی هیچ عضوی ندارد.</string>
     <string name="restore_backup">بازیابی پشتیبان</string>
@@ -792,7 +783,6 @@
     <string name="messages_channel_name">پیام‌ها</string>
     <string name="unable_to_establish_secure_connection">برقراری ارتباط امن ممکن نبود.</string>
     <string name="restore_warning">ویژگی پشتیبان‌گیری را برای کپی کردن برنامه (اجرای همزمان روی دستگاه‌های مختلف) به‌کار نبرید. بازیابی نسخهٔ پشتیان فقط برای مهاجرت به دستگاه تازه یا برای وقتی است که دستگاه قبلی را گم کرده‌اید.</string>
-    <string name="pref_headsup_notifications_summary">نمایش اعلان‌های شناور</string>
     <string name="gp_long">بلند</string>
     <string name="captcha_hint">نوشتهٔ داخل عکس بالا را وارد کنید</string>
     <string name="secure_password_generated">یک رمز امن ساخته شده است</string>

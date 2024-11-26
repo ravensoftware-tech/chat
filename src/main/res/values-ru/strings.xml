@@ -115,13 +115,7 @@
     <string name="pref_accept_files_summary">Автоматический приём файлов…</string>
     <string name="pref_attachments">Вложения</string>
     <string name="pref_notification_settings">Уведомление</string>
-    <string name="pref_vibrate">Вибрация</string>
-    <string name="pref_vibrate_summary">Вибрация при получении нового сообщения</string>
-    <string name="pref_led">Светодиодное уведомление</string>
-    <string name="pref_led_summary">Мерцание индикатора при получении нового сообщения</string>
     <string name="pref_ringtone">Мелодия звонка</string>
-    <string name="pref_notification_sound">Звук уведомления</string>
-    <string name="pref_notification_sound_summary">Звук уведомления о новых сообщениях</string>
     <string name="pref_call_ringtone_summary">Мелодия входящего звонка</string>
     <string name="pref_notification_grace_period">Период отсрочки</string>
     <string name="pref_notification_grace_period_summary">Время, на которое уведомления будут отключены, когда вы пользуетесь аккаунтом на другом устройстве.</string>
@@ -329,8 +323,6 @@
     <string name="account_details">Сведения об аккаунте</string>
     <string name="confirm">Подтвердить</string>
     <string name="try_again">Повторить</string>
-    <string name="pref_keep_foreground_service">Процесс переднего плана</string>
-    <string name="pref_keep_foreground_service_summary">Не позволять операционной системе закрывать ваше соединение</string>
     <string name="pref_create_backup">Создать резервную копию</string>
     <string name="pref_create_backup_summary">Файлы резервной копии будут сохранены в %s</string>
     <string name="notification_create_backup_title">Создание резервной копии</string>
@@ -690,8 +682,6 @@
     <string name="account_status_regis_web">Сервер требует регистрации на сайте</string>
     <string name="open_website">Открыть сайт</string>
     <string name="application_found_to_open_website">Не найдено приложения, способного открыть этот сайт</string>
-    <string name="pref_headsup_notifications">Экранные уведомления</string>
-    <string name="pref_headsup_notifications_summary">Показывать экранные уведомления</string>
     <string name="today">Сегодня</string>
     <string name="yesterday">Вчера</string>
     <string name="pref_validate_hostname">Проверить имя сервера с помощью DNSSEC</string>

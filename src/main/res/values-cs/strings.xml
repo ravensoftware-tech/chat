@@ -110,13 +110,7 @@
     <string name="pref_accept_files_summary">Automaticky přijímat soubory menší než…</string>
     <string name="pref_attachments">Přílohy</string>
     <string name="pref_notification_settings">Upozornění</string>
-    <string name="pref_vibrate">Vibrovat</string>
-    <string name="pref_vibrate_summary">Vibrovat při přijetí nové zprávy</string>
-    <string name="pref_led">LED upozornění</string>
-    <string name="pref_led_summary">Blikat při přijetí nové zprávy</string>
     <string name="pref_ringtone">Vyzváněcí tón</string>
-    <string name="pref_notification_sound">Zvuk upozornění</string>
-    <string name="pref_notification_sound_summary">Zvuk upozornění na nové zprávy</string>
     <string name="pref_call_ringtone_summary">Vyzváněcí tón pro příchozí hovory</string>
     <string name="pref_notification_grace_period">Časová lhůta</string>
     <string name="pref_notification_grace_period_summary">Časová lhůta po kterou bude Conversations v tichém režimu při zaznamenání aktivity na jiném přístroji.</string>
@@ -312,8 +306,6 @@
     <string name="account_details">Detaily účtu</string>
     <string name="confirm">Potvrdit</string>
     <string name="try_again">Zkusit znovu</string>
-    <string name="pref_keep_foreground_service">Služba na popředí</string>
-    <string name="pref_keep_foreground_service_summary">Zamezit operačnímu systému v ukončení připojení</string>
     <string name="pref_create_backup">Vytvořit zálohu</string>
     <string name="pref_create_backup_summary">Soubory zálohy budou uloženy do %s</string>
     <string name="notification_create_backup_title">Vytvářím soubory zálohy</string>
@@ -666,8 +658,6 @@
     <string name="account_status_regis_web">Server požaduje registraci přes webovou stránku</string>
     <string name="open_website">Otevřít webovou stránku</string>
     <string name="application_found_to_open_website">Nebyla nalezena aplikace umožňující otevření webové stránky</string>
-    <string name="pref_headsup_notifications">Heads-up upozornění</string>
-    <string name="pref_headsup_notifications_summary">Zobrazit heads-up upozornění</string>
     <string name="today">Dnes</string>
     <string name="yesterday">Včera</string>
     <string name="pref_validate_hostname">Ověřit název hostitele pomocí DNSSEC</string>

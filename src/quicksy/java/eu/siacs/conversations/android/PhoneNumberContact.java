@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.provider.ContactsContract;
 import android.util.Log;
 
@@ -38,7 +37,7 @@ public class PhoneNumberContact extends AbstractPhoneContact {
     }
 
     public static ImmutableMap<String, PhoneNumberContact> load(Context context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context.checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+        if (context.checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
             return ImmutableMap.of();
         }
         final String[] PROJECTION = new String[]{ContactsContract.Data._ID,

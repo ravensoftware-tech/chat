@@ -4,14 +4,11 @@
     <bool name="portrait_only">true</bool>
     <bool name="enter_is_send">false</bool>
     <bool name="notifications_from_strangers">true</bool>
-    <bool name="headsup_notifications">false</bool>
     <bool name="dnd_on_silent_mode">false</bool>
     <bool name="treat_vibrate_as_silent">false</bool>
     <bool name="confirm_messages">true</bool>
     <bool name="chat_states">true</bool>
     <bool name="last_activity">false</bool>
-    <bool name="vibrate_on_notification">true</bool>
-    <bool name="led">true</bool>
     <string name="notification_ringtone">content://settings/system/notification_sound</string>
     <string name="incoming_call_ringtone">content://settings/system/ringtone</string>
     <integer name="grace_period">144</integer>
@@ -31,7 +28,6 @@
     <bool name="display_enter_key">false</bool>
     <bool name="manually_change_presence">false</bool>
     <bool name="away_when_screen_off">false</bool>
-    <bool name="enable_foreground_service">true</bool>
     <bool name="send_crash_reports">true</bool>
     <bool name="validate_hostname">false</bool>
     <bool name="show_qr_code_scan">true</bool>

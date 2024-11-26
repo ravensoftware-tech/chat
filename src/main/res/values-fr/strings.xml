@@ -110,13 +110,7 @@
     <string name="pref_accept_files_summary">Accepter automatiquement les fichiers plus petits que…</string>
     <string name="pref_attachments">Pièces jointes</string>
     <string name="pref_notification_settings">Notification</string>
-    <string name="pref_vibrate">Vibration</string>
-    <string name="pref_vibrate_summary">Vibrer lors de la réception d\'un message</string>
-    <string name="pref_led">Notification LED</string>
-    <string name="pref_led_summary">Faire clignoter la LED lors de la réception d\'un message</string>
     <string name="pref_ringtone">Sonnerie</string>
-    <string name="pref_notification_sound">Son des notifications</string>
-    <string name="pref_notification_sound_summary">Son de notification pour les nouveaux messages</string>
     <string name="pref_call_ringtone_summary">Sonnerie d\'appels entrants</string>
     <string name="pref_notification_grace_period">Période sans notification</string>
     <string name="pref_notification_grace_period_summary">La durée pendant laquelle les notifications sont désactivées après la détection d\'une activité sur l\'un de vos autres appareils.</string>
@@ -317,8 +311,6 @@
     <string name="account_details">Détails du compte</string>
     <string name="confirm">Confirmer</string>
     <string name="try_again">Réessayer</string>
-    <string name="pref_keep_foreground_service">Service au premier plan</string>
-    <string name="pref_keep_foreground_service_summary">Évite que le système ne ferme votre connexion</string>
     <string name="pref_create_backup">Créer une sauvegarde</string>
     <string name="pref_create_backup_summary">La sauvegarde sera stockée dans %s</string>
     <string name="notification_create_backup_title">Création des fichiers de sauvegarde</string>
@@ -663,8 +655,6 @@
     <string name="account_status_regis_web">Le serveur nécessite une identification sur son site web </string>
     <string name="open_website">Ouvrir le site web</string>
     <string name="application_found_to_open_website">Aucune application disponible pour ouvrir le site web</string>
-    <string name="pref_headsup_notifications">Notifications « pop-up »</string>
-    <string name="pref_headsup_notifications_summary">Afficher les notifications « pop-up »</string>
     <string name="today">Aujourd\'hui</string>
     <string name="yesterday">Hier</string>
     <string name="pref_validate_hostname">Valider le nom de domaine avec DNSSEC</string>

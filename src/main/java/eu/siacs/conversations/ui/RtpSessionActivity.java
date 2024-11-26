@@ -690,7 +690,7 @@ public class RtpSessionActivity extends XmppActivity
     }
 
     private boolean switchToPictureInPicture() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && deviceSupportsPictureInPicture()) {
+        if (deviceSupportsPictureInPicture()) {
             if (shouldBePictureInPicture()) {
                 startPictureInPicture();
                 return true;
@@ -699,7 +699,6 @@ public class RtpSessionActivity extends XmppActivity
         return false;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void startPictureInPicture() {
         try {
             final Rational rational = this.binding.remoteVideo.getAspectRatio();
@@ -717,7 +716,7 @@ public class RtpSessionActivity extends XmppActivity
 
     @Override
     public void onAspectRatioChanged(final Rational rational) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && isPictureInPicture()) {
+        if (isPictureInPicture()) {
             final Rational clippedRational = Rationals.clip(rational);
             Log.d(
                     Config.LOGTAG,
@@ -731,11 +730,7 @@ public class RtpSessionActivity extends XmppActivity
     }
 
     private boolean deviceSupportsPictureInPicture() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return getPackageManager().hasSystemFeature(PackageManager.FEATURE_PICTURE_IN_PICTURE);
-        } else {
-            return false;
-        }
+        return getPackageManager().hasSystemFeature(PackageManager.FEATURE_PICTURE_IN_PICTURE);
     }
 
     private boolean shouldBePictureInPicture() {
@@ -1041,11 +1036,7 @@ public class RtpSessionActivity extends XmppActivity
     }
 
     private boolean isPictureInPicture() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            return isInPictureInPictureMode();
-        } else {
-            return false;
-        }
+        return isInPictureInPictureMode();
     }
 
     private void updateInCallButtonConfiguration() {

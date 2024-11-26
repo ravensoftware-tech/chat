@@ -113,13 +113,7 @@
     <string name="pref_accept_files_summary">Acceptera automatiskt filer som är mindre än…</string>
     <string name="pref_attachments">Bilagor</string>
     <string name="pref_notification_settings">Avisering</string>
-    <string name="pref_vibrate">Vibrera</string>
-    <string name="pref_vibrate_summary">Vibrera när ett nytt meddelande tas emot</string>
-    <string name="pref_led">LED-avisering</string>
-    <string name="pref_led_summary">Blinka med aviseringsljuset när ett nytt meddelande tas emot</string>
     <string name="pref_ringtone">Ringsignal</string>
-    <string name="pref_notification_sound">Aviseringsljud</string>
-    <string name="pref_notification_sound_summary">Aviseringsljud för nya meddelanden</string>
     <string name="pref_call_ringtone_summary">Ringsignal för inkommande samtal</string>
     <string name="pref_notification_grace_period">Tidsfrist</string>
     <string name="pref_notification_grace_period_summary">Tidsfrist för hur länge aviseringar ska vara tysta efter att aktivitet har upptäckts på en av dina andra enheter.</string>
@@ -325,8 +319,6 @@
     <string name="account_details">Kontodetaljer</string>
     <string name="confirm">Bekräfta</string>
     <string name="try_again">Försök igen</string>
-    <string name="pref_keep_foreground_service">Förgrundstjänst</string>
-    <string name="pref_keep_foreground_service_summary">Förhindrar att operativsystemet avbryter din anslutning</string>
     <string name="pref_create_backup">Skapa säkerhetskopia</string>
     <string name="pref_create_backup_summary">Säkerhetskopierade filer kommer att lagras i %s</string>
     <string name="notification_create_backup_title">Skapar säkerhetskopior</string>
@@ -674,8 +666,6 @@
     <string name="account_status_regis_web">Servern kräver registrering på webbplatsen</string>
     <string name="open_website">Öppna webbsida</string>
     <string name="application_found_to_open_website">Ingen app hittades för att kunna öppna webbplatsen</string>
-    <string name="pref_headsup_notifications">\"Heads-up\"-meddelanden</string>
-    <string name="pref_headsup_notifications_summary">Visa \"Heads-up\"-aviseringar</string>
     <string name="today">Idag</string>
     <string name="yesterday">Igår</string>
     <string name="pref_validate_hostname">Validera värdnamn med DNSSEC</string>

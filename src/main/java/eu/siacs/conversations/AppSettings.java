@@ -14,7 +14,6 @@ import java.security.SecureRandom;
 
 public class AppSettings {
 
-    public static final String KEEP_FOREGROUND_SERVICE = "enable_foreground_service";
     public static final String AWAY_WHEN_SCREEN_IS_OFF = "away_when_screen_off";
     public static final String TREAT_VIBRATE_AS_SILENT = "treat_vibrate_as_silent";
     public static final String DND_ON_SILENT_MODE = "dnd_on_silent_mode";
@@ -36,9 +35,6 @@ public class AppSettings {
     public static final String TRUST_SYSTEM_CA_STORE = "trust_system_ca_store";
     public static final String REQUIRE_CHANNEL_BINDING = "channel_binding_required";
     public static final String NOTIFICATION_RINGTONE = "notification_ringtone";
-    public static final String NOTIFICATION_HEADS_UP = "notification_headsup";
-    public static final String NOTIFICATION_VIBRATE = "vibrate_on_notification";
-    public static final String NOTIFICATION_LED = "led";
     public static final String SHOW_CONNECTION_OPTIONS = "show_connection_options";
     public static final String USE_TOR = "use_tor";
     public static final String CHANNEL_DISCOVERY_METHOD = "channel_discovery_method";

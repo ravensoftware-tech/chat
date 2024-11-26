@@ -111,13 +111,7 @@
     <string name="pref_accept_files_summary">Automatycznie akceptuj pliki mniejsze niż…</string>
     <string name="pref_attachments">Załączniki</string>
     <string name="pref_notification_settings">Powiadomienie</string>
-    <string name="pref_vibrate">Wibracje</string>
-    <string name="pref_vibrate_summary">Wibruj gdy nadejdzie wiadomość</string>
-    <string name="pref_led">Powiadomienie diodą LED</string>
-    <string name="pref_led_summary">Migaj lampką powiadamiającą gdy nadejdzie wiadomość</string>
     <string name="pref_ringtone">Dzwonek</string>
-    <string name="pref_notification_sound">Dźwięk powiadomień</string>
-    <string name="pref_notification_sound_summary">Dźwięk powiadomień dla nowych wiadomości</string>
     <string name="pref_call_ringtone_summary">Dzwonek dla przychodzących rozmów</string>
     <string name="pref_notification_grace_period">Czas bez powiadomień</string>
     <string name="pref_notification_grace_period_summary">Długość czasu kiedy powiadomienia są uśpione po wykryciu aktywności na jednym z twoich innych urządzeń.</string>
@@ -322,8 +316,6 @@
     <string name="account_details">Szczegóły konta</string>
     <string name="confirm">Potwierdź</string>
     <string name="try_again">Spróbuj ponownie</string>
-    <string name="pref_keep_foreground_service">Usługa na pierwszym planie</string>
-    <string name="pref_keep_foreground_service_summary">Uniemożliwia systemowi przerwanie połączenia</string>
     <string name="pref_create_backup">Utwórz kopię zapasową</string>
     <string name="pref_create_backup_summary">Kopia zapasowa będzie zapisana w %s</string>
     <string name="notification_create_backup_title">Tworzenie kopii zapasowej</string>
@@ -683,8 +675,6 @@
     <string name="account_status_regis_web">Serwer wymaga rejestracji na stronie</string>
     <string name="open_website">Otwórz stronę</string>
     <string name="application_found_to_open_website">Nie znaleziono aplikacji do otwarcia strony</string>
-    <string name="pref_headsup_notifications">Powiadomienia heads-up</string>
-    <string name="pref_headsup_notifications_summary">Pokazuj powiadomienia Heads-up</string>
     <string name="today">Dzisiaj</string>
     <string name="yesterday">Wczoraj</string>
     <string name="pref_validate_hostname">Potwierdź nazwę hosta za pomocą DNSSEC</string>

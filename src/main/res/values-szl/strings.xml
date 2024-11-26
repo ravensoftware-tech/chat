@@ -114,13 +114,7 @@
     <string name="pref_accept_files_summary">Autōmatycznie akceptuj zbiory myńsze niż…</string>
     <string name="pref_attachments">Przidowki</string>
     <string name="pref_notification_settings">Powiadōmiynie</string>
-    <string name="pref_vibrate">Wibracyje</string>
-    <string name="pref_vibrate_summary">Wibruj, jak przidzie wiadōmość</string>
-    <string name="pref_led">Powiadōmiynie diodōm LED</string>
-    <string name="pref_led_summary">Migej diodōm, jak przidzie wiadōmość</string>
     <string name="pref_ringtone">Zwōnek</string>
-    <string name="pref_notification_sound">Klang powiadōmiyń</string>
-    <string name="pref_notification_sound_summary">Klang powiadōmiyń ô nowych wiadōmościach</string>
     <string name="pref_call_ringtone_summary">Zwōnek przi przichodzōncych połōnczyniach</string>
     <string name="pref_notification_grace_period">Czas bez powiadōmiyń</string>
     <string name="pref_notification_grace_period_summary">Dugość czasu, kej powiadōmiynia sōm wyciszōne po wykryciu aktywności na jednyj z twojich inkszych maszin.</string>
@@ -328,8 +322,6 @@
     <string name="account_details">Informacyje kōnta</string>
     <string name="confirm">Potwiyrdź</string>
     <string name="try_again">Sprōbuj zaś</string>
-    <string name="pref_keep_foreground_service">Usuga na piyrszym planie</string>
-    <string name="pref_keep_foreground_service_summary">Niy zwolo systymowi na przerwanie połōnczynio</string>
     <string name="pref_create_backup">Stwōrz kopijo ibryczno</string>
     <string name="pref_create_backup_summary">Kopijo ibryczno bydzie spamiyntano we %s</string>
     <string name="notification_create_backup_title">Tworzynie kopije ibrycznyj</string>
@@ -686,8 +678,6 @@
     <string name="account_status_regis_web">Serwer wymogo registracyje na strōnie</string>
     <string name="open_website">Ôtwōrz strōna</string>
     <string name="application_found_to_open_website">Niy szło znojś aplikacyje do ôtwarciŏ strōny</string>
-    <string name="pref_headsup_notifications">Powiadōmiynia heads-up</string>
-    <string name="pref_headsup_notifications_summary">Pokazuj powiadōmiynia Heads-up</string>
     <string name="today">Dzisiej</string>
     <string name="yesterday">Wczorej</string>
     <string name="pref_validate_hostname">Potwiyrdź miano ôd hosta ze pōmocōm DNSSEC</string>

@@ -23,9 +23,8 @@ public class PhoneHelper {
 
     public static Uri getProfilePictureUri(final Context context) {
         if (!QuickConversationsService.isContactListIntegration(context)
-                || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-                        && context.checkSelfPermission(Manifest.permission.READ_CONTACTS)
-                                != PackageManager.PERMISSION_GRANTED)) {
+                || (context.checkSelfPermission(Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED)) {
             return null;
         }
         final String[] projection = new String[] {Profile._ID, Profile.PHOTO_URI};

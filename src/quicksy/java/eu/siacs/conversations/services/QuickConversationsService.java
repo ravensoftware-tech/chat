@@ -6,7 +6,6 @@ import static eu.siacs.conversations.utils.Random.SECURE_RANDOM;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
@@ -45,11 +44,7 @@ import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.security.GeneralSecurityException;
-import java.security.KeyManagementException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.security.cert.CertificateException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -63,13 +58,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLException;
-import javax.net.ssl.SSLHandshakeException;
-import javax.net.ssl.SSLPeerUnverifiedException;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.X509TrustManager;
 
 public class QuickConversationsService extends AbstractQuickConversationsService {
 
@@ -143,7 +131,6 @@ public class QuickConversationsService extends AbstractQuickConversationsService
                 try {
                     final URL url = new URL(BASE_URL + "/authentication/" + e164);
                     final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                    setBundledLetsEncrypt(service, connection);
                     connection.setConnectTimeout(Config.SOCKET_TIMEOUT * 1000);
                     connection.setReadTimeout(Config.SOCKET_TIMEOUT * 1000);
                     setHeader(connection);
@@ -170,35 +157,6 @@ public class QuickConversationsService extends AbstractQuickConversationsService
                     mVerificationRequestInProgress.set(false);
                 }
             }).start();
-        }
-    }
-
-    private static void setBundledLetsEncrypt(
-            final Context context, final HttpURLConnection connection) {
-        if (connection instanceof HttpsURLConnection httpsURLConnection) {
-            final X509TrustManager trustManager;
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
-                try {
-                    trustManager = TrustManagers.defaultWithBundledLetsEncrypt(context);
-                } catch (final NoSuchAlgorithmException
-                        | KeyStoreException
-                        | CertificateException
-                        | IOException e) {
-                    Log.e(Config.LOGTAG, "could not configured bundled LetsEncrypt", e);
-                    return;
-                }
-            } else {
-                return;
-            }
-            final SSLSocketFactory socketFactory;
-            try {
-                socketFactory =
-                        new TLSSocketFactory(new X509TrustManager[] {trustManager}, SECURE_RANDOM);
-            } catch (final KeyManagementException | NoSuchAlgorithmException e) {
-                Log.e(Config.LOGTAG, "could not configured bundled LetsEncrypt", e);
-                return;
-            }
-            httpsURLConnection.setSSLSocketFactory(socketFactory);
         }
     }
 
@@ -241,7 +199,6 @@ public class QuickConversationsService extends AbstractQuickConversationsService
                 try {
                     final URL url = new URL(BASE_URL + "/password");
                     final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                    setBundledLetsEncrypt(service, connection);
                     connection.setConnectTimeout(Config.SOCKET_TIMEOUT * 1000);
                     connection.setReadTimeout(Config.SOCKET_TIMEOUT * 1000);
                     connection.setRequestMethod("POST");

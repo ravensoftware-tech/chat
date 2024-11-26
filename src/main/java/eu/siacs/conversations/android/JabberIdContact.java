@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.os.Build;
 import android.provider.ContactsContract;
 import android.util.Log;
 
@@ -64,9 +63,8 @@ public class JabberIdContact extends AbstractPhoneContact {
 
     public static Map<Jid, JabberIdContact> load(final Context context) {
         if (!QuickConversationsService.isContactListIntegration(context)
-                || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-                        && context.checkSelfPermission(Manifest.permission.READ_CONTACTS)
-                                != PackageManager.PERMISSION_GRANTED)) {
+                || (context.checkSelfPermission(Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED)) {
             return Collections.emptyMap();
         }
         try (final Cursor cursor =

@@ -113,13 +113,7 @@
     <string name="pref_accept_files_summary">Automatically accept files smaller than…</string>
     <string name="pref_attachments">Attachments</string>
     <string name="pref_notification_settings">Notification</string>
-    <string name="pref_vibrate">Vibrate</string>
-    <string name="pref_vibrate_summary">Vibrate when a new message arrives</string>
-    <string name="pref_led">LED Notification</string>
-    <string name="pref_led_summary">Blink notification light when a new message arrives</string>
     <string name="pref_ringtone">Ringtone</string>
-    <string name="pref_notification_sound">Notification sound</string>
-    <string name="pref_notification_sound_summary">Notification sound for new messages</string>
     <string name="pref_call_ringtone_summary">Ringtone for incoming calls</string>
     <string name="pref_notification_grace_period">Grace Period</string>
     <string name="pref_notification_grace_period_summary">The length of time notifications are silenced after detecting activity on one of your other devices.</string>
@@ -325,8 +319,6 @@
     <string name="account_details">Account details</string>
     <string name="confirm">Confirm</string>
     <string name="try_again">Try again</string>
-    <string name="pref_keep_foreground_service">Foreground service</string>
-    <string name="pref_keep_foreground_service_summary">Prevents the operating system from killing your connection</string>
     <string name="pref_create_backup">Create backup</string>
     <string name="pref_create_backup_summary">Backup files will be stored in %s</string>
     <string name="notification_create_backup_title">Creating backup files</string>
@@ -680,8 +672,6 @@
     <string name="account_status_regis_web">Server requires registration on website</string>
     <string name="open_website">Open website</string>
     <string name="application_found_to_open_website">No app found to open website</string>
-    <string name="pref_headsup_notifications">Heads-up Notifications</string>
-    <string name="pref_headsup_notifications_summary">Show heads-up notifications</string>
     <string name="today">Today</string>
     <string name="yesterday">Yesterday</string>
     <string name="pref_validate_hostname">Validate hostname with DNSSEC</string>

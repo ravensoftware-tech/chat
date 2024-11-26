@@ -110,13 +110,7 @@
     <string name="pref_accept_files_summary">Mai mici decât…</string>
     <string name="pref_attachments">Atașamente</string>
     <string name="pref_notification_settings">Notificare</string>
-    <string name="pref_vibrate">Vibrează</string>
-    <string name="pref_vibrate_summary">Vibrează când este primit un mesaj nou</string>
-    <string name="pref_led">Notificare LED</string>
-    <string name="pref_led_summary">Clipește lumina de notificare atunci când este primit un mesaj nou</string>
     <string name="pref_ringtone">Ton de apel</string>
-    <string name="pref_notification_sound">Sunet de notificare</string>
-    <string name="pref_notification_sound_summary">Sunet de notificare pentru mesaje noi</string>
     <string name="pref_call_ringtone_summary">Ton pentru apelurile primite</string>
     <string name="pref_notification_grace_period">Perioadă de grație</string>
     <string name="pref_notification_grace_period_summary">Durata de timp cât notificările sunt ascunse după ce s-a observat activitate pe un alt dispozitiv de al dumneavoastră.</string>
@@ -321,8 +315,6 @@
     <string name="account_details">Detalii cont</string>
     <string name="confirm">Confirmă</string>
     <string name="try_again">Încearcă din nou</string>
-    <string name="pref_keep_foreground_service">Serviciul activ în prim-plan</string>
-    <string name="pref_keep_foreground_service_summary">Previne închiderea conexiunii de către sistemul de operare</string>
     <string name="pref_create_backup">Creează o copie de siguranță</string>
     <string name="pref_create_backup_summary">Fișierele copiei de siguranță vor fi salvate în %s</string>
     <string name="notification_create_backup_title">Se creează copia de siguranță</string>
@@ -675,8 +667,6 @@
     <string name="account_status_regis_web">Serverul necesită înregistrarea pe website</string>
     <string name="open_website">Deschide website</string>
     <string name="application_found_to_open_website">Nu s-a găsit nici o aplicație care să poată deschide siteul</string>
-    <string name="pref_headsup_notifications">Notificare heads-up</string>
-    <string name="pref_headsup_notifications_summary">Arată notificările în prim-plan</string>
     <string name="today">Azi</string>
     <string name="yesterday">Ieri</string>
     <string name="pref_validate_hostname">Validează domeniul prin DNSSEC</string>

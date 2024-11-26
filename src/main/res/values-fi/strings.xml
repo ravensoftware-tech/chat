@@ -108,13 +108,7 @@
     <string name="pref_accept_files_summary">Lataa automaattisesti tiedostot jotka ovat pienempiä kuin…</string>
     <string name="pref_attachments">Liitteet</string>
     <string name="pref_notification_settings">Ilmoitus</string>
-    <string name="pref_vibrate">Värinä</string>
-    <string name="pref_vibrate_summary">Värise uuden viestin saapuessa</string>
-    <string name="pref_led">LED-ilmoitus</string>
-    <string name="pref_led_summary">Vilkuta ilmoitusvaloa vastaanotettuasi uuden viestin</string>
     <string name="pref_ringtone">Soittoääni</string>
-    <string name="pref_notification_sound">Ilmoitusääni</string>
-    <string name="pref_notification_sound_summary">Uusien viestien ilmoitusääni</string>
     <string name="pref_call_ringtone_summary">Soittoääni saamillesi puheluille</string>
     <string name="pref_notification_grace_period">Rauhanaika</string>
     <string name="pref_notification_grace_period_summary">Kuinka pitkäksi aikaa ilmoitukset hiljennetään kun jollain toisella laitteillasi tehdään jotain.</string>
@@ -308,8 +302,6 @@
     <string name="account_details">Tilitiedot</string>
     <string name="confirm">Vahvista</string>
     <string name="try_again">Yritä uudelleen</string>
-    <string name="pref_keep_foreground_service">Palvelu etualalla</string>
-    <string name="pref_keep_foreground_service_summary">Estää käyttöjärjestelmää katkaisemasta yhteyttäsi</string>
     <string name="pref_create_backup">Tee varmuuskopio</string>
     <string name="pref_create_backup_summary">Varmuuskopioiden säilytyspaikka: %s</string>
     <string name="notification_create_backup_title">Tehdään varmuuskopiota</string>

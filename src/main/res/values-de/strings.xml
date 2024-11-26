@@ -109,13 +109,7 @@
     <string name="pref_accept_files_summary">Dateien automatisch annehmen, die kleiner sind als …</string>
     <string name="pref_attachments">Anhänge</string>
     <string name="pref_notification_settings">Benachrichtigung</string>
-    <string name="pref_vibrate">Vibrieren</string>
-    <string name="pref_vibrate_summary">Vibrieren bei Erhalt einer neuen Nachricht</string>
-    <string name="pref_led">LED Benachrichtigung</string>
-    <string name="pref_led_summary">Blinke bei Erhalt einer neuen Nachricht</string>
     <string name="pref_ringtone">Klingelton</string>
-    <string name="pref_notification_sound">Benachrichtigungston</string>
-    <string name="pref_notification_sound_summary">Benachrichtigungston für neue Nachrichten</string>
     <string name="pref_call_ringtone_summary">Klingelton für eingehende Anrufe</string>
     <string name="pref_notification_grace_period">Schonfrist</string>
     <string name="pref_notification_grace_period_summary">Die Zeitspanne, in der Benachrichtigungen nach der Erkennung von Aktivitäten auf einem deiner anderen Geräte unterdrückt werden.</string>
@@ -318,8 +312,6 @@
     <string name="account_details">Kontodetails</string>
     <string name="confirm">Bestätigen</string>
     <string name="try_again">Erneut versuchen</string>
-    <string name="pref_keep_foreground_service">Vordergrunddienst</string>
-    <string name="pref_keep_foreground_service_summary">Verhindert, dass das Betriebssystem deine Verbindung unterbricht</string>
     <string name="pref_create_backup">Sicherung erstellen</string>
     <string name="pref_create_backup_summary">Sicherungsdateien werden gespeichert in %s</string>
     <string name="notification_create_backup_title">Erstelle Sicherungsdateien</string>
@@ -661,8 +653,6 @@
     <string name="account_status_regis_web">Der Server benötigt eine Registrierung auf einer Website</string>
     <string name="open_website">Website öffnen</string>
     <string name="application_found_to_open_website">Keine App zum Öffnen der Website gefunden</string>
-    <string name="pref_headsup_notifications">Benachrichtigungsvorschau</string>
-    <string name="pref_headsup_notifications_summary">Benachrichtigungsvorschau anzeigen</string>
     <string name="today">Heute</string>
     <string name="yesterday">Gestern</string>
     <string name="pref_validate_hostname">Überprüfe den Hostnamen mit DNSSEC</string>

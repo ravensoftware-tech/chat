@@ -107,13 +107,7 @@
     <string name="pref_accept_files_summary">Fájlok automatikus fogadása, amelyek kisebbek mint…</string>
     <string name="pref_attachments">Mellékletek</string>
     <string name="pref_notification_settings">Értesítés</string>
-    <string name="pref_vibrate">Rezgés</string>
-    <string name="pref_vibrate_summary">Rezegés új üzenet érkezésekor</string>
-    <string name="pref_led">LED értesítés</string>
-    <string name="pref_led_summary">Értesítési fény villogása új üzenet érkezésekor</string>
     <string name="pref_ringtone">Csengőhang</string>
-    <string name="pref_notification_sound">Értesítési hang</string>
-    <string name="pref_notification_sound_summary">Értesítési hang új üzeneteknél</string>
     <string name="pref_call_ringtone_summary">Csengőhang bejövő hívásnál</string>
     <string name="pref_notification_grace_period">Türelmi idő</string>
     <string name="pref_notification_grace_period_summary">Az időtartam, amíg az értesítések némítva vannak az egyéb eszközei egyikén történt tevékenység észlelése után.</string>
@@ -305,8 +299,6 @@
     <string name="account_details">Fiók részletei</string>
     <string name="confirm">Megerősítés</string>
     <string name="try_again">Próbálja újra</string>
-    <string name="pref_keep_foreground_service">Előtér szolgáltatás</string>
-    <string name="pref_keep_foreground_service_summary">Megakadályozza az operációs rendszert abban, hogy kilője a kapcsolatát</string>
     <string name="pref_create_backup">Biztonsági mentés léterhozása</string>
     <string name="pref_create_backup_summary">A biztonsági mentés fájljai itt lesznek tárolva: %s</string>
     <string name="notification_create_backup_title">Biztonsági mentés fájljainak létrehozása</string>
@@ -618,8 +610,6 @@
     <string name="account_status_regis_web">A kiszolgáló a weboldalon történő regisztrációt igényli</string>
     <string name="open_website">Weboldal megnyitása</string>
     <string name="application_found_to_open_website">Nem található alkalmazás a weboldal megnyitásához</string>
-    <string name="pref_headsup_notifications">Figyelmeztető értesítések</string>
-    <string name="pref_headsup_notifications_summary">Figyelmeztető értesítések megjelenítése</string>
     <string name="today">Ma</string>
     <string name="yesterday">Tegnap</string>
     <string name="pref_validate_hostname">Gépnév ellenőrzése DNSSEC használatával</string>

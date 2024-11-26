@@ -1,9 +1,6 @@
 package eu.siacs.conversations.utils;
 
-import android.os.Build;
 import android.util.Log;
-
-import androidx.annotation.RequiresApi;
 
 import com.google.common.base.Strings;
 
@@ -48,22 +45,11 @@ public class SSLSockets {
     public static void setHostname(final SSLSocket socket, final String hostname) {
         if (Conscrypt.isConscrypt(socket)) {
             Conscrypt.setHostname(socket, hostname);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            setHostnameNougat(socket, hostname);
         } else {
-            setHostnameReflection(socket, hostname);
+            setHostnameNougat(socket, hostname);
         }
     }
 
-    private static void setHostnameReflection(final SSLSocket socket, final String hostname) {
-        try {
-            socket.getClass().getMethod("setHostname", String.class).invoke(socket, hostname);
-        } catch (Throwable e) {
-            Log.e(Config.LOGTAG, "unable to set SNI name on socket (" + hostname + ")", e);
-        }
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
     private static void setHostnameNougat(final SSLSocket socket, final String hostname) {
         final SSLParameters parameters = new SSLParameters();
         parameters.setServerNames(Collections.singletonList(new SNIHostName(hostname)));

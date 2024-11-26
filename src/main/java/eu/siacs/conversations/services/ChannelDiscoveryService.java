@@ -57,7 +57,7 @@ public class ChannelDiscoveryService {
             this.muclumbusService = null;
             return;
         }
-        final OkHttpClient.Builder builder = HttpConnectionManager.okHttpClient(service).newBuilder();
+        final OkHttpClient.Builder builder = HttpConnectionManager.okHttpClient().newBuilder();
         if (service.useTorToConnect()) {
             builder.proxy(HttpConnectionManager.getProxy());
         }

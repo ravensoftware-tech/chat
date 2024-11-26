@@ -100,14 +100,8 @@
     <string name="pref_accept_files_summary">Võta automaatselt vastu failid, mis on väiksemad kui…</string>
     <string name="pref_attachments">Manused</string>
     <string name="pref_notification_settings">Teavitus</string>
-    <string name="pref_led">LRD-märgutuli</string>
-    <string name="pref_led_summary">Sõnumi saabumisel vilguta LED-märgutuld</string>
     <string name="pref_ringtone">Helin</string>
-    <string name="pref_notification_sound">Teavituse heli</string>
-    <string name="pref_notification_sound_summary">Uute sõnumite märguhelin</string>
     <string name="pref_call_ringtone_summary">Saabuvate kõnede helin</string>
-    <string name="pref_vibrate">Värinaalarm</string>
-    <string name="pref_vibrate_summary">Anna uuest sõnumit märku värinaalarmiga</string>
     <string name="remove_contact_text">Kas sa soovid %s eemaldada oma kontaktide loendist? Selle toiminguga ei eemaldata temaga peetud vestlust.</string>
     <string name="contact_blocked">Kontakt on blokeeritud</string>
     <string name="remove_bookmark_and_close">Kas sa soovid eemaldada %s järjehoidja ja selle vestluse arhiveerida?</string>
@@ -438,8 +432,6 @@
     <string name="url_copied_to_clipboard">Kopeerisime võrguaadressi lõikelauale</string>
     <string name="error_message_copied_to_clipboard">Kopeerisime veateate lõikelauale</string>
     <string name="try_again">Proovi uuesti</string>
-    <string name="pref_keep_foreground_service">Teenus esiplaanil</string>
-    <string name="pref_keep_foreground_service_summary">See eelistus takistab operatsioonisüsteemil sinu võrguühenduse sulgemist</string>
     <string name="pref_create_backup">Tee varukoopia</string>
     <string name="pref_create_backup_summary">Varukoopia failide salvestamise asukoht: %s</string>
     <string name="notification_backup_created_title">Sinu varukoopia on tehtud</string>
@@ -981,8 +973,6 @@
     <string name="account_status_regis_web">Server eeldab registreerimist veebisaidis</string>
     <string name="open_website">Ava veebisait</string>
     <string name="application_found_to_open_website">Veebisaidi avamiseks ei leidu rakendust</string>
-    <string name="pref_headsup_notifications">Teavitused väljaspool olekuriba</string>
-    <string name="pref_headsup_notifications_summary">Näita teavitusi väljaspool olekuriba (Heads-Up notifications)</string>
     <string name="distrust_omemo_key_text">Kas sa oled kindel, et tahad sellelt seadmelt eemaldada verifitseerimise?
 \nSee seade ja temalt saabunud sõnumid on nüüd märgitud kui „Pole usaldatud“.</string>
     <string name="providing_a_name_is_optional">Nime lisamine pole kohustuslik</string>

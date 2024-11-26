@@ -3,7 +3,6 @@ package eu.siacs.conversations.ui;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.view.View;
 import com.google.android.material.elevation.SurfaceColors;
 
@@ -26,16 +25,12 @@ public final class Activities {
         } else {
             window.setStatusBarColor(SurfaceColors.SURFACE_0.getColor(activity));
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            window.setNavigationBarColor(SurfaceColors.SURFACE_1.getColor(activity));
-            if (isLightMode) {
-                view.setSystemUiVisibility(
-                        flags
-                                | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-                                | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
-            }
-        } else if (isLightMode) {
-            view.setSystemUiVisibility(flags | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        window.setNavigationBarColor(SurfaceColors.SURFACE_1.getColor(activity));
+        if (isLightMode) {
+            view.setSystemUiVisibility(
+                    flags
+                            | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                            | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         }
     }
 

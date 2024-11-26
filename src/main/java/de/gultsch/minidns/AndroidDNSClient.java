@@ -16,10 +16,8 @@ import com.google.common.collect.ImmutableList;
 
 import org.minidns.AbstractDnsClient;
 import org.minidns.dnsmessage.DnsMessage;
-import org.minidns.dnsqueryresult.DirectCachedDnsQueryResult;
 import org.minidns.dnsqueryresult.DnsQueryResult;
 import org.minidns.dnsqueryresult.StandardDnsQueryResult;
-import org.minidns.dnsqueryresult.SynthesizedCachedDnsQueryResult;
 import org.minidns.record.Data;
 
 import org.minidns.record.Record;
@@ -157,11 +155,9 @@ public class AndroidDNSClient extends AbstractDnsClient {
                 QUERY_CACHE.remove(key);
                 return null;
             }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                Log.d(
-                        Config.LOGTAG,
-                        "DNS query came from cache. expires in " + Duration.ofMillis(expiresIn));
-            }
+            Log.d(
+                    Config.LOGTAG,
+                    "DNS query came from cache. expires in " + Duration.ofMillis(expiresIn));
         }
         return cachedResponse;
     }

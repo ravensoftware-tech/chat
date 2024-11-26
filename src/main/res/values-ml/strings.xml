@@ -77,10 +77,7 @@
     <string name="pref_accept_files">ഫയലുകൾ സ്വീകരിക്കൂ</string>
     <string name="pref_attachments">അറ്റാച്ചുമെന്റുകൾ</string>
     <string name="pref_notification_settings">അറിയിപ്പ്</string>
-    <string name="pref_vibrate">വൈബ്രേറ്റ് ചെയ്യൂ</string>
-    <string name="pref_led">LED അറിയിപ്പ്</string>
     <string name="pref_ringtone">റിംഗ്‌ടോൺ</string>
-    <string name="pref_notification_sound">അറിയിപ്പ് ശബ്‌ദം</string>
     <string name="pref_call_ringtone_summary">ഇൻകമിംഗ് കോളുകൾക്കുള്ള റിംഗ്‌ടോൺ</string>
     <string name="pref_advanced_options">വിപുലമായ</string>
     <string name="pref_confirm_messages">സന്ദേശങ്ങൾ ഉറപ്പാക്കൂ</string>

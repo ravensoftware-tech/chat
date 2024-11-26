@@ -108,13 +108,7 @@
     <string name="pref_accept_files_summary">自動的に小さいファイルを受取…</string>
     <string name="pref_attachments">添付ファイル</string>
     <string name="pref_notification_settings">通知</string>
-    <string name="pref_vibrate">バイブレート</string>
-    <string name="pref_vibrate_summary">新着メッセージが届いたときに振動します</string>
-    <string name="pref_led">LED 通知</string>
-    <string name="pref_led_summary">新着メッセージが届いたときに通知ライトを点滅します</string>
     <string name="pref_ringtone">着信音</string>
-    <string name="pref_notification_sound">通知音</string>
-    <string name="pref_notification_sound_summary">新着メッセージの通知音</string>
     <string name="pref_call_ringtone_summary">着信通話の呼出音</string>
     <string name="pref_notification_grace_period">猶予期間</string>
     <string name="pref_notification_grace_period_summary">別のデバイスでの操作を検知した際に、通知を止める時間の長さ。</string>
@@ -314,8 +308,6 @@
     <string name="account_details">アカウントの詳細</string>
     <string name="confirm">確認</string>
     <string name="try_again">再試行</string>
-    <string name="pref_keep_foreground_service">フォアグラウンドサービス</string>
-    <string name="pref_keep_foreground_service_summary">OSが接続を切断するのを防止します</string>
     <string name="pref_create_backup">バックアップを作成</string>
     <string name="pref_create_backup_summary">バックアップファイルは %s に保存されます </string>
     <string name="notification_create_backup_title">バックアップファイルを作成しています</string>
@@ -650,8 +642,6 @@
     <string name="account_status_regis_web">サーバーはウェブサイトでの登録が必要です</string>
     <string name="open_website">ウェブサイトを開く</string>
     <string name="application_found_to_open_website">ウェブサイトを開くアプリが見つかりません</string>
-    <string name="pref_headsup_notifications">Heads-up 通知</string>
-    <string name="pref_headsup_notifications_summary">Heads-up 通知を表示</string>
     <string name="today">今日</string>
     <string name="yesterday">昨日</string>
     <string name="pref_validate_hostname">DNSSEC でホスト名の妥当性を確認</string>

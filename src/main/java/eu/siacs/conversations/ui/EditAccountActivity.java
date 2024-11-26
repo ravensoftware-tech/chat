@@ -1186,7 +1186,7 @@ public class EditAccountActivity extends OmemoActivity
             this.binding.namePort.setVisibility(mShowOptions ? View.VISIBLE : View.GONE);
         }
 
-        if (!mInitMode && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (!mInitMode) {
             this.binding.accountPassword.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO);
         }
 
@@ -1490,8 +1490,7 @@ public class EditAccountActivity extends OmemoActivity
             boolean showBatteryWarning, boolean showDataSaverWarning) {
         this.binding.osOptimization.setVisibility(
                 showBatteryWarning || showDataSaverWarning ? View.VISIBLE : View.GONE);
-        if (showDataSaverWarning
-                && android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+        if (showDataSaverWarning) {
             this.binding.osOptimizationHeadline.setText(R.string.data_saver_enabled);
             this.binding.osOptimizationBody.setText(
                     getString(R.string.data_saver_enabled_explained, getString(R.string.app_name)));

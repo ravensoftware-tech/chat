@@ -98,13 +98,7 @@
     <string name="pref_accept_files_summary">自動接受小於此大小的檔案…</string>
     <string name="pref_attachments">附件</string>
     <string name="pref_notification_settings">通知</string>
-    <string name="pref_vibrate">震動</string>
-    <string name="pref_vibrate_summary">收到新訊息時震動</string>
-    <string name="pref_led">LED 通知</string>
-    <string name="pref_led_summary">收到新訊息時閃爍通知燈</string>
     <string name="pref_ringtone">鈴聲</string>
-    <string name="pref_notification_sound">通知音效</string>
-    <string name="pref_notification_sound_summary">收到新訊息時發出通知音效</string>
     <string name="pref_call_ringtone_summary">來電時響鈴</string>
     <string name="pref_notification_grace_period">寬限期</string>
     <string name="pref_advanced_options">進階</string>
@@ -296,8 +290,6 @@
     <string name="account_details">帳戶詳細資料</string>
     <string name="confirm">確認</string>
     <string name="try_again">再試一次</string>
-    <string name="pref_keep_foreground_service">前景服務</string>
-    <string name="pref_keep_foreground_service_summary">防止作業系統終止您的連線</string>
     <string name="pref_create_backup">建立備份</string>
     <string name="pref_create_backup_summary">備份檔案將被儲存至 %s</string>
     <string name="notification_create_backup_title">正在建立備份檔案</string>
@@ -608,8 +600,6 @@
     <string name="account_status_regis_web">伺服器要求在網站上註冊</string>
     <string name="open_website">開啟網站</string>
     <string name="application_found_to_open_website">找不到可以開啟網站的應用程式</string>
-    <string name="pref_headsup_notifications">抬頭通知</string>
-    <string name="pref_headsup_notifications_summary">顯示抬頭通知</string>
     <string name="today">今天</string>
     <string name="yesterday">昨天</string>
     <string name="pref_validate_hostname">以 DNSSEC 驗證主機名稱</string>

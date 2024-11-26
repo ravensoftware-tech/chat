@@ -1,17 +1,14 @@
 package eu.siacs.conversations.services;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
-import android.os.Build;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.graphics.drawable.IconCompat;
 
@@ -41,26 +38,15 @@ public class ShortcutService {
     }
 
     public void refresh(final boolean forceUpdate) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
-            final Runnable r = new Runnable() {
-                @Override
-                public void run() {
-                    refreshImpl(forceUpdate);
-                }
-            };
-            replacingSerialSingleThreadExecutor.execute(r);
-        }
+        final Runnable r = () -> refreshImpl(forceUpdate);
+        replacingSerialSingleThreadExecutor.execute(r);
     }
 
-    @TargetApi(25)
     public void report(Contact contact) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
-            ShortcutManager shortcutManager = xmppConnectionService.getSystemService(ShortcutManager.class);
-            shortcutManager.reportShortcutUsed(getShortcutId(contact));
-        }
+        ShortcutManager shortcutManager = xmppConnectionService.getSystemService(ShortcutManager.class);
+        shortcutManager.reportShortcutUsed(getShortcutId(contact));
     }
 
-    @TargetApi(25)
     private void refreshImpl(boolean forceUpdate) {
         List<FrequentContact> frequentContacts = xmppConnectionService.databaseBackend.getFrequentContacts(30);
         HashMap<String,Account> accounts = new HashMap<>();
@@ -98,15 +84,13 @@ public class ShortcutService {
                         .setShortLabel(contact.getDisplayName())
                         .setIntent(getShortcutIntent(contact))
                         .setIsConversation();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            builder.setIcon(
-                    IconCompat.createFromIcon(
-                            xmppConnectionService,
-                            Icon.createWithBitmap(
-                                    xmppConnectionService
-                                            .getAvatarService()
-                                            .getRoundedShortcut(contact))));
-        }
+        builder.setIcon(
+                IconCompat.createFromIcon(
+                        xmppConnectionService,
+                        Icon.createWithBitmap(
+                                xmppConnectionService
+                                        .getAvatarService()
+                                        .getRoundedShortcut(contact))));
         return builder.build();
     }
 
@@ -116,19 +100,16 @@ public class ShortcutService {
                         .setShortLabel(mucOptions.getConversation().getName())
                         .setIntent(getShortcutIntent(mucOptions))
                         .setIsConversation();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            builder.setIcon(
-                    IconCompat.createFromIcon(
-                            xmppConnectionService,
-                            Icon.createWithBitmap(
-                                    xmppConnectionService
-                                            .getAvatarService()
-                                            .getRoundedShortcut(mucOptions))));
-        }
+        builder.setIcon(
+                IconCompat.createFromIcon(
+                        xmppConnectionService,
+                        Icon.createWithBitmap(
+                                xmppConnectionService
+                                        .getAvatarService()
+                                        .getRoundedShortcut(mucOptions))));
         return builder.build();
     }
 
-    @TargetApi(Build.VERSION_CODES.N_MR1)
     private ShortcutInfo getShortcutInfo(final Contact contact) {
         return getShortcutInfoCompat(contact).toShortcutInfo();
     }
@@ -142,7 +123,6 @@ public class ShortcutService {
         return needles.size() != haystack.size();
     }
 
-    @TargetApi(25)
     private static boolean contactExists(Contact needle, List<ShortcutInfo> haystack) {
         for(ShortcutInfo shortcutInfo : haystack) {
             if (getShortcutId(needle).equals(shortcutInfo.getId()) && needle.getDisplayName().equals(shortcutInfo.getShortLabel())) {
@@ -196,7 +176,7 @@ public class ShortcutService {
     @NonNull
     public Intent createShortcut(Contact contact, boolean legacy) {
         Intent intent;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !legacy) {
+        if (!legacy) {
             ShortcutInfo shortcut = getShortcutInfo(contact);
             ShortcutManager shortcutManager = xmppConnectionService.getSystemService(ShortcutManager.class);
             intent = shortcutManager.createShortcutResultIntent(shortcut);

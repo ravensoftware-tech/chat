@@ -29,9 +29,7 @@
 
 package eu.siacs.conversations.utils;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.os.Build;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -45,7 +43,6 @@ import com.google.android.material.color.MaterialColors;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,27 +51,16 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import eu.siacs.conversations.R;
 import eu.siacs.conversations.xmpp.Jid;
 
 public class IrregularUnicodeDetector {
 
-	private static final Map<Character.UnicodeBlock, Character.UnicodeBlock> NORMALIZATION_MAP;
 	private static final LruCache<Jid, PatternTuple> CACHE = new LruCache<>(4096);
 	private static final List<String> AMBIGUOUS_CYRILLIC = Arrays.asList("а","г","е","ѕ","і","ј","ķ","ԛ","о","р","с","у","х");
 
 	static {
 		Map<Character.UnicodeBlock, Character.UnicodeBlock> temp = new HashMap<>();
 		temp.put(Character.UnicodeBlock.LATIN_1_SUPPLEMENT, Character.UnicodeBlock.BASIC_LATIN);
-		NORMALIZATION_MAP = Collections.unmodifiableMap(temp);
-	}
-
-	private static Character.UnicodeBlock normalize(Character.UnicodeBlock in) {
-		if (NORMALIZATION_MAP.containsKey(in)) {
-			return NORMALIZATION_MAP.get(in);
-		} else {
-			return in;
-		}
 	}
 
 	public static Spannable style(final Context context, Jid jid) {
@@ -117,29 +103,6 @@ public class IrregularUnicodeDetector {
 		}
 	}
 
-	private static Map<Character.UnicodeBlock, List<String>> mapCompat(String word) {
-		Map<Character.UnicodeBlock, List<String>> map = new HashMap<>();
-		final int length = word.length();
-		for (int offset = 0; offset < length; ) {
-			final int codePoint = word.codePointAt(offset);
-			offset += Character.charCount(codePoint);
-			if (!Character.isLetter(codePoint)) {
-				continue;
-			}
-			Character.UnicodeBlock block = normalize(Character.UnicodeBlock.of(codePoint));
-			List<String> codePoints;
-			if (map.containsKey(block)) {
-				codePoints = map.get(block);
-			} else {
-				codePoints = new ArrayList<>();
-				map.put(block, codePoints);
-			}
-			codePoints.add(String.copyValueOf(Character.toChars(codePoint)));
-		}
-		return map;
-	}
-
-	@TargetApi(Build.VERSION_CODES.N)
 	private static Map<Character.UnicodeScript, List<String>> map(String word) {
 		Map<Character.UnicodeScript, List<String>> map = new HashMap<>();
 		final int length = word.length();
@@ -161,11 +124,6 @@ public class IrregularUnicodeDetector {
 		return map;
 	}
 
-	private static Set<String> eliminateFirstAndGetCodePointsCompat(Map<Character.UnicodeBlock, List<String>> map) {
-		return eliminateFirstAndGetCodePoints(map, Character.UnicodeBlock.BASIC_LATIN);
-	}
-
-	@TargetApi(Build.VERSION_CODES.N)
 	private static Set<String> eliminateFirstAndGetCodePoints(Map<Character.UnicodeScript, List<String>> map) {
 		return eliminateFirstAndGetCodePoints(map, Character.UnicodeScript.COMMON);
 	}
@@ -189,21 +147,12 @@ public class IrregularUnicodeDetector {
 
 	private static Set<String> findIrregularCodePoints(String word) {
 		Set<String> codePoints;
-		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
-			final Map<Character.UnicodeBlock, List<String>> map = mapCompat(word);
-			final Set<String> set = asSet(map);
-			if (containsOnlyAmbiguousCyrillic(set)) {
-				return set;
-			}
-			codePoints = eliminateFirstAndGetCodePointsCompat(map);
-		} else {
-			final Map<Character.UnicodeScript, List<String>> map = map(word);
-			final Set<String> set = asSet(map);
-			if (containsOnlyAmbiguousCyrillic(set)) {
-				return set;
-			}
-			codePoints = eliminateFirstAndGetCodePoints(map);
+		final Map<Character.UnicodeScript, List<String>> map = map(word);
+		final Set<String> set = asSet(map);
+		if (containsOnlyAmbiguousCyrillic(set)) {
+			return set;
 		}
+		codePoints = eliminateFirstAndGetCodePoints(map);
 		return codePoints;
 	}
 

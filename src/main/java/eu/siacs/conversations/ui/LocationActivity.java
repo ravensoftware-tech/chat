@@ -1,7 +1,6 @@
 package eu.siacs.conversations.ui;
 
 import android.Manifest;
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -10,7 +9,6 @@ import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
@@ -39,7 +37,6 @@ import eu.siacs.conversations.services.QuickConversationsService;
 import eu.siacs.conversations.ui.util.LocationHelper;
 import eu.siacs.conversations.ui.widget.Marker;
 import eu.siacs.conversations.ui.widget.MyLocation;
-import eu.siacs.conversations.ui.util.SettingsUtils;
 
 public abstract class LocationActivity extends ActionBarActivity implements LocationListener {
 	protected LocationManager locationManager;
