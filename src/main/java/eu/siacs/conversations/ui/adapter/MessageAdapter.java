@@ -15,30 +15,24 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.AttrRes;
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.ImageViewCompat;
-import androidx.databinding.DataBindingUtil;
-import androidx.emoji2.emojipicker.EmojiViewItem;
-import androidx.emoji2.emojipicker.RecentEmojiProvider;
-
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.color.MaterialColors;
@@ -47,14 +41,10 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Lists;
-
 import eu.siacs.conversations.AppSettings;
 import eu.siacs.conversations.Config;
 import eu.siacs.conversations.R;
 import eu.siacs.conversations.crypto.axolotl.FingerprintStatus;
-import eu.siacs.conversations.databinding.DialogAddReactionBinding;
 import eu.siacs.conversations.entities.Account;
 import eu.siacs.conversations.entities.Conversation;
 import eu.siacs.conversations.entities.Conversational;
@@ -89,14 +79,11 @@ import eu.siacs.conversations.utils.TimeFrameUtils;
 import eu.siacs.conversations.utils.UIHelper;
 import eu.siacs.conversations.xmpp.Jid;
 import eu.siacs.conversations.xmpp.mam.MamReference;
-import kotlin.coroutines.Continuation;
-
 import java.net.URI;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
-import java.util.function.Consumer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -166,7 +153,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         return 5;
     }
 
-    private int getItemViewType(Message message) {
+    private static int getItemViewType(final Message message) {
         if (message.getType() == Message.TYPE_STATUS) {
             if (DATE_SEPARATOR_BODY.equals(message.getBody())) {
                 return DATE_SEPARATOR;
@@ -183,8 +170,8 @@ public class MessageAdapter extends ArrayAdapter<Message> {
     }
 
     @Override
-    public int getItemViewType(int position) {
-        return this.getItemViewType(getItem(position));
+    public int getItemViewType(final int position) {
+        return getItemViewType(getItem(position));
     }
 
     private void displayStatus(
@@ -192,7 +179,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
             final Message message,
             final int type,
             final BubbleColor bubbleColor) {
-        final int mergedStatus = message.getMergedStatus();
+        final int mergedStatus = message.getStatus();
         final boolean error;
         if (viewHolder.indicatorReceived != null) {
             viewHolder.indicatorReceived.setVisibility(View.GONE);
@@ -285,7 +272,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         }
 
         final String formattedTime =
-                UIHelper.readableTimeDifferenceFull(getContext(), message.getMergedTimeSent());
+                UIHelper.readableTimeDifferenceFull(getContext(), message.getTimeSent());
         final String bodyLanguage = message.getBodyLanguage();
         final ImmutableList.Builder<String> timeInfoBuilder = new ImmutableList.Builder<>();
         if (message.getStatus() <= Message.STATUS_RECEIVED) {
@@ -328,8 +315,8 @@ public class MessageAdapter extends ArrayAdapter<Message> {
             case Message.STATUS_WAITING -> R.drawable.ic_more_horiz_24dp;
             case Message.STATUS_UNSEND -> transferable == null ? null : R.drawable.ic_upload_24dp;
             case Message.STATUS_SEND -> R.drawable.ic_done_24dp;
-            case Message.STATUS_SEND_RECEIVED, Message.STATUS_SEND_DISPLAYED -> R.drawable
-                    .ic_done_all_24dp;
+            case Message.STATUS_SEND_RECEIVED, Message.STATUS_SEND_DISPLAYED ->
+                    R.drawable.ic_done_all_24dp;
             case Message.STATUS_SEND_FAILED -> {
                 final String errorMessage = message.getErrorMessage();
                 if (Message.ERROR_MESSAGE_CANCELLED.equals(errorMessage)) {
@@ -486,21 +473,17 @@ public class MessageAdapter extends ArrayAdapter<Message> {
 
         if (message.getBody() != null) {
             final String nick = UIHelper.getMessageDisplayName(message);
-            SpannableStringBuilder body = message.getMergedBody();
-            boolean hasMeCommand = message.hasMeCommand();
+            final boolean hasMeCommand = message.hasMeCommand();
+            final var rawBody = message.getBody();
+            final SpannableStringBuilder body;
+            if (rawBody.length() > Config.MAX_DISPLAY_MESSAGE_CHARS) {
+                body = new SpannableStringBuilder(rawBody, 0, Config.MAX_DISPLAY_MESSAGE_CHARS);
+                body.append("…");
+            } else {
+                body = new SpannableStringBuilder(rawBody);
+            }
             if (hasMeCommand) {
-                body = body.replace(0, Message.ME_COMMAND.length(), nick + " ");
-            }
-            if (body.length() > Config.MAX_DISPLAY_MESSAGE_CHARS) {
-                body = new SpannableStringBuilder(body, 0, Config.MAX_DISPLAY_MESSAGE_CHARS);
-                body.append("\u2026");
-            }
-            Message.MergeSeparator[] mergeSeparators =
-                    body.getSpans(0, body.length(), Message.MergeSeparator.class);
-            for (Message.MergeSeparator mergeSeparator : mergeSeparators) {
-                int start = body.getSpanStart(mergeSeparator);
-                int end = body.getSpanEnd(mergeSeparator);
-                body.setSpan(new DividerSpan(true), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                body.replace(0, Message.ME_COMMAND.length(), String.format("%s ", nick));
             }
             boolean startsWithQuote = handleTextQuotes(viewHolder.messageBody, body, bubbleColor);
             if (!message.isPrivateMessage()) {
@@ -747,7 +730,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
                 message.isValidInSession() && (!omemoEncryption || message.isTrusted());
         final Conversational conversation = message.getConversation();
         final Account account = conversation.getAccount();
-        final int type = getItemViewType(position);
+        final int type = getItemViewType(message);
         ViewHolder viewHolder;
         if (view == null) {
             viewHolder = new ViewHolder();
@@ -771,6 +754,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
                     view =
                             activity.getLayoutInflater()
                                     .inflate(R.layout.item_message_sent, parent, false);
+                    viewHolder.root = (ConstraintLayout) view;
                     viewHolder.message_box = view.findViewById(R.id.message_box);
                     viewHolder.contact_picture = view.findViewById(R.id.message_photo);
                     viewHolder.download_button = view.findViewById(R.id.download_button);
@@ -787,6 +771,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
                     view =
                             activity.getLayoutInflater()
                                     .inflate(R.layout.item_message_received, parent, false);
+                    viewHolder.root = (ConstraintLayout) view;
                     viewHolder.message_box = view.findViewById(R.id.message_box);
                     viewHolder.contact_picture = view.findViewById(R.id.message_photo);
                     viewHolder.download_button = view.findViewById(R.id.download_button);
@@ -919,7 +904,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
                 } else if (message.getCounterpart() != null
                         || message.getTrueCounterpart() != null
                         || (message.getCounterparts() != null
-                                && message.getCounterparts().size() > 0)) {
+                                && !message.getCounterparts().isEmpty())) {
                     showAvatar = true;
                     AvatarWorkerTask.loadAvatar(
                             message, viewHolder.contact_picture, R.dimen.avatar_on_status_message);
@@ -935,6 +920,12 @@ public class MessageAdapter extends ArrayAdapter<Message> {
             }
             return view;
         } else {
+            // sent and received bubbles
+            final var mergeIntoTop = mergeIntoTop(position, message);
+            final var mergeIntoBottom = mergeIntoBottom(position, message);
+            final var requiresAvatar = type == SENT ? !mergeIntoBottom : !mergeIntoTop;
+            setBubblePadding(viewHolder.root, mergeIntoTop, mergeIntoBottom);
+            setRequiresAvatar(viewHolder, requiresAvatar);
             viewHolder.message_box.setClipToOutline(true);
             AvatarWorkerTask.loadAvatar(message, viewHolder.contact_picture, R.dimen.avatar);
         }
@@ -1093,6 +1084,81 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         return view;
     }
 
+    private void setBubblePadding(
+            final ConstraintLayout root,
+            final boolean mergeIntoTop,
+            final boolean mergeIntoBottom) {
+        final var resources = root.getResources();
+        final var horizontal = resources.getDimensionPixelSize(R.dimen.bubble_horizontal_padding);
+        final int top =
+                resources.getDimensionPixelSize(
+                        mergeIntoTop
+                                ? R.dimen.bubble_vertical_padding_minimum
+                                : R.dimen.bubble_vertical_padding);
+        final int bottom =
+                resources.getDimensionPixelSize(
+                        mergeIntoBottom
+                                ? R.dimen.bubble_vertical_padding_minimum
+                                : R.dimen.bubble_vertical_padding);
+        root.setPadding(horizontal, top, horizontal, bottom);
+    }
+
+    private void setRequiresAvatar(final ViewHolder viewHolder, final boolean requiresAvatar) {
+        final var layoutParams = viewHolder.contact_picture.getLayoutParams();
+        if (requiresAvatar) {
+            final var resources = viewHolder.contact_picture.getResources();
+            final var avatarSize = resources.getDimensionPixelSize(R.dimen.bubble_avatar_size);
+            layoutParams.height = avatarSize;
+            viewHolder.contact_picture.setVisibility(View.VISIBLE);
+            viewHolder.message_box.setMinimumHeight(avatarSize);
+        } else {
+            layoutParams.height = 0;
+            viewHolder.contact_picture.setVisibility(View.INVISIBLE);
+            viewHolder.message_box.setMinimumHeight(0);
+        }
+        viewHolder.contact_picture.setLayoutParams(layoutParams);
+    }
+
+    private boolean mergeIntoTop(final int position, final Message message) {
+        if (position < 0) {
+            return false;
+        }
+        final var top = getItem(position - 1);
+        return merge(top, message);
+    }
+
+    private boolean mergeIntoBottom(final int position, final Message message) {
+        final Message bottom;
+        try {
+            bottom = getItem(position + 1);
+        } catch (final IndexOutOfBoundsException e) {
+            return false;
+        }
+        return merge(message, bottom);
+    }
+
+    private static boolean merge(final Message a, final Message b) {
+        if (getItemViewType(a) != getItemViewType(b)) {
+            return false;
+        }
+        if (a.getConversation().getMode() == Conversation.MODE_MULTI
+                && a.getStatus() == Message.STATUS_RECEIVED) {
+            final var occupantIdA = a.getOccupantId();
+            final var occupantIdB = b.getOccupantId();
+            if (occupantIdA != null && occupantIdB != null) {
+                if (!occupantIdA.equals(occupantIdB)) {
+                    return false;
+                }
+            }
+            final var counterPartA = a.getCounterpart();
+            final var counterPartB = b.getCounterpart();
+            if (counterPartA == null || !counterPartA.equals(counterPartB)) {
+                return false;
+            }
+        }
+        return b.getTimeSent() - a.getTimeSent() <= Config.MESSAGE_MERGE_WINDOW;
+    }
+
     private boolean showDetailedReaction(final Message message, final String emoji) {
         final var c = message.getConversation();
         if (c instanceof Conversation conversation && c.getMode() == Conversational.MODE_MULTI) {
@@ -1211,12 +1277,15 @@ public class MessageAdapter extends ArrayAdapter<Message> {
             final View view, final BubbleColor bubbleColor) {
         final @AttrRes int colorAttributeResId =
                 switch (bubbleColor) {
-                    case SURFACE -> Activities.isNightMode(view.getContext())
-                            ? com.google.android.material.R.attr.colorSurfaceContainerHigh
-                            : com.google.android.material.R.attr.colorSurfaceContainerLow;
-                    case SURFACE_HIGH -> Activities.isNightMode(view.getContext())
-                            ? com.google.android.material.R.attr.colorSurfaceContainerHighest
-                            : com.google.android.material.R.attr.colorSurfaceContainerHigh;
+                    case SURFACE ->
+                            Activities.isNightMode(view.getContext())
+                                    ? com.google.android.material.R.attr.colorSurfaceContainerHigh
+                                    : com.google.android.material.R.attr.colorSurfaceContainerLow;
+                    case SURFACE_HIGH ->
+                            Activities.isNightMode(view.getContext())
+                                    ? com.google.android.material.R.attr
+                                            .colorSurfaceContainerHighest
+                                    : com.google.android.material.R.attr.colorSurfaceContainerHigh;
                     case PRIMARY -> com.google.android.material.R.attr.colorPrimaryContainer;
                     case SECONDARY -> com.google.android.material.R.attr.colorSecondaryContainer;
                     case TERTIARY -> com.google.android.material.R.attr.colorTertiaryContainer;
@@ -1315,6 +1384,7 @@ public class MessageAdapter extends ArrayAdapter<Message> {
 
     private static class ViewHolder {
 
+        private ConstraintLayout root;
         public MaterialButton load_more_messages;
         public ImageView edit_indicator;
         public RelativeLayout audioPlayer;
