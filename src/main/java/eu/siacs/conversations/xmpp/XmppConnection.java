@@ -2125,7 +2125,7 @@ public class XmppConnection implements Runnable {
         mWaitForDisco.set(waitForDisco);
         this.lastDiscoStarted = SystemClock.elapsedRealtime();
         mXmppConnectionService.scheduleWakeUpCall(
-                Config.CONNECT_DISCO_TIMEOUT, account.getUuid().hashCode());
+                Config.CONNECT_DISCO_TIMEOUT * 1000L, account.getUuid().hashCode());
         final Element caps = streamFeatures.findChild("c");
         final String hash = caps == null ? null : caps.getAttribute("hash");
         final String ver = caps == null ? null : caps.getAttribute("ver");
