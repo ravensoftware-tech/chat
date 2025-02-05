@@ -108,6 +108,7 @@ public class NotificationService {
     private final HashMap<Conversation, AtomicInteger> mBacklogMessageCounter = new HashMap<>();
     private final LinkedHashMap<Conversational, MissedCallsInfo> mMissedCalls =
             new LinkedHashMap<>();
+    private final Map<String, Message> possiblyMissedCalls = new HashMap<>();
     private Conversation mOpenConversation;
     private boolean mIsInForeground;
     private long mLastNotification;
@@ -453,6 +454,12 @@ public class NotificationService {
                 updateNotification(count > 0, conversations);
             }
         }
+        synchronized (possiblyMissedCalls) {
+            for (final var entry : possiblyMissedCalls.entrySet()) {
+               pushFromBacklog(entry.getValue());
+            }
+            possiblyMissedCalls.clear();
+        }
         synchronized (mMissedCalls) {
             updateMissedCallNotifications(mMissedCalls.keySet());
         }
@@ -784,6 +791,12 @@ public class NotificationService {
             mMissedCalls.put(conversation, new MissedCallsInfo(message.getTimeSent()));
         } else {
             info.newMissedCall(message.getTimeSent());
+        }
+    }
+
+    public void possiblyMissedCall(final String sessionId, final Message message) {
+        synchronized (possiblyMissedCalls) {
+            possiblyMissedCalls.put(sessionId, message);
         }
     }
 

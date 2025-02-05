@@ -1288,7 +1288,10 @@ public class MessageParser extends AbstractParser
                                     message.setServerMsgId(serverMsgId);
                                     message.setTime(timestamp);
                                     message.setBody(new RtpSessionStatus(false, 0).toString());
+                                    message.markUnread();
                                     c.add(message);
+                                    mXmppConnectionService.getNotificationService().possiblyMissedCall(c.getUuid() + sessionId, message);
+                                    query.incrementActualMessageCount();
                                     mXmppConnectionService.databaseBackend.createMessage(message);
                                 }
                             } else if ("proceed".equals(action)) {
@@ -1307,6 +1310,9 @@ public class MessageParser extends AbstractParser
                                         message.setServerMsgId(serverMsgId);
                                     }
                                     message.setTime(timestamp);
+                                    message.markRead();
+                                    mXmppConnectionService.getNotificationService().possiblyMissedCall(c.getUuid() + sessionId, message);
+                                    query.incrementActualMessageCount();
                                     mXmppConnectionService.updateMessage(message, true);
                                 } else {
                                     Log.d(
