@@ -2982,6 +2982,13 @@ public class XmppConnectionService extends Service {
         updateAccountUi();
         syncEnabledAccountSetting();
         toggleForegroundService();
+        if (this.accounts.size() == 2) {
+            // Enable multi-accounts accessibility features
+            getPreferences()
+                    .edit() 
+                    .putBoolean(AppSettings.SHOW_CONVERSATIONS_SENDER_AVATAR, true)
+                    .apply();
+        }
     }
 
     private void syncEnabledAccountSetting() {
@@ -3206,6 +3213,14 @@ public class XmppConnectionService extends Service {
             mNotificationService.updateErrorNotification();
             syncEnabledAccountSetting();
             toggleForegroundService();
+
+            if (this.accounts.size() == 1) {
+                // Disable multi-accounts accessibility features
+                getPreferences()
+                        .edit()
+                        .putBoolean(AppSettings.SHOW_CONVERSATIONS_SENDER_AVATAR, false)
+                        .apply();
+            }
         }
     }
 

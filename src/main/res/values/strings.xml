@@ -1102,4 +1102,6 @@
     <string name="custom_notifications_enable">Enable customized notification settings (importance, sound, vibration) settings for this conversation?</string>
     <string name="delete_avatar_message">Would you like to delete your avatar? Some clients might continue to display a cached copy of your avatar.</string>
     <string name="show_to_contacts_only">Show to contacts only</string>
+    <string name="show_conversations_sender_avatar">Display sender account</string>
+    <string name="show_conversations_sender_avatar_summary">Display the sender\'s account avatar at the bottom right of a conversation avatar.</string>
 </resources>

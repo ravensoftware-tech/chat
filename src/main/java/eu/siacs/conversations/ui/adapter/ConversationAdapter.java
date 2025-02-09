@@ -39,9 +39,16 @@ public class ConversationAdapter
     private final List<Conversation> conversations;
     private OnConversationClickListener listener;
 
-    public ConversationAdapter(XmppActivity activity, List<Conversation> conversations) {
+    private boolean showSenderAvatar;
+
+    public void setShowSenderAvatar(boolean showSenderAvatar) {
+        this.showSenderAvatar = showSenderAvatar;
+    }
+
+    public ConversationAdapter(XmppActivity activity, List<Conversation> conversations, boolean showSenderAvatar) {
         this.activity = activity;
         this.conversations = conversations;
+        this.showSenderAvatar = showSenderAvatar;
     }
 
     @NonNull
@@ -252,8 +259,22 @@ public class ConversationAdapter
                 UIHelper.readableTimeDifference(activity, timestamp));
         AvatarWorkerTask.loadAvatar(
                 conversation,
-                viewHolder.binding.conversationImage,
+                viewHolder.binding.conversationImageReceiver,
                 R.dimen.avatar_on_conversation_overview);
+
+        if (this.showSenderAvatar) {
+            AvatarWorkerTask.loadAvatar(
+                    conversation.getAccount(),
+                    viewHolder.binding.conversationImageSender,
+                    R.dimen.avatar_on_conversation_overview);
+            viewHolder.binding.conversationImageBg.getBackground().setTint(
+                    conversation.getAccount().getAvatarBackgroundColor()
+            );
+            viewHolder.binding.conversationImageBg.setVisibility(View.VISIBLE);
+        } else {
+            viewHolder.binding.conversationImageBg.setVisibility(View.GONE);
+        }
+
         viewHolder.itemView.setOnClickListener(v -> listener.onConversationClick(v, conversation));
     }
 

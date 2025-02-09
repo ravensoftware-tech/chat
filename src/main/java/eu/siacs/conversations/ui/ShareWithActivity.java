@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
+
+import eu.siacs.conversations.AppSettings;
 import eu.siacs.conversations.Config;
 import eu.siacs.conversations.R;
 import eu.siacs.conversations.databinding.ActivityShareWithBinding;
@@ -110,7 +112,7 @@ public class ShareWithActivity extends XmppActivity
         Activities.setStatusAndNavigationBarColors(this, binding.getRoot());
         setTitle(R.string.title_activity_share_with);
 
-        mAdapter = new ConversationAdapter(this, this.mConversations);
+        mAdapter = new ConversationAdapter(this, this.mConversations, this.getPreferences().getBoolean(AppSettings.SHOW_CONVERSATIONS_SENDER_AVATAR, false));
         binding.chooseConversationList.setLayoutManager(
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         binding.chooseConversationList.setAdapter(mAdapter);
@@ -296,6 +298,7 @@ public class ShareWithActivity extends XmppActivity
         // TODO inject desired order to not resort on refresh
         xmppConnectionService.populateWithOrderedConversations(
                 mConversations, this.share != null && this.share.uris.isEmpty(), false);
+        mAdapter.setShowSenderAvatar(getPreferences().getBoolean(AppSettings.SHOW_CONVERSATIONS_SENDER_AVATAR, false));
         mAdapter.notifyDataSetChanged();
     }
 }

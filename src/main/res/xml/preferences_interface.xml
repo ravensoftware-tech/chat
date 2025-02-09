@@ -74,4 +74,13 @@
             android:summary="@string/pref_enter_is_send_summary"
             android:title="@string/pref_enter_is_send" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="Multiple accounts Accessibility">
+        <SwitchPreferenceCompat
+            android:defaultValue="@bool/show_conversations_sender_avatar"
+            android:icon="@drawable/ic_show_conversations_sender_avatar_24dp"
+            android:key="show_conversations_sender_avatar"
+            android:summary="@string/show_conversations_sender_avatar_summary"
+            android:title="@string/show_conversations_sender_avatar"
+            />
+    </PreferenceCategory>
 </PreferenceScreen>

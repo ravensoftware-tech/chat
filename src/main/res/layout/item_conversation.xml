@@ -21,20 +21,48 @@
                 android:orientation="horizontal"
                 android:padding="8dp">
 
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/conversation_image"
+                <RelativeLayout
+                    android:id="@+id/conversation_image_layout"
                     android:layout_width="56dp"
                     android:layout_height="56dp"
-                    android:layout_alignParentStart="true"
-                    android:scaleType="centerCrop"
-                    app:riv_corner_radius="8dp" />
+                    android:layout_alignParentStart="true">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/conversation_image_receiver"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:scaleType="centerCrop"
+                        app:riv_corner_radius="8dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/conversation_image_bg"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/background_conversation_image_source"
+                        >
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/conversation_image_sender"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_margin="2dp"
+                            android:scaleType="centerCrop"
+                            app:riv_corner_radius="4dp"
+                            />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/avatar_item_distance"
-                    android:layout_toEndOf="@+id/conversation_image">
+                    android:layout_toEndOf="@+id/conversation_image_layout">
 
                     <TextView
                         android:id="@+id/conversation_name"

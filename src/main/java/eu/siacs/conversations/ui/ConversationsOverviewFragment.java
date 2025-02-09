@@ -53,6 +53,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.common.collect.Collections2;
+
+import eu.siacs.conversations.AppSettings;
 import eu.siacs.conversations.BuildConfig;
 import eu.siacs.conversations.Config;
 import eu.siacs.conversations.R;
@@ -326,7 +328,8 @@ public class ConversationsOverviewFragment extends XmppFragment {
         this.binding.fab.setOnClickListener(
                 (view) -> StartConversationActivity.launch(getActivity()));
 
-        this.conversationsAdapter = new ConversationAdapter(this.activity, this.conversations);
+        this.conversationsAdapter = new ConversationAdapter(this.activity, this.conversations,
+                activity.getPreferences().getBoolean(AppSettings.SHOW_CONVERSATIONS_SENDER_AVATAR, false));
         this.conversationsAdapter.setConversationClickListener(
                 (view, conversation) -> {
                     if (activity instanceof OnConversationSelected) {
@@ -473,6 +476,7 @@ public class ConversationsOverviewFragment extends XmppFragment {
             }
         }
         this.conversationsAdapter.notifyDataSetChanged();
+        this.conversationsAdapter.setShowSenderAvatar(activity.getPreferences().getBoolean(AppSettings.SHOW_CONVERSATIONS_SENDER_AVATAR, false));
         ScrollState scrollState = pendingScrollState.pop();
         if (scrollState != null) {
             setScrollPosition(scrollState);
