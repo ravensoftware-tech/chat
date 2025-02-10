@@ -329,7 +329,9 @@ public class ConversationsOverviewFragment extends XmppFragment {
                 (view) -> StartConversationActivity.launch(getActivity()));
 
         this.conversationsAdapter = new ConversationAdapter(this.activity, this.conversations,
-                activity.getPreferences().getBoolean(AppSettings.SHOW_CONVERSATIONS_SENDER_AVATAR, false));
+                activity.getPreferences().getBoolean(AppSettings.SHOW_CONVERSATIONS_SENDER_AVATAR, false),
+                activity.getPreferences().getBoolean(AppSettings.MULTIPLE_ACCOUNTS_COLORING, false)
+                );
         this.conversationsAdapter.setConversationClickListener(
                 (view, conversation) -> {
                     if (activity instanceof OnConversationSelected) {
@@ -477,6 +479,7 @@ public class ConversationsOverviewFragment extends XmppFragment {
         }
         this.conversationsAdapter.notifyDataSetChanged();
         this.conversationsAdapter.setShowSenderAvatar(activity.getPreferences().getBoolean(AppSettings.SHOW_CONVERSATIONS_SENDER_AVATAR, false));
+        this.conversationsAdapter.setMultipleAccountsColoring(activity.getPreferences().getBoolean(AppSettings.MULTIPLE_ACCOUNTS_COLORING, false));
         ScrollState scrollState = pendingScrollState.pop();
         if (scrollState != null) {
             setScrollPosition(scrollState);

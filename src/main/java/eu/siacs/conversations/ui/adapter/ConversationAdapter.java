@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.color.MaterialColors;
 import com.google.common.base.Optional;
 
+import eu.siacs.conversations.AppSettings;
 import eu.siacs.conversations.R;
 import eu.siacs.conversations.databinding.ItemConversationBinding;
 import eu.siacs.conversations.entities.Conversation;
@@ -40,15 +41,19 @@ public class ConversationAdapter
     private OnConversationClickListener listener;
 
     private boolean showSenderAvatar;
-
     public void setShowSenderAvatar(boolean showSenderAvatar) {
         this.showSenderAvatar = showSenderAvatar;
     }
 
-    public ConversationAdapter(XmppActivity activity, List<Conversation> conversations, boolean showSenderAvatar) {
+    private boolean multipleAccountsColoring;
+    public void setMultipleAccountsColoring(boolean multipleAccountsColoring) {
+        this.multipleAccountsColoring = multipleAccountsColoring;
+    }
+    public ConversationAdapter(XmppActivity activity, List<Conversation> conversations, boolean showSenderAvatar, boolean multipleAccountsColoring) {
         this.activity = activity;
         this.conversations = conversations;
         this.showSenderAvatar = showSenderAvatar;
+        this.multipleAccountsColoring = multipleAccountsColoring;
     }
 
     @NonNull
@@ -267,9 +272,18 @@ public class ConversationAdapter
                     conversation.getAccount(),
                     viewHolder.binding.conversationImageSender,
                     R.dimen.avatar_on_conversation_overview);
-            viewHolder.binding.conversationImageBg.getBackground().setTint(
-                    conversation.getAccount().getAvatarBackgroundColor()
-            );
+            if (this.multipleAccountsColoring) {
+                viewHolder.binding.conversationImageBg.getBackground().setTint(
+                        conversation.getAccount().getAvatarBackgroundColor()
+                );
+            } else {
+                viewHolder.binding.conversationImageBg.getBackground().setTint(
+                        com.google.android.material.color.MaterialColors.getColor(
+                                viewHolder.binding.frame,
+                                com.google.android.material.R.attr.colorSurface
+                        )
+                );
+            }
             viewHolder.binding.conversationImageBg.setVisibility(View.VISIBLE);
         } else {
             viewHolder.binding.conversationImageBg.setVisibility(View.GONE);

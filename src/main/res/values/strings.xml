@@ -1104,4 +1104,6 @@
     <string name="show_to_contacts_only">Show to contacts only</string>
     <string name="show_conversations_sender_avatar">Display sender account</string>
     <string name="show_conversations_sender_avatar_summary">Display the sender\'s account avatar at the bottom right of a conversation avatar.</string>
+    <string name="multiple_accounts_coloring">Multiple accounts coloring</string>
+    <string name="multiple_accounts_coloring_summary">Display a color in order to distinguish your different accounts (useful when you use the same profile picture).</string>
 </resources>

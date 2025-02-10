@@ -82,5 +82,12 @@
             android:summary="@string/show_conversations_sender_avatar_summary"
             android:title="@string/show_conversations_sender_avatar"
             />
+        <SwitchPreferenceCompat
+            android:defaultValue="@bool/multiple_accounts_coloring"
+            android:icon="@drawable/ic_colors_24dp"
+            android:key="multiple_accounts_coloring"
+            android:summary="@string/multiple_accounts_coloring_summary"
+            android:title="@string/multiple_accounts_coloring"
+            />
     </PreferenceCategory>
 </PreferenceScreen>

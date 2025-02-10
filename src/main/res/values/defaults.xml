@@ -51,4 +51,5 @@
     <bool name="call_integration">true</bool>
     <bool name="align_start">false</bool>
     <bool name="show_conversations_sender_avatar">false</bool>
+    <bool name="multiple_accounts_coloring">false</bool>
 </resources>

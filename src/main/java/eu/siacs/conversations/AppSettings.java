@@ -25,6 +25,8 @@ public class AppSettings {
 
     public static final String SHOW_CONVERSATIONS_SENDER_AVATAR = "show_conversations_sender_avatar";
 
+    public static final String MULTIPLE_ACCOUNTS_COLORING = "multiple_accounts_coloring";
+
     public static final String OMEMO = "omemo";
     public static final String ALLOW_SCREENSHOTS = "allow_screenshots";
     public static final String RINGTONE = "call_ringtone";
