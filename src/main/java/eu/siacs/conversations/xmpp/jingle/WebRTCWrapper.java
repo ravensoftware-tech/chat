@@ -335,9 +335,9 @@ public class WebRTCWrapper {
             this.videoSourceWrapper.startCapture();
             return true;
         }
-        final VideoSourceWrapper videoSourceWrapper;
+
         try {
-            videoSourceWrapper = initializeVideoSourceWrapper();
+            this.videoSourceWrapper = initializeVideoSourceWrapper();
         } catch (final IllegalStateException e) {
             Log.d(Config.LOGTAG, "could not add video track", e);
             return false;
@@ -346,7 +346,7 @@ public class WebRTCWrapper {
                 requirePeerConnectionFactory()
                         .createVideoTrack(
                                 TrackWrapper.id(VideoTrack.class),
-                                videoSourceWrapper.getVideoSource());
+                                this.videoSourceWrapper.getVideoSource());
         this.localVideoTrack = TrackWrapper.addTrack(peerConnection, videoTrack);
         return true;
     }
