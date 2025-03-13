@@ -1,6 +1,9 @@
 package eu.siacs.conversations.xmpp.jingle;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.media.projection.MediaProjection;
 import android.os.Build;
 import android.util.Log;
 import com.google.common.base.Optional;
@@ -26,6 +29,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import org.webrtc.AudioSource;
 import org.webrtc.AudioTrack;
+import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CandidatePairChangeEvent;
 import org.webrtc.DataChannel;
 import org.webrtc.DefaultVideoDecoderFactory;
@@ -39,6 +43,7 @@ import org.webrtc.PeerConnection;
 import org.webrtc.PeerConnectionFactory;
 import org.webrtc.RtpReceiver;
 import org.webrtc.RtpTransceiver;
+import org.webrtc.ScreenCapturerAndroid;
 import org.webrtc.SdpObserver;
 import org.webrtc.SessionDescription;
 import org.webrtc.VideoTrack;
@@ -78,6 +83,7 @@ public class WebRTCWrapper {
     private TrackWrapper<AudioTrack> localAudioTrack = null;
     private TrackWrapper<VideoTrack> localVideoTrack = null;
     private VideoTrack remoteVideoTrack = null;
+    private boolean doingScreencasting = false;
 
     private final SettableFuture<Void> iceGatheringComplete = SettableFuture.create();
     private final PeerConnection.Observer peerConnectionObserver =
@@ -198,8 +204,10 @@ public class WebRTCWrapper {
     @Nullable private PeerConnection peerConnection = null;
     private Context context = null;
     private EglBase eglBase = null;
-    private VideoSourceWrapper videoSourceWrapper;
-
+    private VideoSourceWrapper videoSourceWrapperCamera = null;
+    private VideoSourceWrapper videoSourceWrapperScreencast = null;
+    private VideoTrack localVideoTrackCamera = null;
+    private VideoTrack localVideoTrackScreencast = null;
     WebRTCWrapper(final EventCallback eventCallback) {
         this.eventCallback = eventCallback;
     }
@@ -281,7 +289,7 @@ public class WebRTCWrapper {
     }
 
     private VideoSourceWrapper initializeVideoSourceWrapper() {
-        final VideoSourceWrapper existingVideoSourceWrapper = this.videoSourceWrapper;
+        final VideoSourceWrapper existingVideoSourceWrapper = this.videoSourceWrapperCamera;
         if (existingVideoSourceWrapper != null) {
             existingVideoSourceWrapper.startCapture();
             return existingVideoSourceWrapper;
@@ -294,7 +302,7 @@ public class WebRTCWrapper {
         videoSourceWrapper.initialize(
                 requirePeerConnectionFactory(), requireContext(), eglBase.getEglBaseContext());
         videoSourceWrapper.startCapture();
-        this.videoSourceWrapper = videoSourceWrapper;
+        this.videoSourceWrapperCamera = videoSourceWrapper;
         return videoSourceWrapper;
     }
 
@@ -322,6 +330,50 @@ public class WebRTCWrapper {
         this.localAudioTrack = TrackWrapper.addTrack(peerConnection, audioTrack);
         return true;
     }
+    public void addScreencastTrack(Intent mp) {
+        if( this.localVideoTrackScreencast == null ) {
+            assert mp != null;
+            org.webrtc.VideoCapturer vc = new ScreenCapturerAndroid(
+                    mp, new MediaProjection.Callback() {
+                @Override
+                public void onStop() {
+                    Log.e(Config.LOGTAG, "User revoked permission to capture the screen.");
+                }
+            });
+            this.videoSourceWrapperScreencast = new VideoSourceWrapper(vc,
+                    new CameraEnumerationAndroid.CaptureFormat(
+                            Resources.getSystem().getDisplayMetrics().widthPixels
+                            , Resources.getSystem().getDisplayMetrics().heightPixels
+                            , 15
+                            , 15),
+                    new java.util.HashSet<>(Set.of("Screencast")));
+            this.videoSourceWrapperScreencast.initialize(
+                    requirePeerConnectionFactory(), requireContext(), eglBase.getEglBaseContext());
+            this.localVideoTrackScreencast =
+                    requirePeerConnectionFactory()
+                            .createVideoTrack(
+                                    TrackWrapper.id(VideoTrack.class),
+                                    videoSourceWrapperScreencast.getVideoSource());
+            this.videoSourceWrapperScreencast.startCapture();
+        }
+        final TrackWrapper<VideoTrack> existing = this.localVideoTrack;
+        if (existing == null) {
+            Log.d(Config.LOGTAG, "This should not happen.");
+        }
+        assert existing != null;
+        assert peerConnection != null;
+        final RtpTransceiver transceiver =
+                TrackWrapper.getTransceiver(peerConnection, existing);
+        transceiver.getSender().setTrack(this.localVideoTrackScreencast, false);
+        transceiver.setDirection(RtpTransceiver.RtpTransceiverDirection.SEND_RECV);
+        this.localVideoTrackScreencast.setEnabled(true);
+        this.doingScreencasting = true;
+    }
+    public void RemoveScreencastTrack() {
+        assert peerConnection != null;
+        this.localVideoTrack.rtpSender.setTrack(this.localVideoTrackCamera,false);
+        this.doingScreencasting = false;
+    }
 
     private boolean addVideoTrack(final PeerConnection peerConnection) {
         final TrackWrapper<VideoTrack> existing = this.localVideoTrack;
@@ -333,7 +385,7 @@ public class WebRTCWrapper {
                 return false;
             }
             transceiver.setDirection(RtpTransceiver.RtpTransceiverDirection.SEND_RECV);
-            this.videoSourceWrapper.startCapture();
+            this.videoSourceWrapperCamera.startCapture();
             return true;
         }
         final VideoSourceWrapper videoSourceWrapper;
@@ -349,6 +401,8 @@ public class WebRTCWrapper {
                                 TrackWrapper.id(VideoTrack.class),
                                 videoSourceWrapper.getVideoSource());
         this.localVideoTrack = TrackWrapper.addTrack(peerConnection, videoTrack);
+        this.localVideoTrackCamera = videoTrack;
+        this.videoSourceWrapperCamera = videoSourceWrapper;
         return true;
     }
 
@@ -363,7 +417,7 @@ public class WebRTCWrapper {
             }
             exactTransceiver.setDirection(RtpTransceiver.RtpTransceiverDirection.INACTIVE);
         }
-        final VideoSourceWrapper videoSourceWrapper = this.videoSourceWrapper;
+        final VideoSourceWrapper videoSourceWrapper = this.videoSourceWrapperCamera;
         if (videoSourceWrapper != null) {
             try {
                 videoSourceWrapper.stopCapture();
@@ -428,7 +482,7 @@ public class WebRTCWrapper {
     synchronized void close() {
         final PeerConnection peerConnection = this.peerConnection;
         final PeerConnectionFactory peerConnectionFactory = this.peerConnectionFactory;
-        final VideoSourceWrapper videoSourceWrapper = this.videoSourceWrapper;
+        final VideoSourceWrapper videoSourceWrapper = this.videoSourceWrapperCamera;
         final EglBase eglBase = this.eglBase;
         if (peerConnection != null) {
             this.peerConnection = null;
@@ -437,7 +491,7 @@ public class WebRTCWrapper {
         this.localVideoTrack = null;
         this.remoteVideoTrack = null;
         if (videoSourceWrapper != null) {
-            this.videoSourceWrapper = null;
+            this.videoSourceWrapperCamera = null;
             try {
                 videoSourceWrapper.stopCapture();
             } catch (final InterruptedException e) {
@@ -445,6 +499,11 @@ public class WebRTCWrapper {
             }
             videoSourceWrapper.dispose();
         }
+        if (this.videoSourceWrapperScreencast != null) {
+            this.videoSourceWrapperScreencast.dispose();
+            this.videoSourceWrapperScreencast = null;
+        }
+
         if (eglBase != null) {
             eglBase.release();
             this.eglBase = null;
@@ -468,17 +527,17 @@ public class WebRTCWrapper {
     }
 
     boolean isCameraSwitchable() {
-        final VideoSourceWrapper videoSourceWrapper = this.videoSourceWrapper;
+        final VideoSourceWrapper videoSourceWrapper = this.videoSourceWrapperCamera;
         return videoSourceWrapper != null && videoSourceWrapper.isCameraSwitchable();
     }
 
     boolean isFrontCamera() {
-        final VideoSourceWrapper videoSourceWrapper = this.videoSourceWrapper;
+        final VideoSourceWrapper videoSourceWrapper = this.videoSourceWrapperCamera;
         return videoSourceWrapper == null || videoSourceWrapper.isFrontCamera();
     }
 
     ListenableFuture<Boolean> switchCamera() {
-        final VideoSourceWrapper videoSourceWrapper = this.videoSourceWrapper;
+        final VideoSourceWrapper videoSourceWrapper = this.videoSourceWrapperCamera;
         if (videoSourceWrapper == null) {
             return Futures.immediateFailedFuture(
                     new IllegalStateException("VideoSourceWrapper has not been initialized"));
@@ -530,6 +589,10 @@ public class WebRTCWrapper {
         if (audioTrack.isPresent()) {
             setEnabled(audioTrack.get(), enabled);
         }
+    }
+
+    public boolean isScreensharingEnabled() {
+        return this.doingScreencasting;
     }
 
     boolean isVideoEnabled() {

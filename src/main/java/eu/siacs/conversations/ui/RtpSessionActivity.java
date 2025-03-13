@@ -11,11 +11,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.media.projection.MediaProjectionManager;
 import android.opengl.GLException;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Rational;
 import android.view.KeyEvent;
@@ -24,6 +26,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -181,6 +186,24 @@ public class RtpSessionActivity extends XmppActivity
         this.binding.localVideo.setOnClickListener(this::onVideoScreenClick);
         setSupportActionBar(binding.toolbar);
         Activities.setStatusAndNavigationBarColors(this, binding.getRoot());
+        mMediaSteamPermissionGetterThunk = this.registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                this::ProcessReceivedScreencastPermissionAndRunRealScreensharing);
+    }
+    public ActivityResultLauncher<Intent> mMediaSteamPermissionGetterThunk;
+    public Intent mProjectionPermissionResultData = null;
+    public static DisplayMetrics metrics = new DisplayMetrics();
+    public void ProcessReceivedScreencastPermissionAndRunRealScreensharing
+            (androidx.activity.result.ActivityResult result) {
+        if (result.getResultCode() == RESULT_OK) {
+            assert result.getData() != null : "Getting permission failed!";
+            this.mProjectionPermissionResultData = result.getData();
+            runOnUiThread(this::enableScreenshare); // uses this.mProjectionPermissionResultData
+        } else {
+            final String e = "Screensharing permission denied.";
+            Log.e(Config.LOGTAG, e);
+            Toast.makeText(this, e, Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void onVideoScreenClick(final View view) {
@@ -333,7 +356,7 @@ public class RtpSessionActivity extends XmppActivity
     private void requestPermissionAndSwitchToVideo() {
         final List<String> permissions = permissions(ImmutableSet.of(Media.VIDEO, Media.AUDIO));
         if (PermissionUtils.hasPermission(this, permissions, REQUEST_ADD_CONTENT)) {
-            switchToVideo();
+            this.switchToVideo();
         }
     }
 
@@ -1058,19 +1081,23 @@ public class RtpSessionActivity extends XmppActivity
                 final JingleRtpConnection rtpConnection = requireRtpConnection();
                 updateInCallButtonConfigurationVideo(
                         rtpConnection.isVideoEnabled(), rtpConnection.isCameraSwitchable());
+                updateInCallButtonConfigurationScreenSharing(requireRtpConnection().isScreensharingEnabled());
             } else {
                 final CallIntegration callIntegration = requireRtpConnection().getCallIntegration();
                 updateInCallButtonConfigurationSpeaker(
                         callIntegration.getSelectedAudioDevice(),
                         callIntegration.getAudioDevices().size());
                 this.binding.inCallActionFarRight.setVisibility(View.GONE);
+                this.binding.inCallActionScreenshare.setVisibility(View.GONE);
             }
+
             if (media.contains(Media.AUDIO)) {
                 updateInCallButtonConfigurationMicrophone(
                         requireRtpConnection().isMicrophoneEnabled());
             } else {
                 this.binding.inCallActionLeft.setVisibility(View.GONE);
             }
+
         } else if (STATES_SHOWING_SPEAKER_CONFIGURATION.contains(state)
                 && showButtons
                 && Media.audioOnly(media)) {
@@ -1089,6 +1116,7 @@ public class RtpSessionActivity extends XmppActivity
             this.binding.inCallActionLeft.setVisibility(View.GONE);
             this.binding.inCallActionRight.setVisibility(View.GONE);
             this.binding.inCallActionFarRight.setVisibility(View.GONE);
+            this.binding.inCallActionScreenshare.setVisibility(View.GONE);
         }
     }
 
@@ -1193,6 +1221,9 @@ public class RtpSessionActivity extends XmppActivity
                 MainThreadExecutor.getInstance());
     }
 
+    public void enableScreenshare() {
+        requireRtpConnection().setScreencastEnabled(this.mProjectionPermissionResultData);
+    }
     private void enableVideo(final View view) {
         resetVisibilityToggleExecutor();
         try {
@@ -1232,6 +1263,39 @@ public class RtpSessionActivity extends XmppActivity
         }
         setVisibleAndShow(this.binding.inCallActionLeft);
     }
+    void switchToScreenshare(final View v) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+        if( this.mProjectionPermissionResultData == null) {
+            Log.e(Config.LOGTAG, "requesting screensharing permission.");
+            var requestIntent = ((MediaProjectionManager)
+                    this.getSystemService(Context.MEDIA_PROJECTION_SERVICE))
+                    .createScreenCaptureIntent();
+            mMediaSteamPermissionGetterThunk.launch(requestIntent);
+            return;
+        } else {
+            this.enableScreenshare();
+        } }
+        else {
+            // https://github.com/JGeraldoLima/android-media-projection-sample/tree/main
+            Toast.makeText(this, "Not supported on Android > 13 (yet).", Toast.LENGTH_SHORT)
+                    .show();
+        }
+    }
+    void switchFromScreenshare(final View v) {
+        requireRtpConnection().setScreencastDisabled();
+    }
+
+    @SuppressLint("RestrictedApi")
+    private void updateInCallButtonConfigurationScreenSharing(final boolean screenshareEnabled) {
+        if (screenshareEnabled) {
+            this.binding.inCallActionScreenshare.setImageResource(R.drawable.ic_screen_share_stop_24dp);
+            this.binding.inCallActionScreenshare.setOnClickListener(this::switchFromScreenshare);
+        } else {
+            this.binding.inCallActionScreenshare.setImageResource(R.drawable.ic_screen_share_24dp);
+            this.binding.inCallActionScreenshare.setOnClickListener(this::switchToScreenshare);
+        }
+        setVisibleAndShow(this.binding.inCallActionScreenshare);
+    }
 
     private void updateCallDuration() {
         final JingleRtpConnection connection =
@@ -1269,6 +1333,8 @@ public class RtpSessionActivity extends XmppActivity
         binding.endCall.hide();
         binding.inCallActionRight.hide();
         binding.inCallActionFarRight.hide();
+        binding.inCallActionScreenshare.hide();
+
     }
 
     private void showInCallButtons() {

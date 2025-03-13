@@ -15,6 +15,7 @@ import org.webrtc.CameraVideoCapturer;
 import org.webrtc.EglBase;
 import org.webrtc.PeerConnectionFactory;
 import org.webrtc.SurfaceTextureHelper;
+import org.webrtc.VideoCapturer;
 import org.webrtc.VideoSource;
 
 import java.util.ArrayList;
@@ -30,14 +31,14 @@ class VideoSourceWrapper {
     private static final int CAPTURING_RESOLUTION = 1920;
     private static final int CAPTURING_MAX_FRAME_RATE = 30;
 
-    private final CameraVideoCapturer cameraVideoCapturer;
+    private final VideoCapturer cameraVideoCapturer;
     private final CameraEnumerationAndroid.CaptureFormat captureFormat;
     private final Set<String> availableCameras;
     private boolean isFrontCamera = false;
     private VideoSource videoSource;
 
     VideoSourceWrapper(
-            CameraVideoCapturer cameraVideoCapturer,
+            VideoCapturer cameraVideoCapturer,
             CameraEnumerationAndroid.CaptureFormat captureFormat,
             Set<String> cameras) {
         this.cameraVideoCapturer = cameraVideoCapturer;
@@ -60,7 +61,7 @@ class VideoSourceWrapper {
         if (surfaceTextureHelper == null) {
             throw new IllegalStateException("Could not create SurfaceTextureHelper");
         }
-        this.videoSource = peerConnectionFactory.createVideoSource(false);
+        this.videoSource = peerConnectionFactory.createVideoSource(this.cameraVideoCapturer.isScreencast());
         this.cameraVideoCapturer.initialize(
                 surfaceTextureHelper, context, this.videoSource.getCapturerObserver());
     }
@@ -104,22 +105,25 @@ class VideoSourceWrapper {
 
     public ListenableFuture<Boolean> switchCamera() {
         final SettableFuture<Boolean> future = SettableFuture.create();
-        this.cameraVideoCapturer.switchCamera(
-                new CameraVideoCapturer.CameraSwitchHandler() {
-                    @Override
-                    public void onCameraSwitchDone(final boolean isFrontCamera) {
-                        VideoSourceWrapper.this.isFrontCamera = isFrontCamera;
-                        future.set(isFrontCamera);
-                    }
+        if( this.cameraVideoCapturer instanceof CameraVideoCapturer) {
+            ((CameraVideoCapturer) this.cameraVideoCapturer).switchCamera(
+                    new CameraVideoCapturer.CameraSwitchHandler() {
+                        @Override
+                        public void onCameraSwitchDone(final boolean isFrontCamera) {
+                            VideoSourceWrapper.this.isFrontCamera = isFrontCamera;
+                            future.set(isFrontCamera);
+                        }
 
-                    @Override
-                    public void onCameraSwitchError(final String message) {
-                        future.setException(
-                                new IllegalStateException(
-                                        String.format("Unable to switch camera %s", message)));
-                    }
-                });
-        return future;
+                        @Override
+                        public void onCameraSwitchError(final String message) {
+                            future.setException(
+                                    new IllegalStateException(
+                                            String.format("Unable to switch camera %s", message)));
+                        }
+                    });
+            return future;
+        }
+        throw new RuntimeException("non Camera capturer cannot be switched");
     }
 
     public boolean isFrontCamera() {

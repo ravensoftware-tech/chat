@@ -2705,6 +2705,16 @@ public class JingleRtpConnection extends AbstractJingleConnection
         webRTCWrapper.setVideoEnabled(enabled);
     }
 
+    public boolean isScreensharingEnabled() {
+        return webRTCWrapper.isScreensharingEnabled();
+    }
+    public void setScreencastEnabled(Intent p) {
+        webRTCWrapper.addScreencastTrack(p);
+    }
+    public void setScreencastDisabled() {
+        webRTCWrapper.RemoveScreencastTrack();
+    }
+
     public boolean isCameraSwitchable() {
         return webRTCWrapper.isCameraSwitchable();
     }
