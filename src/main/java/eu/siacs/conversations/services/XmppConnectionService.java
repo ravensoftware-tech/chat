@@ -1355,6 +1355,7 @@ public class XmppConnectionService extends Service {
                 () -> {
                     long timestamp = getAutomaticMessageDeletionDate();
                     if (timestamp > 0) {
+                        expireOldFiles(timestamp);
                         databaseBackend.expireOldMessages(timestamp);
                         synchronized (XmppConnectionService.this.conversations) {
                             for (Conversation conversation :
@@ -1563,6 +1564,51 @@ public class XmppConnectionService extends Service {
                         + changed.size()
                         + " changed files on start up. total="
                         + relativeFilePaths.size()
+                        + ". ("
+                        + duration
+                        + "ms)");
+        if (changed.size() > 0) {
+            databaseBackend.markFilesAsChanged(changed);
+            markChangedFiles(changed);
+        }
+    }
+
+    private void expireOldFiles(long timestamp) {
+        if (destroyed) {
+            Log.d(
+                    Config.LOGTAG,
+                    "Do not delete files because service has been destroyed");
+            return;
+        }
+        final long start = SystemClock.elapsedRealtime();
+        final List<DatabaseBackend.FilePathInfo> relativeFilePaths =
+                databaseBackend.getFilePathInfo();
+        final List<DatabaseBackend.FilePathInfo> changed = new ArrayList<>();
+        for (final DatabaseBackend.FilePathInfo filePath : relativeFilePaths) {
+            if (destroyed) {
+                Log.d(
+                        Config.LOGTAG,
+                        "Stop deleting files because service has been destroyed");
+                return;
+            }
+            final File file = fileBackend.getFileForPath(filePath.path);
+            // here we finally delete the file -- probably should add handling cases where it fails!
+            if (timestamp > file.lastModified()) {
+                file.delete();
+            }
+            if (filePath.setDeleted(!file.exists())) {
+                changed.add(filePath);
+            }
+        }
+        final long duration = SystemClock.elapsedRealtime() - start;
+        Log.d(
+                Config.LOGTAG,
+                        "Found "
+                        + relativeFilePaths.size()
+                        + " files on start up. "
+                        + "Deleted "
+                        + changed.size()
+                        + " expired files"
                         + ". ("
                         + duration
                         + "ms)");
@@ -2525,6 +2571,7 @@ public class XmppConnectionService extends Service {
                                     Config.LOGTAG,
                                     "deleting messages that are older than "
                                             + AbstractGenerator.getTimestamp(deletionDate));
+                            expireOldFiles(deletionDate);
                             databaseBackend.expireOldMessages(deletionDate);
                         }
                         Log.d(Config.LOGTAG, "restoring roster...");
