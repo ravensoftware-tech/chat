@@ -24,6 +24,7 @@ public class AppSettings {
     public static final String MANUALLY_CHANGE_PRESENCE = "manually_change_presence";
     public static final String BLIND_TRUST_BEFORE_VERIFICATION = "btbv";
     public static final String AUTOMATIC_MESSAGE_DELETION = "automatic_message_deletion";
+    public static final String AUTOMATIC_FILE_DELETION = "automatic_file_deletion";
     public static final String BROADCAST_LAST_ACTIVITY = "last_activity";
     public static final String THEME = "theme";
     public static final String DYNAMIC_COLORS = "dynamic_colors";

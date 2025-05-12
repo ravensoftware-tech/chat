@@ -23,6 +23,7 @@
     <bool name="show_dynamic_tags">false</bool>
     <bool name="btbv">true</bool>
     <integer name="automatic_message_deletion">0</integer>
+    <bool name="automatic_file_deletion">false</bool>
     <bool name="trust_system_ca_store">true</bool>
     <bool name="allow_message_correction">true</bool>
     <bool name="accept_invites_from_strangers">true</bool>

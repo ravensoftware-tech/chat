@@ -43,6 +43,11 @@
             android:key="automatic_message_deletion"
             android:summary="@string/pref_automatically_delete_messages_description"
             android:title="@string/pref_automatically_delete_messages" />
+        <SwitchPreferenceCompat
+            android:defaultValue="@bool/automatic_file_deletion"
+            android:key="automatic_file_deletion"
+            android:summary="@string/pref_automatically_delete_files_description"
+            android:title="@string/pref_automatically_delete_files"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

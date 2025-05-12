@@ -1355,7 +1355,13 @@ public class XmppConnectionService extends Service {
                 () -> {
                     long timestamp = getAutomaticMessageDeletionDate();
                     if (timestamp > 0) {
-                        expireOldFiles(timestamp);
+                        final boolean delete_files = getBooleanPreference(
+                                AppSettings.AUTOMATIC_FILE_DELETION,
+                                R.bool.automatic_file_deletion
+                        );
+                        if (delete_files) {
+                            expireOldFiles(timestamp);
+                        }
                         databaseBackend.expireOldMessages(timestamp);
                         synchronized (XmppConnectionService.this.conversations) {
                             for (Conversation conversation :
@@ -2571,7 +2577,17 @@ public class XmppConnectionService extends Service {
                                     Config.LOGTAG,
                                     "deleting messages that are older than "
                                             + AbstractGenerator.getTimestamp(deletionDate));
-                            expireOldFiles(deletionDate);
+                            final boolean delete_files = getBooleanPreference(
+                                    AppSettings.AUTOMATIC_FILE_DELETION,
+                                    R.bool.automatic_file_deletion
+                            );
+                            if(delete_files) {
+                                Log.d(
+                                        Config.LOGTAG,
+                                        "deleting files that are older than "
+                                                + AbstractGenerator.getTimestamp(deletionDate));
+                                expireOldFiles(deletionDate);
+                            }
                             databaseBackend.expireOldMessages(deletionDate);
                         }
                         Log.d(Config.LOGTAG, "restoring roster...");
