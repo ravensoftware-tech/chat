@@ -49,6 +49,9 @@ public final class Namespace {
     public static final String PUBSUB = "http://jabber.org/protocol/pubsub";
     public static final String PUBSUB_EVENT = PUBSUB + "#event";
     public static final String MUC = "http://jabber.org/protocol/muc";
+    public static final String MUC_ADMIN = MUC + "#admin";
+    public static final String MUC_OWNER = MUC + "#owner";
+    public static final String MUC_USER = MUC + "#user";
     public static final String MUC_ROOM_INFO = MUC + "#roominfo";
     public static final String PUBSUB_PUBLISH_OPTIONS = PUBSUB + "#publish-options";
     public static final String PUBSUB_CONFIG_NODE_MAX = PUBSUB + "#config-node-max";
@@ -96,7 +99,6 @@ public final class Namespace {
     public static final String PING = "urn:xmpp:ping";
     public static final String PUSH = "urn:xmpp:push:0";
     public static final String COMMANDS = "http://jabber.org/protocol/commands";
-    public static final String MUC_USER = "http://jabber.org/protocol/muc#user";
     public static final String BOOKMARKS2 = "urn:xmpp:bookmarks:1";
     public static final String BOOKMARKS2_COMPAT = BOOKMARKS2 + "#compat";
     public static final String PRE_AUTHENTICATED_IN_BAND_REGISTRATION = "urn:xmpp:ibr-token:0";
@@ -114,7 +116,6 @@ public final class Namespace {
     public static final String MEDIA_ELEMENT = "urn:xmpp:media-element";
     public static final String MDS_DISPLAYED = "urn:xmpp:mds:displayed:0";
     public static final String MDS_SERVER_ASSIST = "urn:xmpp:mds:server-assist:0";
-
     public static final String ENTITY_CAPABILITIES = "http://jabber.org/protocol/caps";
     public static final String ENTITY_CAPABILITIES_2 = "urn:xmpp:caps";
     public static final String PRIVATE_XML_STORAGE = "jabber:iq:private";

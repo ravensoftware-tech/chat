@@ -34,6 +34,7 @@ import eu.siacs.conversations.xmpp.XmppConnection;
 import eu.siacs.conversations.xmpp.chatstate.ChatState;
 import eu.siacs.conversations.xmpp.jingle.JingleConnectionManager;
 import eu.siacs.conversations.xmpp.jingle.JingleRtpConnection;
+import eu.siacs.conversations.xmpp.manager.MultiUserChatManager;
 import eu.siacs.conversations.xmpp.manager.PubSubManager;
 import eu.siacs.conversations.xmpp.manager.RosterManager;
 import im.conversations.android.xmpp.model.Extension;
@@ -43,6 +44,7 @@ import im.conversations.android.xmpp.model.carbons.Sent;
 import im.conversations.android.xmpp.model.correction.Replace;
 import im.conversations.android.xmpp.model.forward.Forwarded;
 import im.conversations.android.xmpp.model.markers.Displayed;
+import im.conversations.android.xmpp.model.muc.Affiliation;
 import im.conversations.android.xmpp.model.occupant.OccupantId;
 import im.conversations.android.xmpp.model.oob.OutOfBandData;
 import im.conversations.android.xmpp.model.pubsub.event.Event;
@@ -347,6 +349,9 @@ public class MessageParser extends AbstractParser
             packet = f.first;
             serverMsgId = result.getAttribute("id");
             query.incrementMessageCount();
+
+            // TODO for muc() check that packet.getFrom().toBare() is equals to query.with()
+
             if (handleErrorMessage(account, packet)) {
                 return;
             }
@@ -520,7 +525,7 @@ public class MessageParser extends AbstractParser
                             || mucUserElement != null
                             || connection
                                     .getMucServersWithholdAccount()
-                                    .contains(counterpart.getDomain().toString());
+                                    .contains(counterpart.getDomain());
             final Conversation conversation =
                     mXmppConnectionService.findOrCreateConversation(
                             account,
@@ -1009,6 +1014,8 @@ public class MessageParser extends AbstractParser
                     }
                 }
             }
+
+            // TODO look at original and let manager handle that
             if (conversation != null
                     && mucUserElement != null
                     && Jid.Invalid.hasValidFrom(packet)
@@ -1018,7 +1025,10 @@ public class MessageParser extends AbstractParser
                         try {
                             int code = Integer.parseInt(child.getAttribute("code"));
                             if ((code >= 170 && code <= 174) || (code >= 102 && code <= 104)) {
-                                mXmppConnectionService.fetchConferenceConfiguration(conversation);
+                                Log.d(
+                                        Config.LOGTAG,
+                                        account.getJid() + ": saw a status change in " + from);
+                                getManager(MultiUserChatManager.class).fetchDiscoInfo(conversation);
                                 break;
                             }
                         } catch (Exception e) {
@@ -1046,7 +1056,7 @@ public class MessageParser extends AbstractParser
                             mXmppConnectionService.updateMucRosterUi();
                             mXmppConnectionService.updateConversationUi();
                             Contact contact = user.getContact();
-                            if (!user.getAffiliation().ranks(MucOptions.Affiliation.MEMBER)) {
+                            if (!user.ranks(Affiliation.MEMBER)) {
                                 Jid jid = user.getRealJid();
                                 List<Jid> cryptoTargets = conversation.getAcceptedCryptoTargets();
                                 if (cryptoTargets.remove(user.getRealJid())) {
@@ -1238,6 +1248,7 @@ public class MessageParser extends AbstractParser
             getManager(PubSubManager.class).handleEvent(original);
         }
 
+        // TODO do we still need this?
         final String nick = packet.findChildContent("nick", Namespace.NICK);
         if (nick != null && Jid.Invalid.hasValidFrom(original)) {
             if (mXmppConnectionService.isMuc(account, from)) {
@@ -1603,8 +1614,11 @@ public class MessageParser extends AbstractParser
                 } else {
                     conversation.getMucOptions().setPassword(password);
                     mXmppConnectionService.databaseBackend.updateConversation(conversation);
-                    mXmppConnectionService.joinMuc(
-                            conversation, contact != null && contact.showInContactList());
+                    if (contact != null && contact.showInContactList()) {
+                        getManager(MultiUserChatManager.class).joinFollowingInvite(conversation);
+                    } else {
+                        getManager(MultiUserChatManager.class).join(conversation);
+                    }
                     mXmppConnectionService.updateConversationUi();
                 }
                 return true;

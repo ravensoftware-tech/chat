@@ -134,7 +134,7 @@ public class MessageArchiveService implements OnAdvancedStreamFeaturesLoaded {
         this.execute(query);
     }
 
-    void catchupMUC(final Conversation conversation) {
+    public void catchupMUC(final Conversation conversation) {
         if (conversation.getLastMessageTransmitted().getTimestamp() < 0
                 && conversation.countMessages() == 0) {
             query(conversation, new MamReference(0), 0, true);
