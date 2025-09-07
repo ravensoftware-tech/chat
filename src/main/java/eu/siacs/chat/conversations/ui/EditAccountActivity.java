@@ -1388,7 +1388,10 @@ public class EditAccountActivity extends OmemoActivity
                 } else {
                     errorLayout = this.binding.accountJidLayout;
                 }
-                errorLayout.setError(getString(this.mAccount.getStatus().getReadableId()));
+                Toast.makeText(
+                        EditAccountActivity.this,
+                        getString(this.mAccount.getStatus().getReadableId()),
+                        Toast.LENGTH_SHORT).show();
                 if (init || !accountInfoEdited()) {
                     errorLayout.requestFocus();
                 }
