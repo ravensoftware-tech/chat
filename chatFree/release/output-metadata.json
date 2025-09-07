@@ -46,19 +46,6 @@
       "filters": [
         {
           "filterType": "ABI",
-          "value": "x86"
-        }
-      ],
-      "attributes": [],
-      "versionCode": 4215902,
-      "versionName": "2.19.5+free",
-      "outputFile": "Chat-2.19.5-chat-free-x86-release.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
           "value": "x86_64"
         }
       ],
@@ -66,6 +53,19 @@
       "versionCode": 4215903,
       "versionName": "2.19.5+free",
       "outputFile": "Chat-2.19.5-chat-free-x86_64-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 4215902,
+      "versionName": "2.19.5+free",
+      "outputFile": "Chat-2.19.5-chat-free-x86-release.apk"
     }
   ],
   "elementType": "File",
@@ -77,8 +77,8 @@
         "baselineProfiles/1/Chat-2.19.5-chat-free-universal-release.dm",
         "baselineProfiles/1/Chat-2.19.5-chat-free-armeabi-v7a-release.dm",
         "baselineProfiles/1/Chat-2.19.5-chat-free-arm64-v8a-release.dm",
-        "baselineProfiles/1/Chat-2.19.5-chat-free-x86-release.dm",
-        "baselineProfiles/1/Chat-2.19.5-chat-free-x86_64-release.dm"
+        "baselineProfiles/1/Chat-2.19.5-chat-free-x86_64-release.dm",
+        "baselineProfiles/1/Chat-2.19.5-chat-free-x86-release.dm"
       ]
     },
     {
@@ -88,8 +88,8 @@
         "baselineProfiles/0/Chat-2.19.5-chat-free-universal-release.dm",
         "baselineProfiles/0/Chat-2.19.5-chat-free-armeabi-v7a-release.dm",
         "baselineProfiles/0/Chat-2.19.5-chat-free-arm64-v8a-release.dm",
-        "baselineProfiles/0/Chat-2.19.5-chat-free-x86-release.dm",
-        "baselineProfiles/0/Chat-2.19.5-chat-free-x86_64-release.dm"
+        "baselineProfiles/0/Chat-2.19.5-chat-free-x86_64-release.dm",
+        "baselineProfiles/0/Chat-2.19.5-chat-free-x86-release.dm"
       ]
     }
   ],

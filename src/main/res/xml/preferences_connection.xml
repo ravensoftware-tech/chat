@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="@string/pref_category_server_connection">
-        <SwitchPreferenceCompat
-            android:defaultValue="@bool/show_connection_options"
-            android:icon="@drawable/ic_settings_24dp"
-            android:key="show_connection_options"
-            android:summary="@string/pref_show_connection_options_summary"
-            android:title="@string/pref_show_connection_options" />
-        <SwitchPreferenceCompat
-            android:defaultValue="@bool/use_tor"
-            android:icon="@drawable/ic_network_node_24dp"
-            android:key="use_tor"
-            android:summary="@string/pref_use_tor_summary"
-            android:title="@string/pref_use_tor" />
-    </PreferenceCategory>
+    <!-- Advanced connection settings hidden -->
 
     <PreferenceCategory
         android:key="groups_and_conferences"

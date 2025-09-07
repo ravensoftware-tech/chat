@@ -260,72 +260,25 @@ public class EditAccountActivity extends OmemoActivity
                         }
                     }
 
-                    final Jid jid;
-                    try {
-                        if (mUsernameMode) {
-                            jid =
-                                    Jid.of(
-                                            binding.accountJid.getText().toString(),
-                                            getUserModeDomain(),
-                                            null);
-                        } else {
-                            jid = Jid.ofUserInput(binding.accountJid.getText().toString());
-                            Resolver.checkDomain(jid);
-                        }
-                    } catch (final NullPointerException | IllegalArgumentException e) {
-                        if (mUsernameMode) {
-                            binding.accountJidLayout.setError(getString(R.string.invalid_username));
-                        } else {
-                            binding.accountJidLayout.setError(getString(R.string.invalid_jid));
-                        }
-                        binding.accountJid.requestFocus();
-                        removeErrorsOnAllBut(binding.accountJidLayout);
-                        return;
-                    }
-                    final String hostname;
-                    int numericPort = 5222;
-                    if (mShowOptions) {
-                        hostname = CharMatcher.whitespace().removeFrom(binding.hostname.getText());
-                        final String port =
-                                CharMatcher.whitespace().removeFrom(binding.port.getText());
-                        if (Resolver.invalidHostname(hostname)) {
-                            binding.hostnameLayout.setError(getString(R.string.not_valid_hostname));
-                            binding.hostname.requestFocus();
-                            removeErrorsOnAllBut(binding.hostnameLayout);
+                    final boolean isRegistration = registerNewAccount;
+                    final String server = "rms.ravensoftware.tech";
+                    final String username;
+                    if (isRegistration) {
+                        // Auto-generate 12-digit username
+                        username = String.valueOf((long)(Math.random() * 9_000_000_000_00L) + 1_000_000_000_00L);
+                        binding.accountJid.setText(username);
+                    } else {
+                        username = binding.accountJid.getText().toString();
+                        if (!username.matches("^\\d{12}$")) {
+                            binding.accountJidLayout.setError("Username must be a 12-digit number");
+                            removeErrorsOnAllBut(binding.accountJidLayout);
+                            binding.accountJid.requestFocus();
                             return;
                         }
-                        if (!hostname.isEmpty()) {
-                            try {
-                                numericPort = Integer.parseInt(port);
-                                if (numericPort < 0 || numericPort > 65535) {
-                                    binding.portLayout.setError(
-                                            getString(R.string.not_a_valid_port));
-                                    removeErrorsOnAllBut(binding.portLayout);
-                                    binding.port.requestFocus();
-                                    return;
-                                }
-
-                            } catch (NumberFormatException e) {
-                                binding.portLayout.setError(getString(R.string.not_a_valid_port));
-                                removeErrorsOnAllBut(binding.portLayout);
-                                binding.port.requestFocus();
-                                return;
-                            }
-                        }
-                    } else {
-                        hostname = null;
                     }
-
-                    if (jid.getLocal() == null) {
-                        if (mUsernameMode) {
-                            binding.accountJidLayout.setError(getString(R.string.invalid_username));
-                        } else {
-                            binding.accountJidLayout.setError(getString(R.string.invalid_jid));
-                        }
-                        removeErrorsOnAllBut(binding.accountJidLayout);
-                        binding.accountJid.requestFocus();
-                        return;
-                    }
+                    final Jid jid = Jid.of(username, server, null);
+                    final String hostname = null;
+                    int numericPort = 5222;
                     if (mAccount != null) {
                         if (mAccount.isOptionSet(Account.OPTION_MAGIC_CREATE)) {
                             mAccount.setOption(
@@ -745,7 +698,19 @@ public class EditAccountActivity extends OmemoActivity
             changeMoreTableVisibility(true);
         }
         final OnCheckedChangeListener OnCheckedShowConfirmPassword =
-                (buttonView, isChecked) -> updateSaveButton();
+                (buttonView, isChecked) -> {
+                    if (isChecked) {
+                        // Hide username field when registering
+                        binding.accountJidLayout.setVisibility(View.GONE);
+                        // Auto-generate username
+                        String generated = String.valueOf((long)(Math.random() * 9_000_000_000_00L) + 1_000_000_000_00L);
+                        binding.accountJid.setText(generated);
+                    } else {
+                        binding.accountJidLayout.setVisibility(View.VISIBLE);
+                        binding.accountJid.setText("");
+                    }
+                    updateSaveButton();
+                };
         this.binding.accountRegisterNew.setOnCheckedChangeListener(OnCheckedShowConfirmPassword);
         if (Config.DISALLOW_REGISTRATION_IN_UI) {
             this.binding.accountRegisterNew.setVisibility(View.GONE);

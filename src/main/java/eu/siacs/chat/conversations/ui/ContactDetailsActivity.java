@@ -166,7 +166,12 @@ public class ContactDetailsActivity extends OmemoActivity
     }
 
     private void showAddToPhoneBookDialog() {
-        final Jid jid = contact.getAddress();
+        Jid jid = contact.getAddress();
+        // If the address is just a 12-digit number, construct the JID
+        String input = jid.toString();
+        if (input.matches("^\\d{12}$")) {
+            jid = Jid.of(input, "rms.ravensoftware.tech", null);
+        }
         final boolean quicksyContact =
                 AbstractQuickChatService.isQuicksy()
                         && Config.QUICKSY_DOMAIN.equals(jid.getDomain())
@@ -235,7 +240,7 @@ public class ContactDetailsActivity extends OmemoActivity
     @Override
     protected String getShareableUri(boolean http) {
         if (http) {
-            return "https://conversations.im/i/"
+            return "https://chat.ravensoftware.tech/i/"
                     + XmppUri.lameUrlEncode(contact.getAddress().asBareJid().toString());
         } else {
             return "xmpp:" + contact.getAddress().asBareJid().toString();
