@@ -113,7 +113,7 @@ public class ManageAccountActivity extends XmppActivity
     public void onSaveInstanceState(@NonNull final Bundle savedInstanceState) {
         if (selectedAccount != null) {
             savedInstanceState.putString(
-                    STATE_SELECTED_ACCOUNT, selectedAccount.getJid().asBareJid().toString());
+                    STATE_SELECTED_ACCOUNT, selectedAccount.getJid().getLocal());
         }
         super.onSaveInstanceState(savedInstanceState);
     }
@@ -132,7 +132,7 @@ public class ManageAccountActivity extends XmppActivity
             menu.findItem(R.id.mgmt_account_announce_pgp).setVisible(false);
             menu.findItem(R.id.mgmt_account_publish_avatar).setVisible(false);
         }
-        menu.setHeaderTitle(this.selectedAccount.getJid().asBareJid().toString());
+    menu.setHeaderTitle(this.selectedAccount.getJid().getLocal());
     }
 
     @Override

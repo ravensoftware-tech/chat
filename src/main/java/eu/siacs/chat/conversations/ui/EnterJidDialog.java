@@ -171,10 +171,43 @@ public class EnterJidDialog extends DialogFragment implements OnBackendConnected
 
         if (!issuedWarning && sanityCheckJid) {
             if (contactJid.isDomainJid()) {
-                binding.jidLayout.setError(
-                        getActivity().getString(R.string.this_looks_like_a_domain));
-                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setText(R.string.add_anway);
-                issuedWarning = true;
+                // Auto-complete contactJid with user's domain and immediately add
+                String userDomain = accountJid.getDomain().toString();
+                String local = contactJid.getDomain().toString();
+                Jid completedJid = Jid.of(local, userDomain, null);
+                binding.jid.setText(completedJid.asBareJid().toString());
+                if (mListener != null) {
+                    try {
+                        if (mListener.onEnterJidDialogPositive(accountJid, completedJid)) {
+                            dialog.dismiss();
+                            return;
+                        }
+                    } catch (JidError error) {
+                        binding.jidLayout.setError(error.toString());
+                        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setText(R.string.add);
+                        issuedWarning = false;
+                    }
+                }
+                return;
+            }
+            if (issuedWarning && sanityCheckJid) {
+                String entered = binding.jid.getText().toString().trim();
+                try {
+                    Jid completedJid = Jid.ofUserInput(entered);
+                    if (mListener != null) {
+                        try {
+                            if (mListener.onEnterJidDialogPositive(accountJid, completedJid)) {
+                                dialog.dismiss();
+                            }
+                        } catch (JidError error) {
+                            binding.jidLayout.setError(error.toString());
+                            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setText(R.string.add);
+                            issuedWarning = false;
+                        }
+                    }
+                } catch (final IllegalArgumentException e) {
+                    binding.jidLayout.setError(getActivity().getString(R.string.invalid_jid));
+                }
                 return;
             }
             if (suspiciousSubDomain(contactJid.getDomain().toString())) {
