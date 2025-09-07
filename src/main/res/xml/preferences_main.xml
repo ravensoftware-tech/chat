@@ -6,11 +6,6 @@
         app:fragment="tech.ravensoftware.chat.ui.fragment.settings.InterfaceSettingsFragment"
         app:title="@string/pref_title_interface" />
     <Preference
-        android:icon="@drawable/ic_security_24dp"
-        app:fragment="tech.ravensoftware.chat.ui.fragment.settings.SecuritySettingsFragment"
-        app:summary="@string/pref_summary_security"
-        app:title="@string/pref_title_security" />
-    <Preference
         android:icon="@drawable/ic_privacy_tip_24dp"
         app:fragment="tech.ravensoftware.chat.ui.fragment.settings.PrivacySettingsFragment"
         app:summary="@string/pref_privacy_summary"
@@ -26,23 +21,11 @@
         android:title="@string/pref_attachments"
         app:fragment="tech.ravensoftware.chat.ui.fragment.settings.AttachmentsSettingsFragment" />
     <Preference
-        android:icon="@drawable/ic_settings_ethernet_24dp"
-        android:key="connection"
-        app:fragment="tech.ravensoftware.chat.ui.fragment.settings.ConnectionSettingsFragment"
-        app:summary="@string/pref_connection_summary_w_cd"
-        app:title="@string/pref_connection_options" />
-    <Preference
         android:icon="@drawable/ic_archive_24dp"
         android:key="backup"
         android:summary="@string/pref_backup_summary"
         android:title="@string/backup"
         app:fragment="tech.ravensoftware.chat.ui.fragment.settings.BackupSettingsFragment" />
-    <Preference
-        android:icon="@drawable/ic_cloud_sync_24dp"
-        android:key="up"
-        app:fragment="tech.ravensoftware.chat.ui.fragment.settings.UpSettingsFragment"
-        app:summary="@string/unified_push_summary"
-        app:title="@string/unified_push_distributor" />
     <Preference
         android:key="about"
         android:title="@string/title_activity_about_x">

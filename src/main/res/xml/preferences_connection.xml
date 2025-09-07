@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- Advanced connection settings hidden -->
-
     <PreferenceCategory
         android:key="groups_and_conferences"
         android:title="@string/group_chats_and_channels">
@@ -14,7 +11,5 @@
             android:key="channel_discovery_method"
             android:summary="@string/pref_channel_discovery_summary"
             android:title="@string/pref_channel_discovery" />
-
     </PreferenceCategory>
-
 </PreferenceScreen>

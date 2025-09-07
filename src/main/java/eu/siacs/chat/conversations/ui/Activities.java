@@ -35,14 +35,13 @@ public final class Activities {
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             window.setNavigationBarColor(SurfaceColors.SURFACE_1.getColor(activity));
-            if (isLightMode) {
-                view.setSystemUiVisibility(
-                        flags
-                                | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-                                | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
-            }
-        } else if (isLightMode) {
-            view.setSystemUiVisibility(flags | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                window.getDecorView().setSystemUiVisibility(flags & ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    window.getDecorView()
+                            .setSystemUiVisibility(
+                                    flags & ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                                            & ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+                }
         }
     }
 
