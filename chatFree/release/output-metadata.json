@@ -33,13 +33,13 @@
       "filters": [
         {
           "filterType": "ABI",
-          "value": "x86"
+          "value": "armeabi-v7a"
         }
       ],
       "attributes": [],
-      "versionCode": 4215902,
+      "versionCode": 4215901,
       "versionName": "2.19.5+free",
-      "outputFile": "Chat-2.19.5-chat-free-x86-release.apk"
+      "outputFile": "Chat-2.19.5-chat-free-armeabi-v7a-release.apk"
     },
     {
       "type": "ONE_OF_MANY",
@@ -59,13 +59,13 @@
       "filters": [
         {
           "filterType": "ABI",
-          "value": "armeabi-v7a"
+          "value": "x86"
         }
       ],
       "attributes": [],
-      "versionCode": 4215901,
+      "versionCode": 4215902,
       "versionName": "2.19.5+free",
-      "outputFile": "Chat-2.19.5-chat-free-armeabi-v7a-release.apk"
+      "outputFile": "Chat-2.19.5-chat-free-x86-release.apk"
     }
   ],
   "elementType": "File",
@@ -76,9 +76,9 @@
       "baselineProfiles": [
         "baselineProfiles/1/Chat-2.19.5-chat-free-universal-release.dm",
         "baselineProfiles/1/Chat-2.19.5-chat-free-x86_64-release.dm",
-        "baselineProfiles/1/Chat-2.19.5-chat-free-x86-release.dm",
+        "baselineProfiles/1/Chat-2.19.5-chat-free-armeabi-v7a-release.dm",
         "baselineProfiles/1/Chat-2.19.5-chat-free-arm64-v8a-release.dm",
-        "baselineProfiles/1/Chat-2.19.5-chat-free-armeabi-v7a-release.dm"
+        "baselineProfiles/1/Chat-2.19.5-chat-free-x86-release.dm"
       ]
     },
     {
@@ -87,9 +87,9 @@
       "baselineProfiles": [
         "baselineProfiles/0/Chat-2.19.5-chat-free-universal-release.dm",
         "baselineProfiles/0/Chat-2.19.5-chat-free-x86_64-release.dm",
-        "baselineProfiles/0/Chat-2.19.5-chat-free-x86-release.dm",
+        "baselineProfiles/0/Chat-2.19.5-chat-free-armeabi-v7a-release.dm",
         "baselineProfiles/0/Chat-2.19.5-chat-free-arm64-v8a-release.dm",
-        "baselineProfiles/0/Chat-2.19.5-chat-free-armeabi-v7a-release.dm"
+        "baselineProfiles/0/Chat-2.19.5-chat-free-x86-release.dm"
       ]
     }
   ],
