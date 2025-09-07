@@ -27,7 +27,7 @@
     <string name="just_now">just now</string>
     <string name="minute_ago">1 min ago</string>
     <string name="minutes_ago">%d mins ago</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d unread chat</item>
         <item quantity="other">%d unread chats</item>
 
@@ -900,10 +900,10 @@
     <string name="add_anway">Add anyway</string>
     <string name="this_looks_like_channel">This looks like a channel address</string>
     <string name="share_backup_files">Share backup files</string>
-    <string name="conversations_backup">Conversations backup</string>
+    <string name="chat_backup">Chat backup</string>
     <string name="event">Event</string>
     <string name="open_backup">Open backup</string>
-    <string name="not_a_backup_file">The file you selected is not a Conversations backup file</string>
+    <string name="not_a_backup_file">The file you selected is not a Chat backup file</string>
     <string name="outdated_backup_file_format">You are trying to import an outdated backup file format</string>
     <string name="non_quicksy_backup">Quicksy can only restore backups for quicksy.im accounts</string>
     <string name="account_already_setup">This account has already been setup</string>
@@ -977,7 +977,7 @@
     <string name="remove_from_favorites">Unpin from top</string>
     <string name="gpx_track">GPX track</string>
     <string name="could_not_correct_message">Could not correct message</string>
-    <string name="search_all_conversations">All chats</string>
+    <string name="search_all_chat">All chats</string>
     <string name="search_this_conversation">This chat</string>
     <string name="your_avatar">Your avatar</string>
     <string name="your_avatar_tap_to_select_new_avatar">Your avatar. Tap to select new avatar from gallery.</string>
@@ -1005,7 +1005,7 @@
     <string name="failed_deliveries">Failed deliveries</string>
     <string name="more_options">More options</string>
     <string name="no_application_found">No application found</string>
-    <string name="invite_to_app">Invite to Conversations</string>
+    <string name="invite_to_app">Invite to Chat</string>
     <string name="unable_to_parse_invite">Unable to parse invite</string>
     <string name="server_does_not_support_easy_onboarding_invites">Server does not support generating invites</string>
     <string name="no_active_accounts_support_this">No active accounts support this feature</string>
@@ -1136,5 +1136,5 @@
     <string name="last_seen">last seen %s</string>
     <string name="strong_transport_security">Strong transport security</string>
     <string name="require_tls_v1_3">Require Transport Layer Security (TLS) Protocol Version 1.3 for all connections</string>
-    <string name="empty_conversations_list_hint">Once you start a new conversation, you’ll see it listed here</string>
+    <string name="empty_chat_list_hint">Once you start a new conversation, you’ll see it listed here</string>
 </resources>

@@ -31,7 +31,7 @@
             android:visibility="visible"
             app:useCompatPadding="true" />
 
-        <eu.siacs.conversations.ui.widget.UnreadCountCustomView
+        <tech.ravensoftware.chat.ui.widget.UnreadCountCustomView
             android:id="@+id/unread_count_custom_view"
             android:layout_width="18sp"
             android:layout_height="18sp"
@@ -90,7 +90,7 @@
 
                 </androidx.recyclerview.widget.RecyclerView>
 
-                <eu.siacs.conversations.ui.widget.EditMessage
+                <tech.ravensoftware.chat.ui.widget.EditMessage
                     android:id="@+id/textinput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
                     android:textCursorDrawable="@drawable/cursor_on_tertiary_container">
 
                     <requestFocus />
-                </eu.siacs.conversations.ui.widget.EditMessage>
+                </tech.ravensoftware.chat.ui.widget.EditMessage>
 
             </LinearLayout>
 

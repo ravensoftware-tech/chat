@@ -404,7 +404,7 @@
     <string name="title_activity_new_chat">Nova conversa</string>
     <string name="action_archive_chat">Arquivar conversa</string>
     <string name="action_block_participant">Ignorar membro</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d conversa não lida</item>
         <item quantity="many">%d de conversas não lidas</item>
         <item quantity="other">%d conversas não lidas</item>
@@ -897,14 +897,14 @@
     <string name="i_already_have_an_account">Já tenho uma conta</string>
     <string name="add_existing_account">Adicionar conta existente</string>
     <string name="this_looks_like_a_domain">Isto parece um endereço de domínio</string>
-    <string name="not_a_backup_file">O ficheiro que selecionou não é um backup de Conversations</string>
+    <string name="not_a_backup_file">O ficheiro que selecionou não é um backup de Chat</string>
     <string name="outdated_backup_file_format">Está a tentar importar um ficheiro de backup com um formato desatualizado</string>
     <string name="non_quicksy_backup">Quicksy só pode restaurar backups para contas quicksy.im</string>
     <string name="pref_channel_discovery_summary">A maioria dos utilizadores deve escolher ‘jabber.network’ para melhores sugestões do ecossistema XMPP público inteiro.</string>
     <string name="add_anway">Adicionar mesmo assim</string>
     <string name="this_looks_like_channel">Isto parece um endereço de canal</string>
     <string name="share_backup_files">Partilhar ficheiros de backup</string>
-    <string name="conversations_backup">Backup de Conversations</string>
+    <string name="chat_backup">Backup de Chat</string>
     <string name="register_new_account">Registar nova conta</string>
     <string name="unable_to_perform_this_action">Não foi possível executar esta ação</string>
     <string name="group_chats_and_channels"><![CDATA[Conversas de Grupo & Canais]]></string>
@@ -984,10 +984,10 @@
     <string name="microphone_unavailable">O microfone está indisponível</string>
     <string name="backup_started_message">O backup foi iniciado. Receberá uma notificação quando for concluído.</string>
     <string name="no_application_found">Nenhuma aplicação encontrada</string>
-    <string name="invite_to_app">Convidar para o Conversations</string>
+    <string name="invite_to_app">Convidar para o Chat</string>
     <string name="unable_to_parse_invite">Impossível processar o convite</string>
     <string name="server_does_not_support_easy_onboarding_invites">O servidor não suporta geração de convites</string>
-    <string name="search_all_conversations">Todas as conversas</string>
+    <string name="search_all_chat">Todas as conversas</string>
     <string name="search_this_conversation">Esta conversa</string>
     <string name="encrypted_with_omemo">Encriptado com OMEMO</string>
     <string name="encrypted_with_openpgp">Encriptado com OpenPGP</string>
@@ -1098,7 +1098,7 @@
     <string name="pref_account_avatar_summary">Mostrar avatares de contas em mensagens enviadas para fácil identificação e administração.</string>
     <string name="do_not_show_this_warning_again">Não mostrar este aviso novamente.</string>
     <string name="pref_chat_bubbles_summary">Cor de fundo, Tamanho do texto, Avatares</string>
-    <string name="empty_conversations_list_hint">Quando começar uma nova conversa, ela estará aqui</string>
+    <string name="empty_chat_list_hint">Quando começar uma nova conversa, ela estará aqui</string>
     <string name="pref_category_operating_system">Sistema Operativo</string>
     <string name="pref_privacy_summary">Notificações de escrita, Última vez visto, Disponibilidade</string>
     <string name="pref_connection_summary">Nome do Host &amp; Porta, Tor</string>

@@ -24,7 +24,7 @@
     <string name="just_now">éppen most</string>
     <string name="minute_ago">1 perce</string>
     <string name="minutes_ago">%d perce</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d olvasatlan csevegés</item>
         <item quantity="other">%d olvasatlan csevegés</item>
     </plurals>
@@ -517,7 +517,7 @@
     <string name="gp_medium">Közepes</string>
     <string name="gp_long">Hosszú</string>
     <string name="pref_broadcast_last_activity">Utoljára elérhető</string>
-    <string name="pref_broadcast_last_activity_summary">Tudassa partnereivel, hogy mikor használja a Conversations-t</string>
+    <string name="pref_broadcast_last_activity_summary">Tudassa partnereivel, hogy mikor használja a Chat-t</string>
     <string name="pref_privacy">Adatvédelem</string>
     <string name="pref_theme_options">Téma</string>
     <string name="pref_theme_options_summary">Színpaletta kiválasztása</string>
@@ -762,7 +762,7 @@
     <string name="ebook">e-könyv</string>
     <string name="video_original">Eredeti (tömörítetlen)</string>
     <string name="open_with">Megnyitás ezzel…</string>
-    <string name="set_profile_picture">Conversations profilkép</string>
+    <string name="set_profile_picture">Chat profilkép</string>
     <string name="choose_account">Fiók kiválasztása</string>
     <string name="restore_backup">Biztonsági mentés visszaállítása</string>
     <string name="restore">Visszaállítás</string>
@@ -810,10 +810,10 @@
     <string name="add_anway">Hozzáadás mindenképp</string>
     <string name="this_looks_like_channel">Ez egy csatornacímnek tűnik</string>
     <string name="share_backup_files">Biztonsági mentés fájlok megosztása</string>
-    <string name="conversations_backup">Conversations biztonsági mentés</string>
+    <string name="chat_backup">Chat biztonsági mentés</string>
     <string name="event">Esemény</string>
     <string name="open_backup">Biztonsági mentés megnyitása</string>
-    <string name="not_a_backup_file">A kiválasztott fájl nem Conversations biztonsági mentés fájl</string>
+    <string name="not_a_backup_file">A kiválasztott fájl nem Chat biztonsági mentés fájl</string>
     <string name="account_already_setup">Ez a fiók már be lett állítva</string>
     <string name="please_enter_password">Adja meg a fiók jelszavát</string>
     <string name="unable_to_perform_this_action">Nem sikerült végrehajtani ezt a műveletet</string>
@@ -932,7 +932,7 @@
     <string name="remove_from_favorites">Levétel felülről</string>
     <string name="gpx_track">GPX nyomvonal</string>
     <string name="could_not_correct_message">Nem sikerült kijavítani az üzenetet</string>
-    <string name="search_all_conversations">Minden csevegés</string>
+    <string name="search_all_chat">Minden csevegés</string>
     <string name="search_this_conversation">Ez a csevegés</string>
     <string name="your_avatar">Saját avatar</string>
     <string name="avatar_for_x">Avatár %s profiljához</string>
@@ -1004,7 +1004,7 @@
     <string name="play_audio">Audió lejátszása</string>
     <string name="pause_audio">Audió szüneteltetése</string>
     <string name="no_application_found">Nem található alkalmazás</string>
-    <string name="invite_to_app">Meghívás a Conversations-be</string>
+    <string name="invite_to_app">Meghívás a Chat-be</string>
     <string name="unable_to_parse_invite">Nem lehet elemezni a meghívót</string>
     <string name="server_does_not_support_easy_onboarding_invites">A szerver nem támogatja a meghívók generálását</string>
     <string name="pref_backup_recurring">Ismétlődő biztonsági mentés</string>

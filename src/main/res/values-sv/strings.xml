@@ -24,7 +24,7 @@
     <string name="just_now">just nu</string>
     <string name="minute_ago">1 min sedan</string>
     <string name="minutes_ago">%d min sedan</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d oläst chatt</item>
         <item quantity="other">%d o-lästa chattar</item>
     </plurals>
@@ -561,7 +561,7 @@
     <string name="gp_medium">Medium</string>
     <string name="gp_long">Lång</string>
     <string name="pref_broadcast_last_activity">Sågs senast</string>
-    <string name="pref_broadcast_last_activity_summary">Låter dina kontakter veta när du använder Conversations</string>
+    <string name="pref_broadcast_last_activity_summary">Låter dina kontakter veta när du använder Chat</string>
     <string name="pref_privacy">Integritet</string>
     <string name="pref_theme_options">Tema</string>
     <string name="pref_theme_options_summary">Välj färgpalett</string>
@@ -822,10 +822,10 @@
     <string name="add_anway">Lägg till ändå</string>
     <string name="this_looks_like_channel">Det här ser ut som en gruppchattadress</string>
     <string name="share_backup_files">Dela säkerhetskopior</string>
-    <string name="conversations_backup">Säkerhetskopior för Conversations</string>
+    <string name="chat_backup">Säkerhetskopior för Chat</string>
     <string name="event">Händelse</string>
     <string name="open_backup">Öppna säkerhetskopia</string>
-    <string name="not_a_backup_file">Filen du valde är inte en säkerhetskopia för Conversations</string>
+    <string name="not_a_backup_file">Filen du valde är inte en säkerhetskopia för Chat</string>
     <string name="account_already_setup">Det här kontot har redan konfigurerats</string>
     <string name="please_enter_password">Var god och ange lösenordet för det här kontot</string>
     <string name="unable_to_perform_this_action">Det gick inte att utföra den här åtgärden</string>
@@ -878,7 +878,7 @@
     <string name="remove_from_favorites">Lossa flik från toppen</string>
     <string name="gpx_track">GPX-spår</string>
     <string name="could_not_correct_message">Det gick inte att korrigera meddelandet</string>
-    <string name="search_all_conversations">Alla chatter</string>
+    <string name="search_all_chat">Alla chatter</string>
     <string name="search_this_conversation">Den här chatten</string>
     <string name="your_avatar">Din visningsbild</string>
     <string name="avatar_for_x">Visningsbild för %s</string>
@@ -897,7 +897,7 @@
     <string name="failed_deliveries">Misslyckade leveranser</string>
     <string name="more_options">Fler alternativ</string>
     <string name="no_application_found">Ingen applikation hittades</string>
-    <string name="invite_to_app">Bjud in till Conversations</string>
+    <string name="invite_to_app">Bjud in till Chat</string>
     <string name="no_xmpp_adddress_found">Ingen XMPP-adress hittades</string>
     <plurals name="n_missed_calls_from_x">
         <item quantity="one">%1$d missat samtal från %2$s</item>

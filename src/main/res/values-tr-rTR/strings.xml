@@ -24,7 +24,7 @@
     <string name="just_now">şimdi</string>
     <string name="minute_ago">1 dakika önce</string>
     <string name="minutes_ago">%d dakika önc</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d okunmamış sohbet</item>
         <item quantity="other">%d okunmamış sohbet</item>
     </plurals>
@@ -862,10 +862,10 @@
     <string name="add_anway">Yine de ekle</string>
     <string name="this_looks_like_channel">Bu bir kanal adresine benziyor</string>
     <string name="share_backup_files">Yedekleme dosyalarını paylaş</string>
-    <string name="conversations_backup">Conversations yedeklemesi</string>
+    <string name="chat_backup">Chat yedeklemesi</string>
     <string name="event">Faaliyet</string>
     <string name="open_backup">Yedeklemeyi aç</string>
-    <string name="not_a_backup_file">Seçtioiniz dosya bir Conversations yedekleme dosyası değildir</string>
+    <string name="not_a_backup_file">Seçtioiniz dosya bir Chat yedekleme dosyası değildir</string>
     <string name="account_already_setup">Bu hesap zaten kurulu vaziyette</string>
     <string name="please_enter_password">Lütfen bu hesabın şifresini girin</string>
     <string name="unable_to_perform_this_action">Eylem gerçekleştirilemedi</string>
@@ -930,7 +930,7 @@
     <string name="remove_from_favorites">En baştan kaldır</string>
     <string name="gpx_track">GPX izi</string>
     <string name="could_not_correct_message">İleti düzeltilemedi</string>
-    <string name="search_all_conversations">Tüm sohbetler</string>
+    <string name="search_all_chat">Tüm sohbetler</string>
     <string name="search_this_conversation">Bu sohbet</string>
     <string name="your_avatar">Avatarınız</string>
     <string name="avatar_for_x">%s avatarı</string>
@@ -953,7 +953,7 @@
     <string name="failed_deliveries">Başarısız gönderiler</string>
     <string name="more_options">Daha fazla seçenek</string>
     <string name="no_application_found">Herhangi bir uygulama bulunamadı</string>
-    <string name="invite_to_app">Conversations\'a davet et</string>
+    <string name="invite_to_app">Chat\'a davet et</string>
     <string name="unable_to_parse_invite">Davet iletilemedi</string>
     <string name="server_does_not_support_easy_onboarding_invites">Sunucu, davet oluşturulmasını desteklemiyor</string>
     <string name="no_active_accounts_support_this">Bu özelliği destekleyen aktif bir hesap yok</string>

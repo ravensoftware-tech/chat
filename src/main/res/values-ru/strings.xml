@@ -24,7 +24,7 @@
     <string name="just_now">только что</string>
     <string name="minute_ago">1 минуту назад</string>
     <string name="minutes_ago">%d мин. назад</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d непрочитанная беседа</item>
         <item quantity="few">%d непрочитанных беседы</item>
         <item quantity="many">%d непрочитанных бесед</item>
@@ -102,11 +102,11 @@
     <string name="offering">предложение…</string>
     <string name="waiting">ожидание…</string>
     <string name="no_pgp_key">Нет ключа OpenPGP</string>
-    <string name="contact_has_no_pgp_key">Conversations не может зашифровать сообщение, потому что ваш собеседник не анонсирует свой открытый ключ.
+    <string name="contact_has_no_pgp_key">Chat не может зашифровать сообщение, потому что ваш собеседник не анонсирует свой открытый ключ.
 \n
 \n<small>Попросите вашего собеседника настроить OpenPGP.</small></string>
     <string name="no_pgp_keys">Нет ключей OpenPGP</string>
-    <string name="contacts_have_no_pgp_keys">Conversations не может зашифровать сообщение, потому что ваши собеседники не анонсируют свои открытые ключи.
+    <string name="contacts_have_no_pgp_keys">Chat не может зашифровать сообщение, потому что ваши собеседники не анонсируют свои открытые ключи.
 \n
 \n<small>Попросите ваших собеседников настроить OpenPGP.</small></string>
     <string name="pref_general">Общие</string>
@@ -887,10 +887,10 @@
     <string name="add_anway">Добавить всё равно</string>
     <string name="this_looks_like_channel">Это похоже на адрес канала</string>
     <string name="share_backup_files">Поделиться резервными копиями</string>
-    <string name="conversations_backup">Резервная копия Conversations</string>
+    <string name="chat_backup">Резервная копия Chat</string>
     <string name="event">Событие</string>
     <string name="open_backup">Открыть резервную копию</string>
-    <string name="not_a_backup_file">Выбранный вами файл не является файлом резервной копии Conversations</string>
+    <string name="not_a_backup_file">Выбранный вами файл не является файлом резервной копии Chat</string>
     <string name="account_already_setup">Этот аккаунт уже настроен</string>
     <string name="please_enter_password">Введите пароль аккаунта</string>
     <string name="unable_to_perform_this_action">Невозможно совершить это действие</string>
@@ -939,7 +939,7 @@
     <string name="remove_from_favorites">Открепить</string>
     <string name="gpx_track">GPX-трек</string>
     <string name="could_not_correct_message">Невозможно исправить сообщение</string>
-    <string name="search_all_conversations">Все беседы</string>
+    <string name="search_all_chat">Все беседы</string>
     <string name="search_this_conversation">Эта беседа</string>
     <string name="your_avatar">Ваш аватар</string>
     <string name="avatar_for_x">Аватар для %s</string>
@@ -966,7 +966,7 @@
     <string name="failed_deliveries">Недоставленные сообщения</string>
     <string name="more_options">Ещё</string>
     <string name="no_application_found">Не найдено приложения</string>
-    <string name="invite_to_app">Пригласить в Conversations</string>
+    <string name="invite_to_app">Пригласить в Chat</string>
     <string name="unable_to_parse_invite">Невозможно разобрать приглашение</string>
     <string name="server_does_not_support_easy_onboarding_invites">Сервер не поддерживает создание приглашений</string>
     <string name="no_active_accounts_support_this">Ни один активный аккаунт не поддерживает эту функцию</string>
@@ -1100,7 +1100,7 @@
     <string name="pref_fullscreen_notification">Полноэкранные уведомления</string>
     <string name="pref_backup_recurring">Регулярные резервные копии</string>
     <string name="pref_fullscreen_notification_summary">Разрешить приложению показывать экраны входящих звонков при заблокированном экране</string>
-    <string name="pref_up_long_summary">Conversations, будучи распределителем UnifiedPush, будет использовать стойкое, надёжное и малопотребляющее подключение XMPP для пробуждения других совместимых с UnifiedPush приложений, таких как Tusky, Ltt.rs, FluffyChat и др.</string>
+    <string name="pref_up_long_summary">Chat, будучи распределителем UnifiedPush, будет использовать стойкое, надёжное и малопотребляющее подключение XMPP для пробуждения других совместимых с UnifiedPush приложений, таких как Tusky, Ltt.rs, FluffyChat и др.</string>
     <string name="detect_mim">Требовать привязку канала</string>
     <string name="detect_mim_summary">Привязка канала может обнаружить некоторые атаки посредником</string>
     <string name="pref_category_server_connection">Соединение с сервером</string>
@@ -1188,7 +1188,7 @@
     <string name="strong_transport_security">Строгая транспортная безопасность</string>
     <string name="require_tls_v1_3">Требовать протокол безопасности транспортного уровня (TLS) версии 1.3 для всех соединений</string>
     <string name="download_failed_could_not_establish_tls">Невозможно установить TLS-соединение</string>
-    <string name="empty_conversations_list_hint">После начала новой беседы она появится в этом списке</string>
+    <string name="empty_chat_list_hint">После начала новой беседы она появится в этом списке</string>
     <string name="server_info_moderated_message_retraction">XEP-0425: удаление сообщения модератором</string>
     <string name="server_info_occupant_id">XEP-0421: идентификаторы участников</string>
     <string name="account_status_tls_error_untrusted">Недоверенный сертификат</string>

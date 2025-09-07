@@ -24,7 +24,7 @@
     <string name="just_now">agora</string>
     <string name="minute_ago">Hai 1 min</string>
     <string name="minutes_ago">hai %d minutos</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d conversa sen ler</item>
         <item quantity="other">%d conversas sen ler</item>
     </plurals>
@@ -859,10 +859,10 @@
     <string name="add_anway">Engadir igualmente</string>
     <string name="this_looks_like_channel">Esto semella o enderezo dunha canle</string>
     <string name="share_backup_files">Compartir ficheiros de apoio</string>
-    <string name="conversations_backup">Copia de apoio Conversations</string>
+    <string name="chat_backup">Copia de apoio Chat</string>
     <string name="event">Evento</string>
     <string name="open_backup">Abrir copia de apoio</string>
-    <string name="not_a_backup_file">O ficheiro seleccionado non é un ficheiro de apoio Conversations</string>
+    <string name="not_a_backup_file">O ficheiro seleccionado non é un ficheiro de apoio Chat</string>
     <string name="account_already_setup">Esta conta xa foi configurada</string>
     <string name="please_enter_password">Introduza o contrasinal de esta conta</string>
     <string name="unable_to_perform_this_action">Non se puido completar a acción</string>
@@ -929,7 +929,7 @@
     <string name="remove_from_favorites">Non fixar enriba</string>
     <string name="gpx_track">Ruta GPX</string>
     <string name="could_not_correct_message">No se pode correxir a mensaxe</string>
-    <string name="search_all_conversations">Todos as conversas</string>
+    <string name="search_all_chat">Todos as conversas</string>
     <string name="search_this_conversation">Esta conversa</string>
     <string name="your_avatar">O teu avatar</string>
     <string name="avatar_for_x">Avatar para %s</string>
@@ -952,7 +952,7 @@
     <string name="failed_deliveries">Entregas fallidas</string>
     <string name="more_options">Máis opcións</string>
     <string name="no_application_found">Non se atopa unha aplicación</string>
-    <string name="invite_to_app">Convida a Conversations</string>
+    <string name="invite_to_app">Convida a Chat</string>
     <string name="unable_to_parse_invite">Non se puido enviar o convite</string>
     <string name="server_does_not_support_easy_onboarding_invites">O servidor non soporta a creación de convites</string>
     <string name="no_active_accounts_support_this">Ningunha conta activa soporta esta función</string>
@@ -1139,7 +1139,7 @@
     <string name="require_tls_v1_3">Requerir Transport Layer Security (TLS) Protocol Version 1.3 para todas as conexións</string>
     <string name="strong_transport_security">Seguridade en tránsito forte</string>
     <string name="download_failed_could_not_establish_tls">Non se puido establecer conexión TLS</string>
-    <string name="empty_conversations_list_hint">Cando inicies unha nova conversa, aparecerá nesta lista</string>
+    <string name="empty_chat_list_hint">Cando inicies unha nova conversa, aparecerá nesta lista</string>
     <string name="server_info_moderated_message_retraction">XEP-0425: Retracción de mensaxes moderadas</string>
     <string name="server_info_occupant_id">XEP-0421: Identificadores de participantes</string>
     <string name="account_status_tls_error_protocol">Seguridade en tránsito feble (sen TLS 1.3)</string>

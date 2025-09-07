@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application android:icon="@mipmap/new_launcher">
+        <activity
+            android:name="tech.ravensoftware.chat.ui.ManageAccountActivity"
+            android:label="@string/title_activity_manage_accounts"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Chat3" />
+        <activity
+            android:name="tech.ravensoftware.chat.ui.WelcomeActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="tech.ravensoftware.chat.ui.PickServerActivity"
+            android:enableOnBackInvokedCallback="false"
+            android:label="@string/create_new_account"
+            android:launchMode="singleTask"
+            tools:targetApi="33" />
+        <activity
+            android:name="tech.ravensoftware.chat.ui.MagicCreateActivity"
+            android:label="@string/create_new_account"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="tech.ravensoftware.chat.ui.EasyOnboardingInviteActivity"
+            android:label="@string/invite_to_app"
+            android:launchMode="singleTask" />
+    </application>
+</manifest>

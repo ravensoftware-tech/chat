@@ -17,7 +17,7 @@
             app:useSimpleSummaryProvider="true" />
         <Preference
             android:icon="@drawable/ic_forum_24dp"
-            app:fragment="eu.siacs.conversations.ui.fragment.settings.InterfaceBubblesSettingsFragment"
+            app:fragment="tech.ravensoftware.chat.ui.fragment.settings.InterfaceBubblesSettingsFragment"
             app:summary="@string/pref_chat_bubbles_summary"
             app:title="@string/pref_chat_bubbles" />
         <SwitchPreferenceCompat

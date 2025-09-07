@@ -24,7 +24,7 @@
     <string name="just_now">μόλις τώρα</string>
     <string name="minute_ago">πριν από 1 λεπτό</string>
     <string name="minutes_ago">πριν από %d λεπτά</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d μη αναγνωσμένη συζήτηση</item>
         <item quantity="other">%d μη αναγνωσμένες συζητήσεις</item>
     </plurals>
@@ -540,7 +540,7 @@
     <string name="gp_medium">Μεσαίος</string>
     <string name="gp_long">Μεγάλος</string>
     <string name="pref_broadcast_last_activity">Δημοσιοποίηση της τελευταίας χρήσης</string>
-    <string name="pref_broadcast_last_activity_summary">Επιτρέψτε στις επαφές σας να γνωρίζουν πότε χρησιμοποιείτε το Conversations</string>
+    <string name="pref_broadcast_last_activity_summary">Επιτρέψτε στις επαφές σας να γνωρίζουν πότε χρησιμοποιείτε το Chat</string>
     <string name="pref_privacy">Ιδιωτικότητα</string>
     <string name="pref_theme_options">Θέμα</string>
     <string name="pref_theme_options_summary">Επιλογή παλέτας χρωμάτων</string>
@@ -800,7 +800,7 @@
     <string name="ebook">ηλεκτρονικό βιβλίο</string>
     <string name="video_original">Αρχικό (μη συμπιεσμένο)</string>
     <string name="open_with">Άνοιγμα με...</string>
-    <string name="set_profile_picture">Φωτογραφία προφίλ του Conversations</string>
+    <string name="set_profile_picture">Φωτογραφία προφίλ του Chat</string>
     <string name="choose_account">Επιλογή λογαριασμού</string>
     <string name="restore_backup">Επαναφορά αντιγράφου ασφαλείας</string>
     <string name="restore">Επαναφορά</string>
@@ -848,10 +848,10 @@
     <string name="add_anway">Προσθήκη έτσι κι αλλιώς</string>
     <string name="this_looks_like_channel">Αυτό μοιάζει με διεύθυνση καναλιού</string>
     <string name="share_backup_files">Διαμοιρασμός αντιγράφων ασφαλείας</string>
-    <string name="conversations_backup">Αντίγραφο ασφαλείας Conversations</string>
+    <string name="chat_backup">Αντίγραφο ασφαλείας Chat</string>
     <string name="event">Γεγονός</string>
     <string name="open_backup">Άνοιγμα αντιγράφου ασφαλείας</string>
-    <string name="not_a_backup_file">Το αρχείο που επιλέξατε δεν είναι αντίγραφο ασφαλείας του Conversations</string>
+    <string name="not_a_backup_file">Το αρχείο που επιλέξατε δεν είναι αντίγραφο ασφαλείας του Chat</string>
     <string name="account_already_setup">Αυτός ο λογαριασμός έχει προστεθεί ήδη</string>
     <string name="please_enter_password">Παρακαλώ εισάγετε τον κωδικό για αυτό το λογαριασμό</string>
     <string name="unable_to_perform_this_action">Αδυναμία εκτέλεσης αυτής της λειτουργίας</string>
@@ -904,7 +904,7 @@
     <string name="remove_from_favorites">Ξεκαρφίτσωμα από την κορυφή</string>
     <string name="gpx_track">Ίχνος GPX</string>
     <string name="could_not_correct_message">Αδυναμία διόρθωσης μηνύματος</string>
-    <string name="search_all_conversations">Όλες οι συζητήσεις</string>
+    <string name="search_all_chat">Όλες οι συζητήσεις</string>
     <string name="search_this_conversation">Αυτή η συζήτηση</string>
     <string name="your_avatar">Η φωτογραφία προφίλ σας</string>
     <string name="avatar_for_x">Φωτογραφία προφίλ του/της %s</string>
@@ -927,7 +927,7 @@
     <string name="failed_deliveries">Αποτυχημένες παραδόσεις</string>
     <string name="more_options">Περισσότερες επιλογές</string>
     <string name="no_application_found">Δεν βρέθηκε εφαρμογή</string>
-    <string name="invite_to_app">Πρόσκληση στο Conversations</string>
+    <string name="invite_to_app">Πρόσκληση στο Chat</string>
     <string name="unable_to_parse_invite">Αδυναμία ανάγνωσης πρόσκλησης</string>
     <string name="server_does_not_support_easy_onboarding_invites">Ο διακομιστής δεν υποστηρίζει την δημιουργία προσκλήσεων</string>
     <string name="no_active_accounts_support_this">Κανένας από τους ενεργούς λογαριασμούς δεν υποστηρίζει αυτό το χαρακτηριστικό</string>

@@ -1,6 +1,6 @@
 -dontobfuscate
 
--keep class eu.siacs.conversations.**
+-keep class tech.ravensoftware.chat.**
 -keep class im.conversations.**
 
 -keep class org.whispersystems.**
@@ -37,7 +37,7 @@
 -dontwarn org.openjsse.net.ssl.OpenJSSE
 -dontwarn org.jetbrains.annotations.**
 
--keepclassmembers class eu.siacs.conversations.http.services.** {
+-keepclassmembers class tech.ravensoftware.chat.http.services.** {
   !transient <fields>;
 }
 

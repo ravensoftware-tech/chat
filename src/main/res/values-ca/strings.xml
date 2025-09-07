@@ -24,7 +24,7 @@
     <string name="just_now">Ara</string>
     <string name="minute_ago">fa 1 min</string>
     <string name="minutes_ago">fa %d mins</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%dconverses no llegides</item>
         <item quantity="many"/>
         <item quantity="other">%d converses no llegides</item>
@@ -528,7 +528,7 @@
     <string name="gp_medium">Mitjà</string>
     <string name="gp_long">Llarg</string>
     <string name="pref_broadcast_last_activity">Ús de la radiodifusió</string>
-    <string name="pref_broadcast_last_activity_summary">Permetre que els seus contactes sàpiguen quan usa Conversations</string>
+    <string name="pref_broadcast_last_activity_summary">Permetre que els seus contactes sàpiguen quan usa Chat</string>
     <string name="pref_privacy">Privadesa</string>
     <string name="pref_theme_options">Tema</string>
     <string name="pref_theme_options_summary">Seleccioneu la paleta de colors</string>
@@ -780,7 +780,7 @@
     <string name="ebook">Llibre electrònic</string>
     <string name="video_original">Original (sense comprimir)</string>
     <string name="open_with">Obrir amb…</string>
-    <string name="set_profile_picture">Foto de perfil de Conversations</string>
+    <string name="set_profile_picture">Foto de perfil de Chat</string>
     <string name="choose_account">Triï el compte</string>
     <string name="restore_backup">Restaurar còpia de seguretat</string>
     <string name="restore">Restaurar</string>
@@ -828,10 +828,10 @@
     <string name="add_anway">Afegir de totes maneres</string>
     <string name="this_looks_like_channel">Això sembla una direcció de canal</string>
     <string name="share_backup_files">Compartir arxius de còpia de seguretat</string>
-    <string name="conversations_backup">Còpia de seguretat de Conversations</string>
+    <string name="chat_backup">Còpia de seguretat de Chat</string>
     <string name="event">Esdeveniment</string>
     <string name="open_backup">Obrir la còpia de seguretat</string>
-    <string name="not_a_backup_file">L\'arxiu seleccionat no és un arxiu de còpia de seguretat de Conversations</string>
+    <string name="not_a_backup_file">L\'arxiu seleccionat no és un arxiu de còpia de seguretat de Chat</string>
     <string name="account_already_setup">Aquest compte ja està configurada</string>
     <string name="please_enter_password">Si us plau, introdueixi la contrasenya d\'aquest compte</string>
     <string name="unable_to_perform_this_action">No s\'ha pogut realitzar aquesta acció</string>
@@ -879,7 +879,7 @@
     <string name="remove_from_favorites">Desenclavar de dalt</string>
     <string name="gpx_track">Ruta GPX</string>
     <string name="could_not_correct_message">No s\'ha pogut corregir el missatge</string>
-    <string name="search_all_conversations">Totes les converses</string>
+    <string name="search_all_chat">Totes les converses</string>
     <string name="search_this_conversation">Aquesta conversa</string>
     <string name="your_avatar">El seu avatar</string>
     <string name="avatar_for_x">Avatar per a %s</string>
@@ -902,7 +902,7 @@
     <string name="failed_deliveries">Lliuraments fallits</string>
     <string name="more_options">Més opcions</string>
     <string name="no_application_found">No s\'ha trobat cap aplicació</string>
-    <string name="invite_to_app">Convidar a Conversations</string>
+    <string name="invite_to_app">Convidar a Chat</string>
     <string name="unable_to_parse_invite">No es pot processar la invitació</string>
     <string name="server_does_not_support_easy_onboarding_invites">El servidor no admet la generació d\'invitacions</string>
     <string name="no_active_accounts_support_this">Cap compte actiu admet aquesta funció</string>

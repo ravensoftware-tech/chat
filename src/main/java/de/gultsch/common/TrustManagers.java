@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import androidx.annotation.Nullable;
 import com.google.common.collect.Iterables;
-import eu.siacs.conversations.R;
+import tech.ravensoftware.chat.R;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.KeyStore;

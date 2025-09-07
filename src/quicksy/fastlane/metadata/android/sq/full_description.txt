@@ -4,7 +4,7 @@ Regjistroheni me numrin tuaj të telefonit dhe Quicksy—bazuar në numrat e tel
 
 Nën kapak, Quicksy është një klient i plotë Jabber, që ju lejon të komunikoni me cilindo përdorues në cilindo shërbyes federimi publik. Në mënyrë të ngjashme, me përdoruesit në Quicksy mund të lidhesh që nga jashtë thjesht duke shtuar +phonenumber@quicksy.im te lista juaj e kontakteve.
 
-Hiq njëkohësimin e kontakteve, ndërfaqja e përdoruesit është lënë qëllimisht sa më afër Conversations që të jetë e mundur. Kjo u lejon përdoruesve që të migrojnë, nëse duan, nga Quicksy në Conversations pa u dashur të rimësojnë se si funksionon aplikacioni.
+Hiq njëkohësimin e kontakteve, ndërfaqja e përdoruesit është lënë qëllimisht sa më afër Chat që të jetë e mundur. Kjo u lejon përdoruesve që të migrojnë, nëse duan, nga Quicksy në Chat pa u dashur të rimësojnë se si funksionon aplikacioni.
 
 Kontaktet e sugjeruara përbëhen nga përdorues të tjerë të Quicksy-it dhe përdorues Jabber-i/XMPP-je të zakonshëm që kanë dhënë ID-në e tyre Jabber te Lista Quicksy (https://quicksy.im/#get-listed).
 

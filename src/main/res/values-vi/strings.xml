@@ -24,7 +24,7 @@
     <string name="just_now">mới đây</string>
     <string name="minute_ago">1 phút trước</string>
     <string name="minutes_ago">%d phút trước</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="other">%d cuộc hội thoại chưa đọc</item>
     </plurals>
     <string name="sending">đang gửi…</string>
@@ -544,7 +544,7 @@
     <string name="gp_medium">Vừa</string>
     <string name="gp_long">Dài</string>
     <string name="pref_broadcast_last_activity">Sử dụng truyền phát</string>
-    <string name="pref_broadcast_last_activity_summary">Cho các liên hệ của bạn biết bạn dùng Conversations</string>
+    <string name="pref_broadcast_last_activity_summary">Cho các liên hệ của bạn biết bạn dùng Chat</string>
     <string name="pref_privacy">Riêng tư</string>
     <string name="pref_theme_options">Chủ đề</string>
     <string name="pref_theme_options_summary">Chọn bộ màu sáng</string>
@@ -796,7 +796,7 @@
     <string name="ebook">sách điện tử</string>
     <string name="video_original">Gốc (không nén)</string>
     <string name="open_with">Mở bằng…</string>
-    <string name="set_profile_picture">Ảnh hồ sơ Conversations</string>
+    <string name="set_profile_picture">Ảnh hồ sơ Chat</string>
     <string name="choose_account">Chọn tài khoản</string>
     <string name="restore_backup">Khôi phục bản sao lưu</string>
     <string name="restore">Khôi phục</string>
@@ -844,10 +844,10 @@
     <string name="add_anway">Vẫn thêm</string>
     <string name="this_looks_like_channel">Cái này trông giống một địa chỉ kênh</string>
     <string name="share_backup_files">Chia sẻ tệp sao lưu</string>
-    <string name="conversations_backup">Bản sao lưu Conversations</string>
+    <string name="chat_backup">Bản sao lưu Chat</string>
     <string name="event">Sự kiện</string>
     <string name="open_backup">Mở bản sao lưu</string>
-    <string name="not_a_backup_file">Tệp bạn đã chọn không phải là tệp sao lưu của Conversations</string>
+    <string name="not_a_backup_file">Tệp bạn đã chọn không phải là tệp sao lưu của Chat</string>
     <string name="account_already_setup">Tài khoản này đã được thiết lập rồi</string>
     <string name="please_enter_password">Vui lòng nhập mật khẩu cho tài khoản này</string>
     <string name="unable_to_perform_this_action">Không thể thực hiện hành động này</string>
@@ -897,7 +897,7 @@
     <string name="remove_from_favorites">Bỏ ghim khỏi đầu</string>
     <string name="gpx_track">Tuyến đường GPS</string>
     <string name="could_not_correct_message">Không thể sửa tin nhắn</string>
-    <string name="search_all_conversations">Tất cả cuộc hội thoại</string>
+    <string name="search_all_chat">Tất cả cuộc hội thoại</string>
     <string name="search_this_conversation">Cuộc hội thoại này</string>
     <string name="your_avatar">Ảnh đại diện của bạn</string>
     <string name="avatar_for_x">Ảnh đại diện cho %s</string>
@@ -918,7 +918,7 @@
     <string name="failed_deliveries">Gửi đi thất bại</string>
     <string name="more_options">Thêm tuỳ chọn</string>
     <string name="no_application_found">Không tìm thấy ứng dụng nào</string>
-    <string name="invite_to_app">Mời vào Conversations</string>
+    <string name="invite_to_app">Mời vào Chat</string>
     <string name="unable_to_parse_invite">Không thể xử lý lời mời</string>
     <string name="server_does_not_support_easy_onboarding_invites">Máy chủ không hỗ trợ tạo lời mời</string>
     <string name="no_active_accounts_support_this">Không có tài khoản đang hoạt động nào hỗ trợ tính năng này</string>

@@ -24,7 +24,7 @@
     <string name="just_now">upravo sad</string>
     <string name="minute_ago">prije 1 min</string>
     <string name="minutes_ago">prije %d min</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d nepročitan razgovor</item>
         <item quantity="few">%d nepročitanih razgovora</item>
         <item quantity="other">%d nepročitani razgovori</item>

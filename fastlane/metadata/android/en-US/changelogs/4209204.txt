@@ -1,2 +1,2 @@
-* Provide easier access to 'Privacy Policy' on Play Store version (Quicksy and Conversations)
-* Remove address book integration on Play Store version of Conversations
+* Provide easier access to 'Privacy Policy' on Play Store version (Quicksy and Chat)
+* Remove address book integration on Play Store version of Chat

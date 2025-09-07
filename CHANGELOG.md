@@ -191,8 +191,8 @@
 
 ### Version 2.13.3
 
-* Provide easier access to 'Privacy Policy' on Play Store version (Quicksy and Conversations)
-* Remove address book integration on Play Store version of Conversations
+* Provide easier access to 'Privacy Policy' on Play Store version (Quicksy and Chat)
+* Remove address book integration on Play Store version of Chat
 
 ### Version 2.13.2
 
@@ -396,7 +396,7 @@
 
 ### Version 2.9.4
 * minor stability improvements for A/V calls
-* Conversations releases from here on forward require Android 5
+* Chat releases from here on forward require Android 5
 
 ### Version 2.9.3
 
@@ -417,7 +417,7 @@
 
 ### Version 2.9.0
 
-* Search individual conversations
+* Search individual chat
 * Notify user if message delivery fails
 * Remember display names (nicks) from Quicksy users across restarts
 * Add button to start Orbot (Tor) from notification if necessary
@@ -537,7 +537,7 @@
 
 ### Version 2.5.7
 * fixed crash when scanning QR codes on Android 6 and lower
-* when sharing a message from and to Conversations insert it as quote
+* when sharing a message from and to Chat insert it as quote
 
 ### Version 2.5.6
 * fixes for Jingle file transfer
@@ -617,7 +617,7 @@
 
 ### Version 2.3.5
 * Fixed group chat mentions when nick ends in . (dot)
-* Fixed Conversations not asking for permissions after direct share
+* Fixed Chat not asking for permissions after direct share
 * Fixed CVE-2018-18467
 
 ### Version 2.3.4
@@ -714,7 +714,7 @@
 * Removed slide out panel for conversation overview
 * Add ability to change status message
 * Highlight irregular unicode code blocks in Jabber IDs
-* Conversations now requires Android 4.4+
+* Chat now requires Android 4.4+
 
 ### Version 1.23.8
 * bug fixes
@@ -800,7 +800,7 @@
 ### Version 1.18.4
 * fixed UI freezes during connection timeout
 * fixed notification sound playing twice
-* fixed conversations being marked as read
+* fixed chat being marked as read
 * removed 'copy text' in favor of 'select text' and 'share with'
 
 ### Version 1.18.3
@@ -815,7 +815,7 @@
 * bug fixes
 
 ### Version 1.18.0
-* Conversations <1.16.0 will be unable to receive OMEMO encrypted messages
+* Chat <1.16.0 will be unable to receive OMEMO encrypted messages
 * OMEMO: put auth tag into key (verify auth tag as well)
 * offer to block entire domain in message from stranger snackbar 
 * treat URL as file if URL is in oob or contains key
@@ -978,7 +978,7 @@
 ### Version 1.12.3
 * make omemo default when all resources support it
 * show presence of other resources as template
-* start typing in StartConversationsActivity to search
+* start typing in StartChatActivity to search
 * various bug fixes and improvements
 
 ### Version 1.12.2
@@ -1017,7 +1017,7 @@
 * various bug fixes
 
 ### Version 1.11.1
-* fixed some bugs when sharing files with Conversations
+* fixed some bugs when sharing files with Chat
 
 ### Version 1.11.0
 * OMEMO encrypted conferences
@@ -1032,7 +1032,7 @@
 * introduced build flavors to make dependence on play-services optional
 
 ### Version 1.9.4
-* prevent cleared Conversations from reloading history with MAM
+* prevent cleared Chat from reloading history with MAM
 * various MAM fixes
 
 ### Version 1.9.3
@@ -1052,7 +1052,7 @@
 * Per conference notification settings
 * Let user decide whether to compress pictures
 * Support for XEP-0368
-* Ask user to exclude Conversations from battery optimizations
+* Ask user to exclude Chat from battery optimizations
 
 ### Version 1.8.4
 * prompt to trust own OMEMO devices
@@ -1163,7 +1163,7 @@
 * various bug fixes
 
 ### Version 1.3.0
-* swipe conversations to end them
+* swipe chat to end them
 * quickly enable / disable account via slider
 * share multiple images at once
 * expert option to distrust system CAs
@@ -1171,7 +1171,7 @@
 * bug fixes
 
 ### Version 1.2.0
-* Send current location. (requires [plugin](https://play.google.com/store/apps/details?id=eu.siacs.conversations.sharelocation))
+* Send current location. (requires [plugin](https://play.google.com/store/apps/details?id=tech.ravensoftware.chat.sharelocation))
 * Invite multiple contacts at once
 * performance improvements
 * bug fixes
@@ -1220,7 +1220,7 @@
 * more bug fixes
 
 ### Version 0.9.1
-* bug fixes including some that caused Conversations to crash on start
+* bug fixes including some that caused Chat to crash on start
 
 ### Version 0.9
 * arbitrary file transfer
@@ -1269,7 +1269,7 @@
 * Optionally use send button as status indicator
 
 ### Version 0.7
-* Ability to disable notifications for single conversations
+* Ability to disable notifications for single chat
 * Merge messages in chat bubbles
 * Fixes for OpenPGP and OTR (please republish your public key)
 * Improved reliability on sending messages

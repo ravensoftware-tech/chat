@@ -24,7 +24,7 @@
     <string name="just_now">току-що</string>
     <string name="minute_ago">преди 1 минута</string>
     <string name="minutes_ago">преди %d минути</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d непрочетен разговор</item>
         <item quantity="other">%d непрочетени разговора</item>
     </plurals>
@@ -541,7 +541,7 @@
     <string name="gp_medium">Средно</string>
     <string name="gp_long">Дълго</string>
     <string name="pref_broadcast_last_activity">Информиране за използването</string>
-    <string name="pref_broadcast_last_activity_summary">Позволява на контактите Ви да знаят кога използвате Conversations</string>
+    <string name="pref_broadcast_last_activity_summary">Позволява на контактите Ви да знаят кога използвате Chat</string>
     <string name="pref_privacy">Поверителност</string>
     <string name="pref_theme_options">Тема</string>
     <string name="pref_theme_options_summary">Изберете цветовата схема</string>
@@ -799,7 +799,7 @@
     <string name="ebook">е-книга</string>
     <string name="video_original">Оригинално (некомпресирано)</string>
     <string name="open_with">Отваряне с…</string>
-    <string name="set_profile_picture">Профилна снимка за Conversations</string>
+    <string name="set_profile_picture">Профилна снимка за Chat</string>
     <string name="choose_account">Изберете профил</string>
     <string name="restore_backup">Възстановяване от резервно копие</string>
     <string name="restore">Възстановяване</string>
@@ -847,10 +847,10 @@
     <string name="add_anway">Добавяне въпреки това</string>
     <string name="this_looks_like_channel">Това прилича на адрес на канал</string>
     <string name="share_backup_files">Споделяне на файловете с резервни копия</string>
-    <string name="conversations_backup">Резервно копие от Conversations</string>
+    <string name="chat_backup">Резервно копие от Chat</string>
     <string name="event">Събитие</string>
     <string name="open_backup">Отваряне на резервно копие</string>
-    <string name="not_a_backup_file">Избраният файл не е резервно копие от Conversations</string>
+    <string name="not_a_backup_file">Избраният файл не е резервно копие от Chat</string>
     <string name="account_already_setup">Този профил вече е настроен</string>
     <string name="please_enter_password">Въведете паролата за този профил</string>
     <string name="unable_to_perform_this_action">Това действие не може да бъде извършено</string>
@@ -898,7 +898,7 @@
     <string name="add_to_favorites">Закачане горе</string>
     <string name="remove_from_favorites">Откачане от горе</string>
     <string name="could_not_correct_message">Съобщението не може да бъде поправено</string>
-    <string name="search_all_conversations">Всички разговори</string>
+    <string name="search_all_chat">Всички разговори</string>
     <string name="search_this_conversation">Този разговор</string>
     <string name="your_avatar">Вашият аватар</string>
     <string name="avatar_for_x">Аватар за %s</string>
@@ -921,7 +921,7 @@
     <string name="failed_deliveries">Неуспешни доставяния</string>
     <string name="more_options">Още настройки</string>
     <string name="no_application_found">Няма намерено приложение</string>
-    <string name="invite_to_app">Канене в Conversations</string>
+    <string name="invite_to_app">Канене в Chat</string>
     <string name="unable_to_parse_invite">Поканата не може да бъде анализирана</string>
     <string name="server_does_not_support_easy_onboarding_invites">Сървърът не поддържа създаването на покани</string>
     <string name="no_active_accounts_support_this">Нито един от активните профили не поддържа тази функционалност</string>

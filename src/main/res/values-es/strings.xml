@@ -24,7 +24,7 @@
     <string name="just_now">ahora</string>
     <string name="minute_ago">hace 1 min</string>
     <string name="minutes_ago">hace %d min</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d chat sin leer</item>
         <item quantity="many">%d chats sin leer</item>
         <item quantity="other">%d chats sin leer</item>
@@ -866,10 +866,10 @@
     <string name="add_anway">Añadir de todas formas</string>
     <string name="this_looks_like_channel">Esto parece una dirección de un canal</string>
     <string name="share_backup_files">Compartir ficheros de respaldo</string>
-    <string name="conversations_backup">Respaldo de Conversations</string>
+    <string name="chat_backup">Respaldo de Chat</string>
     <string name="event">Evento</string>
     <string name="open_backup">Abrir respaldo</string>
-    <string name="not_a_backup_file">El fichero seleccionado no es un respaldo de Conversations</string>
+    <string name="not_a_backup_file">El fichero seleccionado no es un respaldo de Chat</string>
     <string name="account_already_setup">Esta cuenta ya fue configurada</string>
     <string name="please_enter_password">Por favor ingrese la contraseña para esta cuenta</string>
     <string name="unable_to_perform_this_action">No se ha podido realizar esta acción</string>
@@ -939,7 +939,7 @@
     <string name="remove_from_favorites">Desfijar de la parte superior</string>
     <string name="gpx_track">Recorrido GPX</string>
     <string name="could_not_correct_message">No se pudo corregir el mensaje</string>
-    <string name="search_all_conversations">Todos los chats</string>
+    <string name="search_all_chat">Todos los chats</string>
     <string name="search_this_conversation">Este chat</string>
     <string name="your_avatar">Tu imagen de perfil</string>
     <string name="avatar_for_x">Imagen de perfil de %s</string>
@@ -964,7 +964,7 @@
     <string name="failed_deliveries">Envíos fallidos</string>
     <string name="more_options">Más opciones</string>
     <string name="no_application_found">No se ha encontrado aplicación</string>
-    <string name="invite_to_app">Invitar a Conversations</string>
+    <string name="invite_to_app">Invitar a Chat</string>
     <string name="unable_to_parse_invite">No se ha podido leer la invitación</string>
     <string name="server_does_not_support_easy_onboarding_invites">El servidor no admite la generación de invitaciones</string>
     <string name="no_active_accounts_support_this">Ninguna cuenta activa admite esta funcionalidad</string>
@@ -1154,7 +1154,7 @@
     <string name="account_status_tls_error_untrusted">Certificado no confiable</string>
     <string name="account_status_tls_error_protocol">Seguridad de transporte débil (sin TLS 1.3)</string>
     <string name="strong_transport_security">Seguridad de transporte fuerte</string>
-    <string name="empty_conversations_list_hint">Una vez que inicies un chat, lo verás listado aquí</string>
+    <string name="empty_chat_list_hint">Una vez que inicies un chat, lo verás listado aquí</string>
     <string name="server_info_occupant_id">XEP-0421: Identificadores de ocupantes</string>
     <string name="server_info_moderated_message_retraction">XEP-0425: Retractación de Mensajes Moderados</string>
 </resources>

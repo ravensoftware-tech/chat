@@ -34,7 +34,7 @@ import android.text.Spannable;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
-import eu.siacs.conversations.utils.XmppUri;
+import tech.ravensoftware.chat.utils.XmppUri;
 import java.util.List;
 import java.util.Objects;
 

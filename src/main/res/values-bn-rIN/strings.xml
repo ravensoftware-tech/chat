@@ -24,7 +24,7 @@
     <string name="just_now">এক্ষুণি</string>
     <string name="minute_ago">এক মিনিট আগে</string>
     <string name="minutes_ago">%d মিনিট আগে</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%dটি চ্যাট পড়া হয়নি</item>
         <item quantity="other">%dটি চ্যাট পড়া হয়নি</item>
     </plurals>

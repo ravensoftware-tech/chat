@@ -24,7 +24,7 @@
     <string name="just_now">ちょうど今</string>
     <string name="minute_ago">1 分前</string>
     <string name="minutes_ago">%d 分前</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="other">未読の会話 %d 件</item>
     </plurals>
     <string name="sending">送信中…</string>
@@ -847,10 +847,10 @@
     <string name="add_anway">とにかく追加</string>
     <string name="this_looks_like_channel">これは談話室アドレスのようです</string>
     <string name="share_backup_files">バックアップファイルを共有</string>
-    <string name="conversations_backup">Conversations のバックアップ</string>
+    <string name="chat_backup">Chat のバックアップ</string>
     <string name="event">予定</string>
     <string name="open_backup">バックアップを開く</string>
-    <string name="not_a_backup_file">選択したファイルは、 Conversations のバックアップファイルではありません</string>
+    <string name="not_a_backup_file">選択したファイルは、 Chat のバックアップファイルではありません</string>
     <string name="account_already_setup">このアカウントは既に設定されています</string>
     <string name="please_enter_password">このアカウントのパスワートを入力してください</string>
     <string name="unable_to_perform_this_action">この操作を実行できません</string>
@@ -912,7 +912,7 @@
     <string name="remove_from_favorites">最上部へのピン止めを外す</string>
     <string name="gpx_track">GPX 追跡</string>
     <string name="could_not_correct_message">メッセージを修正できません</string>
-    <string name="search_all_conversations">すべての会話</string>
+    <string name="search_all_chat">すべての会話</string>
     <string name="search_this_conversation">この会話</string>
     <string name="your_avatar">あなたのアバター</string>
     <string name="avatar_for_x">%s のアバター</string>
@@ -933,7 +933,7 @@
     <string name="failed_deliveries">配信に失敗</string>
     <string name="more_options">更なるオプション</string>
     <string name="no_application_found">アプリケーションが見つかりません</string>
-    <string name="invite_to_app">Conversationsに招待</string>
+    <string name="invite_to_app">Chatに招待</string>
     <string name="unable_to_parse_invite">招待を解析できません</string>
     <string name="server_does_not_support_easy_onboarding_invites">サーバーは招待の作成に対応していません</string>
     <string name="no_active_accounts_support_this">この機能をサポートするアクティブなアカウントがありません</string>

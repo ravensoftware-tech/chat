@@ -24,7 +24,7 @@
     <string name="just_now">právě teď</string>
     <string name="minute_ago">před minutou</string>
     <string name="minutes_ago">před %d minutami</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d nepřečtený chat</item>
         <item quantity="few">%d nepřečtené chaty</item>
         <item quantity="other">%d nepřečtených chatů</item>
@@ -118,7 +118,7 @@
     <string name="pref_notification_sound_summary">Zvuk upozornění na nové zprávy</string>
     <string name="pref_call_ringtone_summary">Vyzváněcí tón pro příchozí hovory</string>
     <string name="pref_notification_grace_period">Časová lhůta</string>
-    <string name="pref_notification_grace_period_summary">Časová lhůta po kterou bude Conversations v tichém režimu při zaznamenání aktivity na jiném přístroji.</string>
+    <string name="pref_notification_grace_period_summary">Časová lhůta po kterou bude Chat v tichém režimu při zaznamenání aktivity na jiném přístroji.</string>
     <string name="pref_advanced_options">Rozšířené</string>
     <string name="pref_never_send_crash_summary">Zasíláním detailů o důvodu selhání pomůžete dalšímu vývoji</string>
     <string name="pref_confirm_messages">Potvrzovat zprávy</string>
@@ -854,10 +854,10 @@
     <string name="add_anway">Přesto přidat</string>
     <string name="this_looks_like_channel">Toto vypadá jako adresa kanálu</string>
     <string name="share_backup_files">Sdílet soubory zálohy</string>
-    <string name="conversations_backup">Záloha Conversations</string>
+    <string name="chat_backup">Záloha Chat</string>
     <string name="event">Událost</string>
     <string name="open_backup">Otevřít zálohu</string>
-    <string name="not_a_backup_file">Soubor, který jste zvolili, není soubor zálohy Conversations</string>
+    <string name="not_a_backup_file">Soubor, který jste zvolili, není soubor zálohy Chat</string>
     <string name="account_already_setup">Tento účet byl již nastaven</string>
     <string name="please_enter_password">Prosím, zadejte heslo k tomuto účtu</string>
     <string name="unable_to_perform_this_action">Nebylo možné vykonat tuto akci</string>
@@ -904,7 +904,7 @@
     <string name="remove_from_favorites">Odepnout shora</string>
     <string name="gpx_track">GPX trasa</string>
     <string name="could_not_correct_message">Nebylo možné opravit zprávu</string>
-    <string name="search_all_conversations">Všechny chaty</string>
+    <string name="search_all_chat">Všechny chaty</string>
     <string name="search_this_conversation">Tento chat</string>
     <string name="your_avatar">Váš avatar</string>
     <string name="avatar_for_x">Avatar uživatele %s</string>
@@ -931,7 +931,7 @@
     <string name="failed_deliveries">Neúspěšné přenosy</string>
     <string name="more_options">Více možností</string>
     <string name="no_application_found">Nenalezena žádná aplikace</string>
-    <string name="invite_to_app">Pozvat do Conversations</string>
+    <string name="invite_to_app">Pozvat do Chat</string>
     <string name="unable_to_parse_invite">Nelze načíst pozvánku</string>
     <string name="server_does_not_support_easy_onboarding_invites">Server nepodporuje vytváření pozvánek</string>
     <string name="no_active_accounts_support_this">Žádný z aktivních účtů tuto funkci nepodporuje</string>
@@ -1154,5 +1154,5 @@
     <string name="copy_geo_uri">Kopírovat polohu</string>
     <string name="copy_email_address">Kopírovat e-mailovou adresu</string>
     <string name="copied_email_address">E-mailová adresa zkopírována do schránky</string>
-    <string name="welcome_header">Začněte používat Conversations</string>
+    <string name="welcome_header">Začněte používat Chat</string>
 </resources>

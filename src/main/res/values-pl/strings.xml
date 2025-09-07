@@ -24,7 +24,7 @@
     <string name="just_now">przed chwilą</string>
     <string name="minute_ago">minutę temu</string>
     <string name="minutes_ago">%d minut temu</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d nieprzeczytana rozmowa</item>
         <item quantity="few">%d nieprzeczytane rozmowy</item>
         <item quantity="many">%d nieprzeczytanych rozmów</item>
@@ -747,7 +747,7 @@
     <string name="foreground_service_channel_description">Ta kategoria powiadomień jest używana aby wyświetlać stałe powiadomienie oznaczające, że %1$s działa.</string>
     <string name="notification_group_status_information">Wiadomość Statusu</string>
     <string name="error_channel_name">Problemy z połączeniem</string>
-    <string name="error_channel_description">Ta kategoria powiadomień jest używana aby wyświetlać powiadomienia oznaczające, że Conversations ma problemy z połączeniem.</string>
+    <string name="error_channel_description">Ta kategoria powiadomień jest używana aby wyświetlać powiadomienia oznaczające, że Chat ma problemy z połączeniem.</string>
     <string name="notification_group_messages">Wiadomości</string>
     <string name="notification_group_calls">Połączenia</string>
     <string name="messages_channel_name">Wiadomości</string>
@@ -873,10 +873,10 @@
     <string name="add_anway">Dodaj i tak</string>
     <string name="this_looks_like_channel">To wygląda jak adres kanału</string>
     <string name="share_backup_files">Udostępnij pliki kopii zapasowych</string>
-    <string name="conversations_backup">Kopia zapasowa Conversations</string>
+    <string name="chat_backup">Kopia zapasowa Chat</string>
     <string name="event">Zdarzenie</string>
     <string name="open_backup">Otwórz kopię zapasową</string>
-    <string name="not_a_backup_file">Plik, który otworzyłeś, nie jest plikiem kopii zapasowej Conversations</string>
+    <string name="not_a_backup_file">Plik, który otworzyłeś, nie jest plikiem kopii zapasowej Chat</string>
     <string name="account_already_setup">To konto zostało już ustawione</string>
     <string name="please_enter_password">Proszę podać hasło dla tego konta</string>
     <string name="unable_to_perform_this_action">Nie można wykonać tej akcji</string>
@@ -949,7 +949,7 @@
     <string name="remove_from_favorites">Odepnij</string>
     <string name="gpx_track">Ścieżka GPX</string>
     <string name="could_not_correct_message">Nie można poprawić wiadomości</string>
-    <string name="search_all_conversations">Wszystkie rozmowy</string>
+    <string name="search_all_chat">Wszystkie rozmowy</string>
     <string name="search_this_conversation">Ta rozmowa</string>
     <string name="your_avatar">Twój awatar</string>
     <string name="avatar_for_x">Awatar dla %s</string>
@@ -976,7 +976,7 @@
     <string name="failed_deliveries">Nie dostarczone wiadomości</string>
     <string name="more_options">Więcej ustawień</string>
     <string name="no_application_found">Nie znaleziono żadnej aplikacji</string>
-    <string name="invite_to_app">Zaproś do Conversations</string>
+    <string name="invite_to_app">Zaproś do Chat</string>
     <string name="unable_to_parse_invite">Nie można przetworzyć zaproszenia</string>
     <string name="server_does_not_support_easy_onboarding_invites">Serwer nie wspiera tworzenia zaproszeń</string>
     <string name="no_active_accounts_support_this">Nie ma aktywnych kont wspierających tę funkcję</string>
@@ -1165,7 +1165,7 @@
     <string name="require_tls_v1_3">Wymaganie protokołu Transport Layer Security (TLS) w wersji 1.3 dla wszystkich połączeń</string>
     <string name="strong_transport_security">Silne zabezpieczenie transportu</string>
     <string name="download_failed_could_not_establish_tls">Nie można zestawić połączenia TLS</string>
-    <string name="empty_conversations_list_hint">Po rozpoczęciu nowej rozmowy zobaczysz ją tutaj</string>
+    <string name="empty_chat_list_hint">Po rozpoczęciu nowej rozmowy zobaczysz ją tutaj</string>
     <string name="server_info_occupant_id">XEP-0421: identyfikatory uczestników</string>
     <string name="server_info_moderated_message_retraction">XEP-0425: wycofywanie wiadomości przez moderację</string>
     <string name="account_status_tls_error_protocol">Niskie bezpieczeństwo transportu (brak TLS 1.3)</string>

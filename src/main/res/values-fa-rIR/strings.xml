@@ -555,7 +555,7 @@
     <string name="recording_error">خطا</string>
     <string name="download_failed_server_not_found">بارگیری شکست خورد: سرور پیدا نشد</string>
     <string name="server_info_stream_management">XEP-0198: Stream Management</string>
-    <string name="search_all_conversations">همهٔ گفتگوها</string>
+    <string name="search_all_chat">همهٔ گفتگوها</string>
     <string name="disable_notifications">قطع اعلان‌ها</string>
     <string name="return_to_ongoing_call">بازگشت به تماس جاری</string>
     <string name="could_not_change_affiliation">تغییر نسبت %s ممکن نبود</string>
@@ -569,7 +569,7 @@
 \n
 \n<b>هشدار:</b> گفتگوی گروهی کاملاً از سرور حذف خواهد شد.</string>
     <string name="openpgp_messages_found">پیام تازهٔ رمزشده با OpenPGP پیدا شد</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d گفتگوی خوانده‌نشده</item>
         <item quantity="other">%d گفتگوی خوانده‌نشده</item>
     </plurals>
@@ -587,7 +587,7 @@
     <string name="invite">دعوت</string>
     <string name="rtp_state_finding_device">یافتن دستگاه‌ها</string>
     <string name="user_has_left_conference">%1$s از گفتگوی گروهی رفت</string>
-    <string name="invite_to_app">دعوت به Conversations</string>
+    <string name="invite_to_app">دعوت به Chat</string>
     <string name="done">انجام شد</string>
     <string name="missing_public_keys">کلید عمومی اطلاع‌رسانی نشده</string>
     <string name="verifying">در حال تأیید…</string>
@@ -595,7 +595,7 @@
     <string name="not_fetching_history_retention_period">پیغام‌ها به خاطر زمان نگه‌داری آفلاین دریافت نمی‌شوند.</string>
     <string name="pref_validate_hostname_summary">تأییدیه‌های امنیتی سرورهایی که دارای نام میزبان تأییدشده هستند تأیید می‌شوند</string>
     <string name="join_public_channel">عضو کانال عمومی شوید</string>
-    <string name="conversations_backup">پشتیان Conversations</string>
+    <string name="chat_backup">پشتیان Chat</string>
     <string name="presence_xa">دور از دسترس</string>
     <string name="this_device_is_no_longer_in_use">این دستگاه دیگر فعالیتی ندارد</string>
     <string name="action_directions">مسیریابی</string>
@@ -932,7 +932,7 @@
     <string name="retry_decryption">رمزگشایی دوباره</string>
     <string name="only_the_owner_can_change_group_chat_avatar">تنها مالک می‌تواند تصویر نمایهٔ گفتگوی عمومی را عوض کند</string>
     <string name="error_channel_description">این نوع از اعلان وقتی نمایش می‌یابد که در اتصال یک حساب مشکلی وجود داشته باشد.</string>
-    <string name="set_profile_picture">تصویر نمایهٔ Conversations</string>
+    <string name="set_profile_picture">تصویر نمایهٔ Chat</string>
     <string name="shared_file_with_x">پرونده با %s هم‌رسانی شد</string>
     <string name="type_tablet">تبلت</string>
     <string name="view_media">دیدن رسانه</string>

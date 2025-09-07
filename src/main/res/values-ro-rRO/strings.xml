@@ -24,7 +24,7 @@
     <string name="just_now">acum</string>
     <string name="minute_ago">acum un minut</string>
     <string name="minutes_ago">acum %d minute</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d discuție necitită</item>
         <item quantity="few">%d discuții necitite</item>
         <item quantity="other">%d de discuții necitite</item>
@@ -873,10 +873,10 @@
     <string name="add_anway">Adaugă oricum</string>
     <string name="this_looks_like_channel">Aceasta pare o adresă de canal</string>
     <string name="share_backup_files">Partajează fișierele copiei de siguranță</string>
-    <string name="conversations_backup">Copie de siguranță Conversations</string>
+    <string name="chat_backup">Copie de siguranță Chat</string>
     <string name="event">Eveniment</string>
     <string name="open_backup">Deschide o copie de siguranță</string>
-    <string name="not_a_backup_file">Fișierul selectat nu este o copie de siguranță Conversations</string>
+    <string name="not_a_backup_file">Fișierul selectat nu este o copie de siguranță Chat</string>
     <string name="account_already_setup">Acest cont a fost deja configurat</string>
     <string name="please_enter_password">Va rugăm să introduceți parola pentru acest cont</string>
     <string name="unable_to_perform_this_action">Nu s-a putut realiza această acțiune</string>
@@ -946,7 +946,7 @@
     <string name="remove_from_favorites">Anulează fixarea</string>
     <string name="gpx_track">Traseu GPX</string>
     <string name="could_not_correct_message">Nu s-a putut corecta mesajul</string>
-    <string name="search_all_conversations">Toate discuțiile</string>
+    <string name="search_all_chat">Toate discuțiile</string>
     <string name="search_this_conversation">Această discuție</string>
     <string name="your_avatar">Poza dumneavoastră de profil</string>
     <string name="avatar_for_x">Poză de profil pentru %s</string>
@@ -971,7 +971,7 @@
     <string name="failed_deliveries">Trimiteri eșuate</string>
     <string name="more_options">Mai multe</string>
     <string name="no_application_found">Nu s-a găsit nici o aplicație</string>
-    <string name="invite_to_app">Invitați la Conversations</string>
+    <string name="invite_to_app">Invitați la Chat</string>
     <string name="unable_to_parse_invite">Nu s-a putut procesa invitația</string>
     <string name="server_does_not_support_easy_onboarding_invites">Serverul nu suportă generarea de invitații</string>
     <string name="no_active_accounts_support_this">Nici un cont activ nu suporta această caracteristică</string>
@@ -1159,7 +1159,7 @@
     <string name="strong_transport_security">Securitate puternică a transportului</string>
     <string name="require_tls_v1_3">Necesită Transport Layer Security (TLS) Protocol Versiunea 1.3 pentru toate conexiunile</string>
     <string name="download_failed_could_not_establish_tls">Nu s-a putut stabili conexiunea TLS</string>
-    <string name="empty_conversations_list_hint">Odată ce începeți o discuție nouă, o veți vedea listată aici</string>
+    <string name="empty_chat_list_hint">Odată ce începeți o discuție nouă, o veți vedea listată aici</string>
     <string name="server_info_moderated_message_retraction">XEP-0425: Retragerea mesajului moderat</string>
     <string name="server_info_occupant_id">XEP-0421: Identificatori ocupanți</string>
     <string name="account_status_tls_error_untrusted">Certificatul nu este de încredere</string>

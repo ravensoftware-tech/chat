@@ -24,7 +24,7 @@
     <string name="just_now">управо сад</string>
     <string name="minute_ago">пре минут</string>
     <string name="minutes_ago">пре %d минута</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d непрочитана порука</item>
         <item quantity="few">%d непрочитане поруке</item>
         <item quantity="other">%d непрочитаних порука</item>
@@ -905,7 +905,7 @@
     <string name="play_audio">Пусти снимак</string>
     <string name="add_contact_or_create_or_join_group_chat">Додај контакт, направи или се придружи у групну преписку, или пронађи канале</string>
     <string name="no_application_found">Није пронађена апликација</string>
-    <string name="invite_to_app">Позови на Conversations</string>
+    <string name="invite_to_app">Позови на Chat</string>
     <string name="unable_to_parse_invite">Није могуће ишчитати позивницу</string>
     <string name="could_not_disable_video">Није могуће искључити видео.</string>
     <string name="no_xmpp_adddress_found">Није пронађена XMPP адреса</string>
@@ -1026,10 +1026,10 @@
     <string name="this_looks_like_a_domain">Ово изгледа као адреса домена</string>
     <string name="add_anway">Додај свеједно</string>
     <string name="this_looks_like_channel">Ово изгледа као адреса канала</string>
-    <string name="conversations_backup">Conversations резервне копије</string>
+    <string name="chat_backup">Chat резервне копије</string>
     <string name="event">Догађај</string>
     <string name="open_backup">Отвори резервну копију</string>
-    <string name="not_a_backup_file">Фајл који си одабрао/ла није Conversations резервна копија</string>
+    <string name="not_a_backup_file">Фајл који си одабрао/ла није Chat резервна копија</string>
     <string name="outdated_backup_file_format">Покушаваш да увезеш резервну копију застарелог формата</string>
     <string name="account_already_setup">Овај налог је већ подешен</string>
     <string name="please_enter_password">Унеси лозинку за овај налог</string>
@@ -1065,7 +1065,7 @@
     <string name="missed_call">Пропуштен позив</string>
     <string name="audio_call">Аудио позив</string>
     <string name="video_call">Видео позив</string>
-    <string name="search_all_conversations">Све преписке</string>
+    <string name="search_all_chat">Све преписке</string>
     <string name="search_this_conversation">Ова преписка</string>
     <string name="unified_push_distributor">UnifiedPush дистрибутер</string>
     <string name="pref_up_push_account_summary">Налог кроз који ће “push” поруке бити примљене.</string>
@@ -1174,7 +1174,7 @@
     <string name="strong_transport_security">Појачана безбедност транспорта</string>
     <string name="require_tls_v1_3">Захтевај Transport Layer Security (TLS) протокол верзије 1.3 за све везе</string>
     <string name="download_failed_could_not_establish_tls">Није могуће успоставити TLS везу</string>
-    <string name="empty_conversations_list_hint">Кад започнеш нову преписку, видећеш је излистану овде</string>
+    <string name="empty_chat_list_hint">Кад започнеш нову преписку, видећеш је излистану овде</string>
     <string name="server_info_moderated_message_retraction">XEP-0425: Moderated Message Retraction</string>
     <string name="server_info_occupant_id">XEP-0421: Occupant identifiers</string>
     <string name="account_status_tls_error_protocol">Слаба безбедност транспорта (није TLS 1.3)</string>

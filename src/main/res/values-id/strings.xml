@@ -24,7 +24,7 @@
     <string name="just_now">sekarang</string>
     <string name="minute_ago">1 min lalu</string>
     <string name="minutes_ago">%d min lalu</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="other">%d percakapan belum dibaca</item>
     </plurals>
     <string name="sending">mengirim...</string>

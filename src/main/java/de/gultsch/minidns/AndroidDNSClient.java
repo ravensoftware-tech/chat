@@ -12,7 +12,7 @@ import com.google.common.base.Objects;
 import com.google.common.base.Strings;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableList;
-import eu.siacs.conversations.Config;
+import tech.ravensoftware.chat.Config;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.time.Duration;

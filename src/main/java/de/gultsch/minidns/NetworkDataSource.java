@@ -11,7 +11,7 @@ import com.google.common.cache.LoadingCache;
 import com.google.common.cache.RemovalListener;
 import com.google.common.collect.ImmutableList;
 
-import eu.siacs.conversations.Config;
+import tech.ravensoftware.chat.Config;
 
 import org.minidns.MiniDnsException;
 import org.minidns.dnsmessage.DnsMessage;

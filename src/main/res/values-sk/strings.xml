@@ -24,7 +24,7 @@
     <string name="just_now">práve teraz</string>
     <string name="minute_ago">pred 1 minútou</string>
     <string name="minutes_ago">pred %d minútami</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%dneprečítaný rozhovor</item>
         <item quantity="few">%dneprečítaných rozhovorov</item>
         <item quantity="other">%dneprečítaných rozhovorov</item>

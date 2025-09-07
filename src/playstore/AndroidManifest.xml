@@ -19,7 +19,7 @@
             android:exported="true"
             android:permission="android.permission.CHANGE_CONFIGURATION">
             <intent-filter>
-                <action android:name="eu.siacs.conversations.RENEW_INSTANCE_ID" />
+                <action android:name="tech.ravensoftware.chat.RENEW_INSTANCE_ID" />
             </intent-filter>
         </receiver>
 

@@ -23,9 +23,9 @@ repositories {
 configurations {
     playstoreImplementation
     freeImplementation
-    conversationsFreeImplementation
-    conversationsPlaystorImplementation
-    conversationsPlaystoreImplementation
+    chatFreeImplementation
+    chatPlaystorImplementation
+    chatPlaystoreImplementation
     quicksyPlaystoreImplementation
     quicksyPlaystoreImplementation
     quicksyFreeImplementation
@@ -85,7 +85,7 @@ dependencies {
     implementation 'org.minidns:minidns-dnssec:1.1.1'
     implementation 'org.osmdroid:osmdroid-android:6.1.20'
     implementation 'org.whispersystems:signal-protocol-java:2.6.2'
-    conversationsPlaystoreImplementation 'com.android.installreferrer:installreferrer:2.2'
+    chatPlaystoreImplementation 'com.android.installreferrer:installreferrer:2.2'
     playstoreImplementation('com.google.firebase:firebase-messaging:25.0.0') {
         exclude group: 'com.google.firebase', module: 'firebase-core'
         exclude group: 'com.google.firebase', module: 'firebase-analytics'
@@ -107,7 +107,7 @@ ext {
 }
 
 android {
-    namespace 'eu.siacs.conversations'
+    namespace 'tech.ravensoftware.chat'
     compileSdk 36
 
     defaultConfig {
@@ -116,9 +116,9 @@ android {
         versionCode 42159
         versionName "2.19.5"
         archivesBaseName += "-$versionName"
-        applicationId "eu.siacs.conversations"
+        applicationId 'tech.ravensoftware.chat'
         resValue "string", "applicationId", applicationId
-        def appName = "Conversations"
+        def appName = "Chat"
         resValue "string", "app_name", appName
         buildConfigField "String", "APP_NAME", "\"$appName\""
     }
@@ -163,7 +163,7 @@ android {
             buildConfigField "String", "PRIVACY_POLICY", "\"https://quicksy.im/privacy.htm\""
         }
 
-        conversations {
+        chat {
             dimension "mode"
             buildConfigField "String", "PRIVACY_POLICY", "\"https://conversations.im/privacy.html\""
         }
@@ -192,17 +192,17 @@ android {
                 srcDir 'src/quicksyPlaystore/res'
             }
         }
-        conversationsFree {
+        chatFree {
             java {
-                srcDir 'src/conversationsFree/java'
+                srcDir 'src/chatFree/java'
             }
         }
-        conversationsPlaystore {
+        chatPlaystore {
             java {
-                srcDir 'src/conversationsPlaystore/java'
+                srcDir 'src/chatPlaystore/java'
             }
             res {
-                srcDir 'src/conversationsPlaystore/res'
+                srcDir 'src/chatPlaystore/res'
             }
         }
     }

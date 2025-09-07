@@ -24,7 +24,7 @@
     <string name="just_now">äskettäin</string>
     <string name="minute_ago">minuutti sitten</string>
     <string name="minutes_ago">%d minuuttia sitten</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d lukematon pikakeskustelu</item>
         <item quantity="other">%d lukematonta pikakeskustelua</item>
     </plurals>
@@ -800,7 +800,7 @@
     <string name="share_backup_files">Jaa varmuuskopiotiedostot</string>
     <string name="event">Tapahtuma</string>
     <string name="open_backup">Avaa varmuuskopio</string>
-    <string name="not_a_backup_file">Valitsemasi tiedosto ei ole Conversationsin varmuuskopio</string>
+    <string name="not_a_backup_file">Valitsemasi tiedosto ei ole Chatin varmuuskopio</string>
     <string name="account_already_setup">Tämä tili on jo asennettu</string>
     <string name="please_enter_password">Syötä tämän tilin salasana</string>
     <string name="unable_to_perform_this_action">Toiminnon suorittaminen epäonnistui</string>
@@ -850,7 +850,7 @@
     <string name="remove_from_favorites">Irrota</string>
     <string name="gpx_track">GPX-reitti</string>
     <string name="could_not_correct_message">Viestin korjaaminen epäonnistui</string>
-    <string name="search_all_conversations">Kaikki pikakeskustelut</string>
+    <string name="search_all_chat">Kaikki pikakeskustelut</string>
     <string name="search_this_conversation">Tämä pikakeskustelu</string>
     <string name="your_avatar">Profiilikuvasi</string>
     <string name="avatar_for_x">%s:n profiilikuva</string>
@@ -873,7 +873,7 @@
     <string name="failed_deliveries">Toimitusvirheet</string>
     <string name="more_options">Lisää vaihtoehtoja</string>
     <string name="no_application_found">Sovellusta ei löytynyt</string>
-    <string name="invite_to_app">Kutsu Conversationsiin</string>
+    <string name="invite_to_app">Kutsu Chatiin</string>
     <string name="unable_to_parse_invite">Kutsun jäsentäminen epäonnistui</string>
     <string name="server_does_not_support_easy_onboarding_invites">Palvelin ei tue kutsujen luomista</string>
     <string name="no_active_accounts_support_this">Yksikään aktiivinen tili ei tue tätä toimintoa</string>
@@ -988,7 +988,7 @@
     <string name="pref_category_engagement_notifications">Sitoutumisilmoitukset</string>
     <string name="remove_bookmark">Haluatko poistaa kirjanmerkin kohteesta %s?</string>
     <string name="remove_bookmark_and_close">Haluatko poistaa %s:n kirjanmerkin ja arkistoida pikakeskustelun?</string>
-    <string name="conversations_backup">Keskustelujen varmuuskopio</string>
+    <string name="chat_backup">Keskustelujen varmuuskopio</string>
     <string name="outdated_backup_file_format">Yrität tuoda vanhentunutta varmuuskopiotiedostomuotoa</string>
     <string name="hide_inactive_devices">Piilota ei-aktiivinen</string>
     <string name="battery_optimizations_enabled_explained">Laitteesi käyttää raskasta akun optimointia kohteelle %1$s, mikä voi johtaa viivästyneisiin ilmoituksiin tai jopa viestien katoamiseen.\nOn suositeltavaa poistaa ne käytöstä.</string>

@@ -24,7 +24,7 @@
     <string name="just_now">剛剛</string>
     <string name="minute_ago">1 分鐘前</string>
     <string name="minutes_ago">%d 分鐘前</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="other">%d 則未讀會話</item>
     </plurals>
     <string name="sending">正在傳送…</string>
@@ -751,7 +751,7 @@
     <string name="ebook">電子書</string>
     <string name="video_original">原始 (未壓縮)</string>
     <string name="open_with">開啟為…</string>
-    <string name="set_profile_picture">Conversations 設定檔圖片</string>
+    <string name="set_profile_picture">Chat 設定檔圖片</string>
     <string name="choose_account">選擇帳戶</string>
     <string name="restore_backup">還原備份</string>
     <string name="restore">還原</string>
@@ -799,10 +799,10 @@
     <string name="add_anway">仍要新增</string>
     <string name="this_looks_like_channel">這似乎是一個頻道位址</string>
     <string name="share_backup_files">分享備份檔案</string>
-    <string name="conversations_backup">Conversations 備份</string>
+    <string name="chat_backup">Chat 備份</string>
     <string name="event">活動</string>
     <string name="open_backup">開啟備份</string>
-    <string name="not_a_backup_file">你選取的檔案的並不是 Conversations 備份檔案</string>
+    <string name="not_a_backup_file">你選取的檔案的並不是 Chat 備份檔案</string>
     <string name="account_already_setup">此帳戶已完成設定</string>
     <string name="please_enter_password">請輸入此帳戶的密碼</string>
     <string name="unable_to_perform_this_action">無法執行此動作</string>
@@ -863,7 +863,7 @@
     <string name="remove_from_favorites">取消釘選</string>
     <string name="gpx_track">GPX 追綜</string>
     <string name="could_not_correct_message">無法更正訊息</string>
-    <string name="search_all_conversations">所有會話</string>
+    <string name="search_all_chat">所有會話</string>
     <string name="search_this_conversation">此會話</string>
     <string name="your_avatar">您的頭像</string>
     <string name="avatar_for_x">%s 的頭像</string>
@@ -884,7 +884,7 @@
     <string name="failed_deliveries">無法傳遞</string>
     <string name="more_options">更多選項</string>
     <string name="no_application_found">找不到應用程式</string>
-    <string name="invite_to_app">邀請至 Conversations</string>
+    <string name="invite_to_app">邀請至 Chat</string>
     <string name="unable_to_parse_invite">無法剖析邀請</string>
     <string name="server_does_not_support_easy_onboarding_invites">伺服器不支援產生邀請</string>
     <string name="no_active_accounts_support_this">沒有支援此功能的啟用中帳戶</string>

@@ -134,7 +134,7 @@
                             android:src="@drawable/ic_star_24dp"
                             android:visibility="visible" />
 
-                        <eu.siacs.conversations.ui.widget.UnreadCountCustomView
+                        <tech.ravensoftware.chat.ui.widget.UnreadCountCustomView
                             android:id="@+id/unread_count"
                             android:layout_width="18sp"
                             android:layout_height="18sp"

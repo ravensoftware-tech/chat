@@ -276,7 +276,7 @@
     <string name="account_state_logged_out">התנתק</string>
     <string name="account_status_policy_violation">הפרת מדיניות</string>
     <string name="account_status_connection_timeout">פסק זמן התחברות</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d צ\'אט שלא נקרא</item>
         <item quantity="two">%d צ\'אטים שלא נקראו</item>
         <item quantity="other">%d צ\'אטים שלא נקראו</item>

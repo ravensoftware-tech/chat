@@ -659,10 +659,10 @@
     <string name="this_looks_like_a_domain">Kjo duket si adresë përkatësie</string>
     <string name="add_anway">Shtoje sido qoftë</string>
     <string name="share_backup_files">Ndani me të tjerë kartela kopjeruajtjesh</string>
-    <string name="conversations_backup">Kopjeruajtje bisede</string>
+    <string name="chat_backup">Kopjeruajtje bisede</string>
     <string name="event">Akt</string>
     <string name="open_backup">Hap kopjeruajtje</string>
-    <string name="not_a_backup_file">Kartela që përzgjodhët s’është kartelë kopjeruajtjeje Conversations</string>
+    <string name="not_a_backup_file">Kartela që përzgjodhët s’është kartelë kopjeruajtjeje Chat</string>
     <string name="account_already_setup">Kjo llogari është ujdisur tashmë</string>
     <string name="please_enter_password">Ju lutemi, jepni fjalëkalimin për këtë llogari</string>
     <string name="unable_to_perform_this_action">S’u krye dot ky veprim</string>
@@ -716,7 +716,7 @@
     <string name="remove_from_favorites">Shfiksoje prej kreut</string>
     <string name="gpx_track">Gjurmë GPX</string>
     <string name="could_not_correct_message">S’u ndreq dot mesazhi</string>
-    <string name="search_all_conversations">Krejt fjalosjet</string>
+    <string name="search_all_chat">Krejt fjalosjet</string>
     <string name="search_this_conversation">Këtë fjalosje</string>
     <string name="your_avatar">Avatari juaj</string>
     <string name="avatar_for_x">Avatar për %s</string>
@@ -738,7 +738,7 @@
     <string name="failed_deliveries">Dërgime të dështuara</string>
     <string name="more_options">Më tepër mundësi</string>
     <string name="no_application_found">S’u gjet aplikacion</string>
-    <string name="invite_to_app">Ftojeni te Conversations</string>
+    <string name="invite_to_app">Ftojeni te Chat</string>
     <string name="unable_to_parse_invite">S’arrihet të analizohet ftesë</string>
     <string name="server_does_not_support_easy_onboarding_invites">Shërbyesi s’mbulon prodhim ftesash</string>
     <string name="no_active_accounts_support_this">Këtë veçori s’e mbulon ndonjë llogari aktive</string>
@@ -751,7 +751,7 @@
     <string name="switch_to_video">Kalo në thirrje video</string>
     <string name="reject_switch_to_video">Hidh poshtë kalim në thirrje video</string>
     <string name="open_join_dialog">Hyni në kanal publik…</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d fjalosje e palexuar</item>
         <item quantity="other">%d fjalosje të palexuara</item>
     </plurals>

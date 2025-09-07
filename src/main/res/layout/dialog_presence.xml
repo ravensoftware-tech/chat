@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <eu.siacs.conversations.ui.widget.ImmediateAutoCompleteTextView
+            <tech.ravensoftware.chat.ui.widget.ImmediateAutoCompleteTextView
                 android:padding="16dp"
                 android:id="@+id/status_message"
                 android:layout_width="match_parent"

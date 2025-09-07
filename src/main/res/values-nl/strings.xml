@@ -24,7 +24,7 @@
     <string name="just_now">zojuist</string>
     <string name="minute_ago">1 min. geleden</string>
     <string name="minutes_ago">%d min. geleden</string>
-    <plurals name="x_unread_conversations">
+    <plurals name="x_unread_chat">
         <item quantity="one">%d ongelezen gesprek</item>
         <item quantity="other">%d ongelezen gesprekken</item>
     </plurals>
@@ -700,7 +700,7 @@
     <string name="ebook">e-boek</string>
     <string name="video_original">Origineel (zonder compressie)</string>
     <string name="open_with">Openen met…</string>
-    <string name="set_profile_picture">Conversations profielafbeelding</string>
+    <string name="set_profile_picture">Chat profielafbeelding</string>
     <string name="choose_account">Kies een account</string>
     <string name="restore_backup">Back-up herstellen</string>
     <string name="restore">Herstellen</string>
@@ -745,10 +745,10 @@
     <string name="add_anway">Tóch toevoegen</string>
     <string name="this_looks_like_channel">Dit lijkt op een kanaaladres</string>
     <string name="share_backup_files">Back-upbestanden delen</string>
-    <string name="conversations_backup">Back-up van Conversations</string>
+    <string name="chat_backup">Back-up van Chat</string>
     <string name="event">Gebeurtenis</string>
     <string name="open_backup">Back-up openen</string>
-    <string name="not_a_backup_file">Het geselecteerde bestand is geen Conversations-back-upbestand</string>
+    <string name="not_a_backup_file">Het geselecteerde bestand is geen Chat-back-upbestand</string>
     <string name="account_already_setup">Deze account is al ingesteld</string>
     <string name="please_enter_password">Voer het wachtwoord voor deze account in</string>
     <string name="open_join_dialog">Deelnemen aan openbaar kanaal…</string>
@@ -763,7 +763,7 @@
     <string name="add_to_favorites">Bovenaan vastzetten</string>
     <string name="remove_from_favorites">Bovenaan losmaken</string>
     <string name="could_not_correct_message">Kon bericht niet corrigeren</string>
-    <string name="search_all_conversations">Alle gesprekken</string>
+    <string name="search_all_chat">Alle gesprekken</string>
     <string name="search_this_conversation">Dit gesprek</string>
     <string name="your_avatar">Je avatar</string>
     <string name="avatar_for_x">Avatar voor %s</string>
@@ -782,7 +782,7 @@
     <string name="failed_deliveries">Mislukte afleveringen</string>
     <string name="more_options">Meer opties</string>
     <string name="no_application_found">Geen applicatie gevonden</string>
-    <string name="invite_to_app">Nodig uit bij Conversations</string>
+    <string name="invite_to_app">Nodig uit bij Chat</string>
     <string name="unable_to_parse_invite">Kan uitnodiging niet verwerken</string>
     <string name="no_active_accounts_support_this">Geen actieve accounts ondersteunen deze functie</string>
     <string name="backup_started_message">De backup is gestart. Je krijgt een bericht als het voltooid is.</string>

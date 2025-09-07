@@ -8,7 +8,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
 
 
-import eu.siacs.conversations.Config;
+import tech.ravensoftware.chat.Config;
 
 import org.conscrypt.OkHostnameVerifier;
 import org.minidns.dnsmessage.DnsMessage;
