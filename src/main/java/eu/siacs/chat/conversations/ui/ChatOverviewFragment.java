@@ -406,8 +406,8 @@ public class ChatOverviewFragment extends XmppFragment {
                     new MaterialAlertDialogBuilder(requireContext());
             alertDialogBuilder.setTitle(R.string.choose_account);
             final String[] asStrings =
-                    Collections2.transform(accounts, a -> a.getJid().asBareJid().toString())
-                            .toArray(new String[0]);
+            Collections2.transform(accounts, a -> a.getJid().getLocal())
+                .toArray(new String[0]);
             alertDialogBuilder.setSingleChoiceItems(
                     asStrings, 0, (dialog, which) -> selectedAccount.set(accounts.get(which)));
             alertDialogBuilder.setNegativeButton(R.string.cancel, null);

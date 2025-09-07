@@ -1132,14 +1132,9 @@ public class EditAccountActivity extends OmemoActivity
     private void updateAccountInformation(boolean init) {
         if (init) {
             this.binding.accountJid.getEditableText().clear();
-            if (mUsernameMode) {
-                this.binding.accountJid.getEditableText().append(this.mAccount.getJid().getLocal());
-            } else {
-                this.binding
-                        .accountJid
-                        .getEditableText()
-                        .append(this.mAccount.getJid().asBareJid().toString());
-            }
+            // Always show only the RMS number (12-digit username)
+            String rmsNumber = this.mAccount.getJid().getLocal();
+            this.binding.accountJid.getEditableText().append(rmsNumber);
             this.binding.accountPassword.getEditableText().clear();
             this.binding.accountPassword.getEditableText().append(this.mAccount.getPassword());
             this.binding.hostname.setText("");
