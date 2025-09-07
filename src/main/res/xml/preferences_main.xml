@@ -4,7 +4,6 @@
     <Preference
         android:icon="@drawable/ic_touch_app_24dp"
         app:fragment="tech.ravensoftware.chat.ui.fragment.settings.InterfaceSettingsFragment"
-        app:summary="@string/pref_summary_appearance"
         app:title="@string/pref_title_interface" />
     <Preference
         android:icon="@drawable/ic_security_24dp"

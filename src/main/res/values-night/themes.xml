@@ -1,9 +1,5 @@
 <resources>
 
-    <style name="Theme.Chat3" parent="Theme.Chat3.Dark"/>
+    <style name="AppTheme" parent="android:Theme"/>
 
-    <style name="Theme.Chat3.SplashScreen" parent="@style/Theme.Chat3">
-        <item name="android:windowBackground">@drawable/background_splash_screen</item>
-        <item name="android:windowLightStatusBar">false</item>
-    </style>
 </resources>
