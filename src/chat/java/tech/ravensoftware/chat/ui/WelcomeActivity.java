@@ -125,7 +125,9 @@ public class WelcomeActivity extends XmppActivity
         setTitle(null);
         binding.registerNewAccount.setOnClickListener(
                 v -> {
-                    final Intent intent = new Intent(this, PickServerActivity.class);
+                    Intent intent = new Intent(this, EditAccountActivity.class);
+                    intent.putExtra(EditAccountActivity.EXTRA_FORCE_REGISTER, true);
+                    intent.putExtra("server", "rms.ravensoftware.tech");
                     addInviteUri(intent);
                     startActivity(intent);
                 });

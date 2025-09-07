@@ -699,16 +699,6 @@ public class EditAccountActivity extends OmemoActivity
         }
         final OnCheckedChangeListener OnCheckedShowConfirmPassword =
                 (buttonView, isChecked) -> {
-                    if (isChecked) {
-                        // Hide username field when registering
-                        binding.accountJidLayout.setVisibility(View.GONE);
-                        // Auto-generate username
-                        String generated = String.valueOf((long)(Math.random() * 9_000_000_000_00L) + 1_000_000_000_00L);
-                        binding.accountJid.setText(generated);
-                    } else {
-                        binding.accountJidLayout.setVisibility(View.VISIBLE);
-                        binding.accountJid.setText("");
-                    }
                     updateSaveButton();
                 };
         this.binding.accountRegisterNew.setOnCheckedChangeListener(OnCheckedShowConfirmPassword);
@@ -834,8 +824,15 @@ public class EditAccountActivity extends OmemoActivity
                         getSupportActionBar(), !(init && Config.MAGIC_CREATE_DOMAIN == null));
                 if (mForceRegister != null) {
                     if (mForceRegister) {
+                        // Hide username field when registering
+                        binding.accountJidLayout.setVisibility(View.GONE);
+                        // Auto-generate username
+                        String generated = String.valueOf((long)(Math.random() * 9_000_000_000_00L) + 1_000_000_000_00L);
+                        binding.accountJid.setText(generated);
                         setTitle(R.string.register_new_account);
                     } else {
+                        binding.accountJidLayout.setVisibility(View.VISIBLE);
+                        binding.accountJid.setText("");
                         setTitle(R.string.add_existing_account);
                     }
                 } else {

@@ -95,6 +95,7 @@
         android:networkSecurityConfig="@xml/network_security_configuration"
         android:preserveLegacyExternalStorage="true"
         android:requestLegacyExternalStorage="true"
+        android:theme="@style/Theme.Chat3"
         tools:targetApi="tiramisu">
 
         <meta-data
@@ -328,8 +329,7 @@
                 android:value="tech.ravensoftware.chat.ui.activity.SettingsActivity" />
         </activity>
         <activity
-            android:name="com.canhub.cropper.CropImageActivity"
-            android:theme="@style/AppTheme" />
+            android:name="com.canhub.cropper.CropImageActivity" />
         <activity android:name=".ui.MemorizingActivity" />
 
         <activity
@@ -361,8 +361,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.ViewProfilePictureActivity"
-            android:theme="@style/AppTheme" />
+            android:name=".ui.ViewProfilePictureActivity" />
         <activity
             android:name=".ui.MucUsersActivity"
             android:label="@string/group_chat_members" />

@@ -43,11 +43,7 @@ public class SignupUtils {
 
     public static Intent getSignUpIntent(final Activity activity, final boolean toServerChooser) {
         final Intent intent;
-        if (toServerChooser) {
-            intent = new Intent(activity, PickServerActivity.class);
-        } else {
-            intent = new Intent(activity, WelcomeActivity.class);
-        }
+        intent = new Intent(activity, WelcomeActivity.class);
         return intent;
     }
 

@@ -68,7 +68,7 @@
     <string name="save">Save</string>
     <string name="ok">OK</string>
     <string name="crash_report_title">%1$s has crashed</string>
-    <string name="crash_report_message">Using your XMPP account to send in stack traces helps the ongoing development of %1$s.</string>
+    <string name="crash_report_message">Using your Chat account to send in stack traces helps the ongoing development of %1$s.</string>
     <string name="send_now">Send now</string>
     <string name="send_never">Never ask again</string>
     <string name="problem_connecting_to_account">Could not connect to account</string>
@@ -187,11 +187,11 @@
     <string name="mgmt_account_enable">Enable account</string>
     <string name="mgmt_account_delete_confirm_text">Are you sure you want to delete your account? Deleting your account erases your entire chat history</string>
     <string name="attach_record_voice">Record voice</string>
-    <string name="account_settings_jabber_id">XMPP address</string>
-    <string name="block_jabber_id">Block XMPP address</string>
-    <string name="account_settings_example_jabber_id">username@example.com</string>
+    <string name="account_settings_jabber_id">RMS number</string>
+    <string name="block_jabber_id">Block RMS number</string>
+    <string name="account_settings_example_jabber_id">839174625179</string>
     <string name="password">Password</string>
-    <string name="invalid_jid">This is not a valid XMPP address</string>
+    <string name="invalid_jid">This is not a valid RMS number</string>
     <string name="error_out_of_memory">Out of memory. Image too big</string>
     <string name="add_phone_book_text">Do you want to add %s to your address book?</string>
     <string name="server_info_show_more">Server info</string>
@@ -317,7 +317,7 @@
     <string name="url_copied_to_clipboard">Copied URL to clipboard</string>
     <string name="uri_copied_to_clipboard">Copied URI to clipboard</string>
     <string name="uri">URI</string>
-    <string name="jabber_id_copied_to_clipboard">Copied XMPP address to clipboard</string>
+    <string name="jabber_id_copied_to_clipboard">Copied RMS number to clipboard</string>
     <string name="error_message_copied_to_clipboard">Copied error message to clipboard</string>
     <string name="web_address">web address</string>
     <string name="scan_qr_code">Scan QR Code</string>
@@ -399,7 +399,7 @@
     <string name="conference_options">Private group chat configuration</string>
     <string name="channel_options">Public channel configuration</string>
     <string name="members_only">Private, members only</string>
-    <string name="non_anonymous">Make XMPP addresses visible to anyone</string>
+    <string name="non_anonymous">Make RMS numbers visible to anyone</string>
     <string name="moderated">Make channel moderated</string>
     <string name="you_are_not_participating">You are not participating</string>
     <string name="modified_conference_options">Modified group chat options!</string>
@@ -493,7 +493,7 @@
     <string name="captcha_required">CAPTCHA required</string>
     <string name="captcha_hint">Enter the text from the image above</string>
     <string name="certificate_chain_is_not_trusted">Untrusted certificate chain</string>
-    <string name="jid_does_not_match_certificate">XMPP address does not match certificate</string>
+    <string name="jid_does_not_match_certificate">RMS number does not match certificate</string>
     <string name="action_renew_certificate">Renew certificate</string>
     <string name="error_fetching_omemo_key">Error fetching OMEMO key!</string>
     <string name="verified_omemo_key_with_certificate">Verified OMEMO key with certificate!</string>
@@ -521,7 +521,7 @@
     <string name="no_contacts_permission">%1$s needs access to your contacts</string>
     <string name="quicksy_wants_your_consent">Quicksy asks for your consent to use your data</string>
     <string name="sync_with_contacts">Contact list integration</string>
-    <string name="sync_with_contacts_long">%1$s processes your contact list locally, on your device, to show you the names and profile pictures for matching contacts on XMPP.\n\nNo contact list data ever leaves your device!</string>
+    <string name="sync_with_contacts_long">%1$s processes your contact list locally, on your device, to show you the names and profile pictures for matching contacts on Chat.\n\nNo contact list data ever leaves your device!</string>
     <string name="sync_with_contacts_quicksy_static" translatable="false"><![CDATA[Quicksy syncs your contact list in regular intervals to make suggestions about possible contacts, who are already using the app, even when the app is closed or not in use.<br><br>Find more information in our <a href="https://quicksy.im/privacy.htm">Privacy Policy</a>.]]></string>
     <string name="notify_on_all_messages">Notify on all messages</string>
     <string name="notify_only_when_highlighted">Notify only when mentioned</string>
@@ -550,8 +550,8 @@
     <string name="welcome_header_quicksy">Welcome to Quicksy!</string>
     <string name="welcome_text_quicksy_static" translatable="false"><![CDATA[· Quicksy syncs your contact list in regular intervals to make suggestions about possible contacts who are already on Quicksy even when the app is closed or not in use.<br>· Quicksy shares and stores images, audio recordings, videos and other media to deliver them to the intended recipients. Files will be stored for up to 30 days.<br><br>Find more information in our <a href="https://quicksy.im/privacy.htm">Privacy Policy</a>.]]></string>
     <string name="agree_and_continue">Agree and continue</string>
-    <string name="magic_create_text">A guide is set up for account creation on conversations.im.\nWhen picking conversations.im as a provider you will be able to communicate with users of other providers by giving them your full XMPP address.</string>
-    <string name="your_full_jid_will_be">Your full XMPP address will be: %s</string>
+    <string name="magic_create_text">A guide is set up for account creation on conversations.im.\nWhen picking conversations.im as a provider you will be able to communicate with users of other providers by giving them your full RMS number.</string>
+    <string name="your_full_jid_will_be">Your full RMS number will be: %s</string>
     <string name="create_account">Create Account</string>
     <string name="use_own_provider">Use my own provider</string>
     <string name="pick_your_username">Pick your username</string>
@@ -602,7 +602,7 @@
     <string name="remote_server_not_found">Remote server not found</string>
     <string name="remote_server_timeout">Remote server timeout</string>
     <string name="unable_to_update_account">Could not update account</string>
-    <string name="report_jid_as_spammer">Report this XMPP address for spamming.</string>
+    <string name="report_jid_as_spammer">Report this RMS number for spamming.</string>
     <string name="pref_delete_omemo_identities">Delete OMEMO identities</string>
     <string name="pref_delete_omemo_identities_summary">Regenerate your OMEMO keys. All your contacts will have to verify you again. Only use this as a last resort.</string>
     <string name="delete_selected_keys">Delete selected keys</string>
@@ -621,7 +621,7 @@
     <string name="use_camera_icon_to_scan_barcode">Use the camera to scan a contact’s barcode</string>
     <string name="please_wait_for_keys_to_be_fetched">Please wait for keys to be fetched</string>
     <string name="share_as_barcode">Share as Barcode</string>
-    <string name="share_as_uri">Share as XMPP URI</string>
+    <string name="share_as_uri">Share as RMS URI</string>
     <string name="share_as_http">Share as HTTP link</string>
     <string name="pref_blind_trust_before_verification">Blind Trust Before Verification</string>
     <string name="pref_blind_trust_before_verification_summary">Trust new devices from non-verified contacts, but prompt manual confirmation of new devices for verified contacts.</string>
@@ -690,7 +690,7 @@
     <string name="yesterday">Yesterday</string>
     <string name="pref_validate_hostname">Validate hostname with DNSSEC</string>
     <string name="pref_validate_hostname_summary">Server certificates that contain the validated hostname are considered verified</string>
-    <string name="certificate_does_not_contain_jid">Certificate does not contain a XMPP address</string>
+    <string name="certificate_does_not_contain_jid">Certificate does not contain a RMS number</string>
     <string name="server_info_partial">partial</string>
     <string name="attach_record_video">Record video</string>
     <string name="copy_to_clipboard">Copy to clipboard</string>
@@ -750,7 +750,7 @@
     <string name="copy_URI">Copy URI</string>
     <string name="copy_telephone_number">Copy phone number</string>
     <string name="copy_geo_uri">Copy geo location</string>
-    <string name="copy_jabber_id">Copy XMPP address</string>
+    <string name="copy_jabber_id">Copy RMS number</string>
     <string name="copy_email_address">Copy email address</string>
     <string name="copied_email_address">Copied email address to clipboard</string>
     <string name="copied_phone_number">Copied phone number to clipboard</string>
@@ -845,7 +845,7 @@
     <string name="install_orbot">Install Orbot</string>
     <string name="start_orbot">Start Orbot</string>
     <string name="no_market_app_installed">No market app installed.</string>
-    <string name="group_chat_will_make_your_jabber_id_public">This channel will make your XMPP address public</string>
+    <string name="group_chat_will_make_your_jabber_id_public">This channel will make your RMS number public</string>
     <string name="ebook">e-book</string>
     <string name="video_original">Original (uncompressed)</string>
     <string name="open_with">Open with…</string>
@@ -860,16 +860,16 @@
     <string name="unable_to_restore_backup">Could not restore backup.</string>
     <string name="unable_to_decrypt_backup">Could not decrypt backup. Is the password correct?</string>
     <string name="backup_channel_name">Backup &amp; Restore</string>
-    <string name="enter_jabber_id">Enter XMPP address</string>
+    <string name="enter_jabber_id">Enter RMS number</string>
     <string name="create_group_chat">Create group chat</string>
     <string name="join_public_channel">Join public channel</string>
     <string name="create_private_group_chat">Create private group chat</string>
     <string name="create_public_channel">Create public channel</string>
     <string name="create_dialog_channel_name">Channel name</string>
-    <string name="xmpp_address">XMPP address</string>
+    <string name="xmpp_address">RMS number</string>
     <string name="please_enter_name">Please provide a name for the channel</string>
-    <string name="please_enter_xmpp_address">Please provide an XMPP address</string>
-    <string name="this_is_an_xmpp_address">This is an XMPP address. Please provide a name.</string>
+    <string name="please_enter_xmpp_address">Please provide an RMS number</string>
+    <string name="this_is_an_xmpp_address">This is an RMS number. Please provide a name.</string>
     <string name="creating_channel">Creating public channel…</string>
     <string name="channel_already_exists">This channel already exists</string>
     <string name="joined_an_existing_channel">You’ve joined an existing channel</string>
@@ -881,9 +881,9 @@
     <string name="admins_can_edit_subject">Admins can edit the topic.</string>
     <string name="owners_can_invite_others">Owners can invite others.</string>
     <string name="anyone_can_invite_others">Anyone can invite others.</string>
-    <string name="jabber_ids_are_visible_to_admins">XMPP addresses are visible to admins.</string>
-    <string name="jabber_ids_are_visible_to_anyone">XMPP addresses are visible to anyone.</string>
-    <string name="no_users_hint_channel">This public channel has no participants. Invite your contacts or use the share button to distribute its XMPP address.</string>
+    <string name="jabber_ids_are_visible_to_admins">RMS numbers are visible to admins.</string>
+    <string name="jabber_ids_are_visible_to_anyone">RMS numbers are visible to anyone.</string>
+    <string name="no_users_hint_channel">This public channel has no participants. Invite your contacts or use the share button to distribute its RMS number.</string>
     <string name="no_users_hint_group_chat">This private group chat has no participants.</string>
     <string name="manage_permission">Manage privileges</string>
     <string name="search_participants">Search participants</string>
@@ -914,7 +914,7 @@
     <string name="group_chats_and_channels"><![CDATA[Group Chats & Channels]]></string>
     <string name="jabber_network">jabber.network</string>
     <string name="local_server">Local server</string>
-    <string name="pref_channel_discovery_summary">Most users should choose ‘jabber.network’ for better suggestions from the entirety of the public XMPP ecosystem.</string>
+    <string name="pref_channel_discovery_summary">Most users should choose ‘jabber.network’ for better suggestions from the entirety of the public RMS ecosystem.</string>
     <string name="pref_channel_discovery">Channel discovery method</string>
     <string name="backup">Backup</string>
     <string name="category_about">About</string>
@@ -1014,7 +1014,7 @@
     <string name="could_not_disable_video">Could not disable video.</string>
     <string name="plain_text_document">Plain text document</string>
     <string name="account_registrations_are_not_supported">Account registrations are not supported</string>
-    <string name="no_xmpp_adddress_found">No XMPP address found</string>
+    <string name="no_xmpp_adddress_found">No RMS number found</string>
     <string name="account_status_temporary_auth_failure">Temporary authentication failure</string>
     <string name="delete_avatar">Delete avatar</string>
     <string name="audio_video_disabled_tor">Calls are disabled when using Tor</string>
@@ -1102,7 +1102,7 @@
     <string name="add_reaction_title">Add reaction</string>
     <string name="more_reactions">More reactions</string>
     <string name="could_not_modify_call">Could not modify call</string>
-    <string name="clients_may_not_support_av">Your contact’s XMPP client might not support audio/video calls.</string>
+    <string name="clients_may_not_support_av">Your contact might not support audio/video calls.</string>
     <string name="pref_chat_bubbles">Chat bubbles</string>
     <string name="pref_chat_bubbles_summary">Background color, Font size, Avatars</string>
     <string name="pref_title_bubbles">Chat Bubbles</string>

@@ -62,7 +62,7 @@
     <string name="save">Speichern</string>
     <string name="ok">OK</string>
     <string name="crash_report_title">%1$s ist abgestürzt</string>
-    <string name="crash_report_message">Die Verwendung deines XMPP-Kontos zum Einsenden von Absturzberichten hilft bei der Weiterentwicklung von %1$s.</string>
+    <string name="crash_report_message">Die Verwendung deines Chat-Kontos zum Einsenden von Absturzberichten hilft bei der Weiterentwicklung von %1$s.</string>
     <string name="send_now">Jetzt abschicken</string>
     <string name="send_never">Nie mehr nachfragen</string>
     <string name="problem_connecting_to_account">Verbindung zum Konto konnte nicht hergestellt werden</string>
@@ -177,11 +177,11 @@
     <string name="mgmt_account_enable">Konto aktivieren </string>
     <string name="mgmt_account_delete_confirm_text">Bist du sicher, dass du dein Konto möchtest? Dies wird deinen gesamten Chatverlauf entfernen</string>
     <string name="attach_record_voice">Sprache aufzeichnen</string>
-    <string name="account_settings_jabber_id">XMPP-Adresse</string>
-    <string name="block_jabber_id">XMPP-Adresse sperren</string>
-    <string name="account_settings_example_jabber_id">benutzer@domain.de</string>
+    <string name="account_settings_jabber_id">RMS-Nummer</string>
+    <string name="block_jabber_id">RMS-Nummer sperren</string>
+    <string name="account_settings_example_jabber_id">839174625179</string>
     <string name="password">Passwort</string>
-    <string name="invalid_jid">Ungültige XMPP-Adresse</string>
+    <string name="invalid_jid">Ungültige RMS-Nummer</string>
     <string name="error_out_of_memory">Zu wenig Speicher vorhanden. Bild ist zu groß</string>
     <string name="add_phone_book_text">Möchtest du %s in dein Telefonbuch hinzufügen\?</string>
     <string name="server_info_show_more">Server-Info</string>
@@ -301,7 +301,7 @@
     <string name="send_again">Erneut senden</string>
     <string name="file_url">Datei-URL</string>
     <string name="url_copied_to_clipboard">URL in die Zwischenablage kopiert</string>
-    <string name="jabber_id_copied_to_clipboard">XMPP-Adresse in die Zwischenablage kopiert</string>
+    <string name="jabber_id_copied_to_clipboard">RMS-Nummer in die Zwischenablage kopiert</string>
     <string name="error_message_copied_to_clipboard">Fehlermeldung in die Zwischenablage kopiert</string>
     <string name="web_address">Internetadresse</string>
     <string name="scan_qr_code">QR-Code scannen</string>
@@ -383,7 +383,7 @@
     <string name="conference_options">Einstellungen für private Gruppenchats</string>
     <string name="channel_options">Einstellungen für öffentlichen Channel</string>
     <string name="members_only">Privat, nur Mitglieder</string>
-    <string name="non_anonymous">XMPP-Adressen für alle sichtbar machen</string>
+    <string name="non_anonymous">RMS-Nummern für alle sichtbar machen</string>
     <string name="moderated">Channel wird moderiert</string>
     <string name="you_are_not_participating">Du bist kein Mitglied</string>
     <string name="modified_conference_options">Gruppenchatoptionen wurden geändert!</string>
@@ -462,7 +462,7 @@
     <string name="pref_treat_vibrate_as_dnd_summary">Als beschäftigt anzeigen, wenn das Gerät auf Vibration eingestellt ist</string>
     <string name="pref_show_connection_options">Hostname &amp; Port</string>
     <string name="pref_show_connection_options_summary">Erweiterte Verbindungseinstellungen beim Einrichten eines Kontos anzeigen</string>
-    <string name="hostname_example">xmpp.domain.de</string>
+    <string name="hostname_example">chat.domain.de</string>
     <string name="action_add_account_with_certificate">Mit Zertifikat anmelden</string>
     <string name="unable_to_parse_certificate">Zertifikat konnte nicht verarbeitet werden</string>
     <string name="mam_prefs">Archivierungseinstellungen</string>
@@ -472,7 +472,7 @@
     <string name="captcha_required">CAPTCHA erforderlich</string>
     <string name="captcha_hint">Gib den Text aus dem Bild oben ein</string>
     <string name="certificate_chain_is_not_trusted">Nicht vertrauenswürdige Zertifikatskette</string>
-    <string name="jid_does_not_match_certificate">XMPP-Adresse stimmt nicht dem Zertifikat überein</string>
+    <string name="jid_does_not_match_certificate">RMS-Nummer stimmt nicht dem Zertifikat überein</string>
     <string name="action_renew_certificate">Zertifikat erneuern</string>
     <string name="error_fetching_omemo_key">Kann OMEMO-Schlüssel nicht empfangen!</string>
     <string name="verified_omemo_key_with_certificate">OMEMO-Schlüssel mit Zertifikat überprüft!</string>
@@ -498,7 +498,7 @@
     <string name="no_storage_permission"> %1$s den Zugriff auf den externen Speicher gewähren</string>
     <string name="no_camera_permission">%1$s den Zugriff auf die Kamera gewähren</string>
     <string name="sync_with_contacts">Kontaktlistenintegration</string>
-    <string name="sync_with_contacts_long">%1$s verarbeitet deine Kontaktliste lokal auf deinem Gerät, um dir die Namen und Profilbilder von passenden Kontakten auf XMPP zu zeigen.
+    <string name="sync_with_contacts_long">%1$s verarbeitet deine Kontaktliste lokal auf deinem Gerät, um dir die Namen und Profilbilder von passenden Kontakten auf Chat zu zeigen.
 \n
 \nKeine Daten der Kontaktliste verlassen jemals dein Gerät!</string>
     <string name="notify_on_all_messages">Bei allen Nachrichten benachrichtigen</string>
@@ -525,8 +525,8 @@
     <string name="share_uri_with">Teile URI mit…</string>
     <string name="agree_and_continue">Zustimmen und fortfahren</string>
     <string name="magic_create_text">Ein Guide hilft bei der Kontoerstellung auf conversations.im.
-\nWenn du conversations.im als Provider wählst, kannst du mit Nutzern anderer Anbieter kommunizieren, indem du ihnen deine vollständige XMPP-Adresse gibst.</string>
-    <string name="your_full_jid_will_be">Deine vollständige XMPP-Adresse lautet: %s</string>
+\nWenn du conversations.im als Provider wählst, kannst du mit Nutzern anderer Anbieter kommunizieren, indem du ihnen deine vollständige RMS-Nummer gibst.</string>
+    <string name="your_full_jid_will_be">Deine vollständige RMS-Nummer lautet: %s</string>
     <string name="create_account">Konto erstellen</string>
     <string name="use_own_provider">Nutze eigenen Provider</string>
     <string name="pick_your_username">Wähle deinen Benutzernamen</string>
@@ -573,7 +573,7 @@
     <string name="remote_server_not_found">Remote-Server nicht gefunden</string>
     <string name="remote_server_timeout">Zeitüberschreitung des Remote-Servers</string>
     <string name="unable_to_update_account">Konto konnte nicht aktualisiert werden</string>
-    <string name="report_jid_as_spammer">Diese XMPP-Adresse als Spammer melden.</string>
+    <string name="report_jid_as_spammer">Diese RMS-Nummer als Spammer melden.</string>
     <string name="pref_delete_omemo_identities">OMEMO-Identitäten zurücksetzen</string>
     <string name="pref_delete_omemo_identities_summary">Erzeuge neue OMEMO-Schlüssel. Alle deine Kontakte müssen sie erneut verifizieren. Verwende dies nur als letztes Mittel.</string>
     <string name="delete_selected_keys">Ausgewählte Schlüssel löschen</string>
@@ -591,7 +591,7 @@
     <string name="use_camera_icon_to_scan_barcode">Nutze die Kamera, um Barcodes deiner Kontakte zu scannen</string>
     <string name="please_wait_for_keys_to_be_fetched">Bitte warten, bis die Schlüssel abgerufen werden</string>
     <string name="share_as_barcode">Als Barcode teilen</string>
-    <string name="share_as_uri">Als XMPP-URI teilen</string>
+    <string name="share_as_uri">Als RMS-URI teilen</string>
     <string name="share_as_http">Als HTTP-Link teilen</string>
     <string name="pref_blind_trust_before_verification">Blind vertrauen vor der Überprüfung</string>
     <string name="pref_blind_trust_before_verification_summary">Neuen Geräten von nicht verifizierten Kontakten vertrauen, aber bei verifizierten Kontakten eine manuelle Bestätigung der neuen Geräte verlangen.</string>
@@ -659,7 +659,7 @@
     <string name="yesterday">Gestern</string>
     <string name="pref_validate_hostname">Überprüfe den Hostnamen mit DNSSEC</string>
     <string name="pref_validate_hostname_summary">Serverzertifikate, die den überprüften Hostnamen enthalten, werden als verifiziert betrachtet</string>
-    <string name="certificate_does_not_contain_jid">Zertifikat enthält keine XMPP-Adresse</string>
+    <string name="certificate_does_not_contain_jid">Zertifikat enthält keine RMS-Nummer</string>
     <string name="server_info_partial">teilweise</string>
     <string name="attach_record_video">Video aufnehmen</string>
     <string name="copy_to_clipboard">In die Zwischenablage kopieren</string>
@@ -715,7 +715,7 @@
     <string name="pref_use_share_location_plugin"> Plugin zum Standort teilen</string>
     <string name="pref_use_share_location_plugin_summary">Verwende das Plugin zum Teilen des Standorts anstatt der integrierten Karte</string>
     <string name="copy_link">Internetadresse kopieren</string>
-    <string name="copy_jabber_id">XMPP-Adresse kopieren</string>
+    <string name="copy_jabber_id">RMS-Nummer kopieren</string>
     <string name="p1_s3_filetransfer">HTTP-Dateifreigabe für S3</string>
     <string name="pref_start_search">Direkte Suche </string>
     <string name="pref_start_search_summary">Beim Dialog \"Neuer Chat\" Tastatur öffnen und den Cursor im Suchfeld platzieren</string>
@@ -807,7 +807,7 @@
     <string name="install_orbot">Orbot installieren</string>
     <string name="start_orbot">Orbot starten</string>
     <string name="no_market_app_installed">Kein App-Store installiert.</string>
-    <string name="group_chat_will_make_your_jabber_id_public">Dieser Channel wird deine XMPP-Adresse veröffentlichen</string>
+    <string name="group_chat_will_make_your_jabber_id_public">Dieser Channel wird deine RMS-Nummer veröffentlichen</string>
     <string name="ebook">E-Book</string>
     <string name="video_original">Original (unkomprimiert)</string>
     <string name="open_with">Öffnen mit…</string>
@@ -820,16 +820,16 @@
     <string name="unable_to_restore_backup">Sicherung konnte nicht wiederhergestellt werden.</string>
     <string name="unable_to_decrypt_backup">Sicherung konnte nicht entschlüsselt werden. Ist das Passwort korrekt?</string>
     <string name="backup_channel_name">Sicherung &amp; Wiederherstellung</string>
-    <string name="enter_jabber_id">XMPP-Adresse eingeben</string>
+    <string name="enter_jabber_id">RMS-Nummer eingeben</string>
     <string name="create_group_chat">Gruppenchat erstellen</string>
     <string name="join_public_channel">Öffentlichem Channel beitreten</string>
     <string name="create_private_group_chat">Privaten Gruppenchat erstellen</string>
     <string name="create_public_channel">Öffentlichen Channel erstellen</string>
     <string name="create_dialog_channel_name">Channelname</string>
-    <string name="xmpp_address">XMPP-Adresse</string>
+    <string name="xmpp_address">RMS-Nummer</string>
     <string name="please_enter_name">Bitte einen Namen für den Channel eingeben</string>
-    <string name="please_enter_xmpp_address">Bitte eine XMPP-Adresse eingeben</string>
-    <string name="this_is_an_xmpp_address">Dies ist eine XMPP-Adresse. Bitte einen Namen eingeben.</string>
+    <string name="please_enter_xmpp_address">Bitte eine RMS-Nummer eingeben</string>
+    <string name="this_is_an_xmpp_address">Dies ist eine RMS-Nummer. Bitte einen Namen eingeben.</string>
     <string name="creating_channel">Öffentlichen Channel erstellen…</string>
     <string name="channel_already_exists">Dieser Channel existiert bereits</string>
     <string name="joined_an_existing_channel">Du bist einem bestehenden Channel beigetreten</string>
@@ -841,9 +841,9 @@
     <string name="admins_can_edit_subject">Administratoren können das Thema bearbeiten.</string>
     <string name="owners_can_invite_others">Eigentümer können andere einladen.</string>
     <string name="anyone_can_invite_others">Alle können andere einladen.</string>
-    <string name="jabber_ids_are_visible_to_admins">XMPP-Adressen sind für Administratoren sichtbar.</string>
-    <string name="jabber_ids_are_visible_to_anyone">XMPP-Adressen sind für alle sichtbar.</string>
-    <string name="no_users_hint_channel">Dieser öffentliche Channel hat keine Teilnehmer. Lade deine Kontakte ein oder benutze die \"Teilen\"-Schaltfläche, um die XMPP-Adresse zu verteilen.</string>
+    <string name="jabber_ids_are_visible_to_admins">RMS-Nummern sind für Administratoren sichtbar.</string>
+    <string name="jabber_ids_are_visible_to_anyone">RMS-Nummern sind für alle sichtbar.</string>
+    <string name="no_users_hint_channel">Dieser öffentliche Channel hat keine Teilnehmer. Lade deine Kontakte ein oder benutze die \"Teilen\"-Schaltfläche, um die RMS-Nummer zu verteilen.</string>
     <string name="no_users_hint_group_chat">Dieser private Gruppenchat hat keine Teilnehmer.</string>
     <string name="manage_permission">Rechte verwalten</string>
     <string name="search_participants">Teilnehmer suchen</string>
@@ -871,7 +871,7 @@
     <string name="group_chats_and_channels"><![CDATA[Gruppenchats & Channels]]></string>
     <string name="jabber_network">jabber.network</string>
     <string name="local_server">Lokaler Server</string>
-    <string name="pref_channel_discovery_summary">Die meisten Benutzer sollten hier ‘jabber.network’ auswählen, um bessere Vorschläge aus dem gesamten, öffentlichen XMPP-Ökosystem zu bekommen.</string>
+    <string name="pref_channel_discovery_summary">Die meisten Benutzer sollten hier ‘jabber.network’ auswählen, um bessere Vorschläge aus dem gesamten, öffentlichen RMS-Ökosystem zu bekommen.</string>
     <string name="pref_channel_discovery">Channelsuchmethode</string>
     <string name="backup">Sicherung</string>
     <string name="category_about">Über</string>
@@ -960,13 +960,13 @@
     <string name="unable_to_enable_video">Video kann nicht aktiviert werden.</string>
     <string name="plain_text_document">Textdokument</string>
     <string name="account_registrations_are_not_supported">Kontoregistrierungen werden nicht unterstützt</string>
-    <string name="no_xmpp_adddress_found">Keine XMPP-Adresse gefunden</string>
+    <string name="no_xmpp_adddress_found">Keine RMS-Nummer gefunden</string>
     <string name="account_status_temporary_auth_failure">Temporärer Authentifizierungsfehler</string>
     <string name="delete_avatar">Profilbild löschen</string>
     <string name="audio_video_disabled_tor">Anrufe sind bei der Verwendung von Tor deaktiviert</string>
     <string name="switch_to_video">Umschalten auf Video</string>
     <string name="reject_switch_to_video">Umschalten auf Video ablehnen</string>
-    <string name="pref_up_push_account_title">XMPP-Konto</string>
+    <string name="pref_up_push_account_title">Chat-Konto</string>
     <string name="pref_up_push_server_title">Push-Server</string>
     <string name="no_account_deactivated">Kein (deaktiviert)</string>
     <string name="unified_push_distributor">UnifiedPush Verteiler</string>
@@ -1049,7 +1049,7 @@
     <string name="pref_connection_summary_w_cd">Hostname &amp; Port, Tor, Channelsuche</string>
     <string name="pref_category_application">Anwendung</string>
     <string name="pref_category_interaction">Interaktion</string>
-    <string name="pref_up_long_summary">Beim Einsatz als UnifiedPush-Verteiler wird die dauerhafte, zuverlässige und akkuschonende XMPP-Verbindung genutzt, um andere UnifiedPush-kompatible Apps wie Tusky, Ltt.rs, FluffyChat und andere aufzuwecken.</string>
+    <string name="pref_up_long_summary">Beim Einsatz als UnifiedPush-Verteiler wird die dauerhafte, zuverlässige und akkuschonende RMS-Verbindung genutzt, um andere UnifiedPush-kompatible Apps wie Tusky, Ltt.rs, FluffyChat und andere aufzuwecken.</string>
     <string name="send_encrypted_message">Verschlüsselt schreiben…</string>
     <string name="pref_large_font_summary">Schriftgröße der Nachrichten erhöhen</string>
     <string name="pref_large_font">Große Schrift</string>
@@ -1086,7 +1086,7 @@
     <string name="add_reaction_title">Reaktion hinzufügen</string>
     <string name="more_reactions">Weitere Reaktionen</string>
     <string name="could_not_modify_call">Anruf konnte nicht geändert werden</string>
-    <string name="clients_may_not_support_av">Der XMPP-Client deines Kontakts unterstützt möglicherweise keine Audio-/Videoanrufe.</string>
+    <string name="clients_may_not_support_av">Dein Kontakt unterstützt möglicherweise keine Audio-/Videoanrufe.</string>
     <string name="pref_chat_bubbles">Sprechblasen</string>
     <string name="pref_chat_bubbles_summary">Hintergrundfarbe, Schriftgröße, Profilbilder</string>
     <string name="pref_title_bubbles">Sprechblasen</string>
