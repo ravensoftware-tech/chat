@@ -367,14 +367,6 @@ public class StartConversationActivity extends XmppActivity
                         prefilled = null;
                     }
                     switch (actionItem.getId()) {
-                        case R.id.discover_public_channels:
-                            if (QuickChatService.isPlayStoreFlavor()) {
-                                throw new IllegalStateException(
-                                        "Channel discovery is not available on Google Play flavor");
-                            } else {
-                                startActivity(new Intent(this, ChannelDiscoveryActivity.class));
-                            }
-                            break;
                         case R.id.join_public_channel:
                             showJoinConferenceDialog(prefilled);
                             break;
@@ -401,8 +393,7 @@ public class StartConversationActivity extends XmppActivity
         final Menu menu = popupMenu.getMenu();
         for (int i = 0; i < menu.size(); i++) {
             final MenuItem menuItem = menu.getItem(i);
-            if (QuickChatService.isPlayStoreFlavor()
-                    && menuItem.getItemId() == R.id.discover_public_channels) {
+            if (QuickChatService.isPlayStoreFlavor()) {
                 continue;
             }
             final SpeedDialActionItem actionItem =
