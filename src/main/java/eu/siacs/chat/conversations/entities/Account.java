@@ -659,7 +659,7 @@ public class Account extends AbstractEntity implements AvatarService.Avatar {
     public String getShareableLink() {
         List<XmppUri.Fingerprint> fingerprints = this.getFingerprints();
         String uri =
-                "https://chat.ravensoftware.tech/i/"
+                "https://conversations.im/i/"
                         + XmppUri.lameUrlEncode(this.getJid().asBareJid().toString());
         if (fingerprints.isEmpty()) {
             return uri;
