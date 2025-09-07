@@ -118,7 +118,7 @@ public class EditAccountActivity extends OmemoActivity
     private Jid jidToEdit;
     private boolean mInitMode = false;
     private Boolean mForceRegister = null;
-    private boolean mUsernameMode = false;
+    private boolean mUsernameMode = true;
     private boolean mShowOptions = false;
     private Account mAccount;
     private final OnClickListener mCancelButtonClickListener =

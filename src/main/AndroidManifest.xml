@@ -329,7 +329,8 @@
                 android:value="tech.ravensoftware.chat.ui.activity.SettingsActivity" />
         </activity>
         <activity
-            android:name="com.canhub.cropper.CropImageActivity" />
+            android:name="com.canhub.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
         <activity android:name=".ui.MemorizingActivity" />
 
         <activity
