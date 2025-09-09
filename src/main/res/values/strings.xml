@@ -1024,6 +1024,7 @@
     <string name="pref_up_push_account_title">XMPP Account</string>
     <string name="pref_up_push_account_summary">The account through which push messages will be received.</string>
     <string name="pref_up_push_server_title">Push Server</string>
+    <string name="app_server">up.conversations.im</string>
     <string name="no_account_deactivated">None (deactivated)</string>
     <string name="decline">Decline</string>
     <string name="delete_from_server">Remove account from server</string>
