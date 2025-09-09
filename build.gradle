@@ -126,7 +126,7 @@ android {
     splits {
         abi {
             universalApk true
-            enable true
+            enable !project.hasProperty('android.injected.invoked.from.ide') && !gradle.startParameter.taskRequests.toString().contains('Bundle')
             reset()
             //noinspection ChromeOsAbiSupport
             include project.ext.abiCodes.keySet() as String[]
