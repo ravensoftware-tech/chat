@@ -8,4 +8,3 @@ steps:
     commands:
       - ./gradlew clean
       - ./gradlew assembleChatFreeDebug
-      - ./gradlew assembleQuicksyFreeDebug

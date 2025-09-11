@@ -152,7 +152,7 @@
     <string name="account_status_not_found">Server nicht gefunden</string>
     <string name="account_status_no_internet">Keine Internetverbindung</string>
     <string name="account_status_regis_fail">Registrierung fehlgeschlagen</string>
-    <string name="account_status_regis_conflict">Benutzername wird bereits verwendet</string>
+    <string name="account_status_regis_conflict">RMS-Nummer wird bereits verwendet</string>
     <string name="account_status_regis_success">Registrierung abgeschlossen</string>
     <string name="account_status_regis_not_sup">Registrierung wird vom Server nicht unterstützt</string>
     <string name="account_status_regis_invalid_token">Ungültiger Registrierungstoken</string>
@@ -441,9 +441,9 @@
     <string name="search_contacts">Kontakte durchsuchen</string>
     <string name="send_private_message">Private Nachricht senden</string>
     <string name="user_has_left_conference">%1$s hat den Gruppenchat verlassen</string>
-    <string name="username">Benutzername</string>
-    <string name="username_hint">Benutzername</string>
-    <string name="invalid_username">Ungültiger Benutzername</string>
+    <string name="username">RMS-Nummer</string>
+    <string name="username_hint">RMS-Nummer</string>
+    <string name="invalid_username">Ungültige RMS-Nummer</string>
     <string name="download_failed_server_not_found">Download fehlgeschlagen: Server nicht gefunden</string>
     <string name="download_failed_file_not_found">Download fehlgeschlagen: Datei nicht gefunden</string>
     <string name="download_failed_could_not_connect">Download fehlgeschlagen: Keine Verbindung zum Host</string>
@@ -529,7 +529,7 @@
     <string name="your_full_jid_will_be">Deine vollständige RMS-Nummer lautet: %s</string>
     <string name="create_account">Konto erstellen</string>
     <string name="use_own_provider">Nutze eigenen Provider</string>
-    <string name="pick_your_username">Wähle deinen Benutzernamen</string>
+    <string name="pick_your_username">Wähle deine RMS-Nummer</string>
     <string name="pref_manually_change_presence">Status manuell ändern</string>
     <string name="pref_manually_change_presence_summary">Lege deinen Status fest, wenn du deine Statusnachricht bearbeitest.</string>
     <string name="status_message">Statusnachricht</string>
@@ -1014,7 +1014,7 @@
     <string name="corresponding_chats_closed">Entsprechende Chats werden archiviert.</string>
     <string name="switch_to_chat">Zum Chat wechseln</string>
     <string name="action_archive_chat">Chat archivieren</string>
-    <string name="welcome_header">Nimm an der Unterhaltung teil</string>
+    <string name="welcome_header">ravEn Chat</string>
     <string name="barcode_does_not_contain_fingerprints_for_this_chat">Der Barcode enthält keine Fingerabdrücke für diesen Chat.</string>
     <string name="title_undo_swipe_out_chat">Chat archiviert</string>
     <string name="pref_send_crash_reports">Absturzberichte senden</string>
