@@ -300,6 +300,7 @@ public class StartConversationActivity extends XmppActivity
                     @Override
                     public void onPageSelected(int position) {
                         updateSearchViewHint();
+                        updateEmptyStates();
                     }
                 });
         mListPagerAdapter = new ListPagerAdapter(getSupportFragmentManager());
@@ -1028,6 +1029,9 @@ public class StartConversationActivity extends XmppActivity
                 && mOpenedFab.compareAndSet(false, true)) {
             binding.speedDial.open();
         }
+        
+        // Update empty states after initial data loading
+        updateEmptyStates();
     }
 
     protected boolean processViewIntent(@NonNull Intent intent) {
@@ -1160,6 +1164,7 @@ public class StartConversationActivity extends XmppActivity
         }
         Collections.sort(this.contacts);
         mContactsAdapter.notifyDataSetChanged();
+        updateEmptyStates();
     }
 
     protected void filterConferences(final String needle) {
@@ -1178,6 +1183,30 @@ public class StartConversationActivity extends XmppActivity
         }
         Collections.sort(this.conferences);
         mConferenceAdapter.notifyDataSetChanged();
+        updateEmptyStates();
+    }
+
+    private void updateEmptyStates() {
+        if (binding == null) {
+            return;
+        }
+        
+        int currentTab = binding.startConversationViewPager.getCurrentItem();
+        
+        // Hide all empty states first
+        binding.emptyContactsHint.setVisibility(View.GONE);
+        binding.emptyConferencesHint.setVisibility(View.GONE);
+        
+        // Show appropriate empty state based on current tab and content
+        if (currentTab == 0) { // Contacts tab
+            if (contacts.isEmpty()) {
+                binding.emptyContactsHint.setVisibility(View.VISIBLE);
+            }
+        } else { // Conferences tab
+            if (conferences.isEmpty()) {
+                binding.emptyConferencesHint.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     @Override

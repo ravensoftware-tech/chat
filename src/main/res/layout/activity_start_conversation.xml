@@ -38,6 +38,72 @@
 
         </androidx.viewpager.widget.ViewPager>
 
+        <!-- Empty state for contacts tab -->
+        <RelativeLayout
+            android:id="@+id/empty_contacts_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_below="@id/app_bar_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="48dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/empty_contacts_hint_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_forum_thin_48dp"
+                app:tint="?colorPrimaryFixedDim" />
+
+            <TextView
+                android:id="@+id/empty_contacts_hint_text"
+                style="?textAppearanceBodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty_contacts_hint_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/empty_contacts_list_hint" />
+        </RelativeLayout>
+
+        <!-- Empty state for conferences tab -->
+        <RelativeLayout
+            android:id="@+id/empty_conferences_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_below="@id/app_bar_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="48dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/empty_conferences_hint_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_forum_thin_48dp"
+                app:tint="?colorPrimaryFixedDim" />
+
+            <TextView
+                android:id="@+id/empty_conferences_hint_text"
+                style="?textAppearanceBodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty_conferences_hint_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/empty_group_chats_list_hint" />
+        </RelativeLayout>
+
         <com.leinardi.android.speeddial.SpeedDialOverlayLayout
             android:id="@+id/overlay"
             android:layout_width="match_parent"
