@@ -1144,6 +1144,7 @@
     <string name="empty_chat_list_hint">Sobald du eine neue Unterhaltung startest, wird sie hier angezeigt</string>
     <string name="empty_contacts_list_hint">Kontakte hinzufügen, um Gespräche zu beginnen</string>
     <string name="empty_group_chats_list_hint">Gruppenchats beitreten oder erstellen, um sie hier zu sehen</string>
+    <string name="empty_chat_rms_explanation">Teile diese RMS-Nummer mit anderen, damit sie eine Unterhaltung mit dir beginnen können</string>
     <string name="account_status_tls_error_protocol">Schwache Transportsicherheit (kein TLS 1.3)</string>
     <string name="account_status_tls_error_untrusted">Nicht vertrauenswürdiges Zertifikat</string>
 </resources>

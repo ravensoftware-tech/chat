@@ -34,8 +34,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/empty_chat_hint_image"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:text="@string/empty_chat_list_hint" />
+
+            <TextView
+                android:id="@+id/empty_chat_rms_number"
+                style="?textAppearanceBodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty_chat_hint_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:textColor="?colorPrimary"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/empty_chat_rms_explanation"
+                style="?textAppearanceBodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty_chat_rms_number"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/empty_chat_rms_explanation" />
         </RelativeLayout>
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton

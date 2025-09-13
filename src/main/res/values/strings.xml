@@ -1139,4 +1139,5 @@
     <string name="empty_chat_list_hint">Once you start a new conversation, you will see it listed here</string>
     <string name="empty_contacts_list_hint">Add contacts to start conversations</string>
     <string name="empty_group_chats_list_hint">Join or create group chats to see them here</string>
+    <string name="empty_chat_rms_explanation">Share this RMS number with others so they can start a conversation with you</string>
 </resources>

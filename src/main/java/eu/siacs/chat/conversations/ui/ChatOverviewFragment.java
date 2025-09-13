@@ -440,6 +440,7 @@ public class ChatOverviewFragment extends XmppFragment {
         if (this.chat.isEmpty()) {
             this.binding.list.setVisibility(View.GONE);
             this.binding.emptyChatHint.setVisibility(View.VISIBLE);
+            updateRmsNumberDisplay();
         } else {
             this.binding.emptyChatHint.setVisibility(View.GONE);
             this.binding.list.setVisibility(View.VISIBLE);
@@ -451,10 +452,27 @@ public class ChatOverviewFragment extends XmppFragment {
         }
     }
 
+    private void updateRmsNumberDisplay() {
+        if (this.binding == null) {
+            return;
+        }
+        
+        Account account = AccountUtils.getFirstEnabled(requireXmppActivity().xmppConnectionService);
+        if (account != null) {
+            String rmsNumber = account.getJid().getLocal();
+            this.binding.emptyChatRmsNumber.setText(rmsNumber);
+            this.binding.emptyChatRmsExplanation.setVisibility(View.VISIBLE);
+        } else {
+            this.binding.emptyChatRmsNumber.setText("");
+            this.binding.emptyChatRmsExplanation.setVisibility(View.GONE);
+        }
+    }
+
     private void toggleHintVisibility() {
         if (this.chat.isEmpty()) {
             this.binding.list.setVisibility(View.GONE);
             this.binding.emptyChatHint.setVisibility(View.VISIBLE);
+            updateRmsNumberDisplay();
         } else {
             this.binding.emptyChatHint.setVisibility(View.GONE);
             this.binding.list.setVisibility(View.VISIBLE);
